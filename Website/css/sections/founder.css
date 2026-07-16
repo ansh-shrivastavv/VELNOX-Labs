@@ -1,0 +1,297 @@
+/* ===================================================
+   FOUNDER SECTION
+=================================================== */
+
+.founder-section {
+    position: relative;
+    padding: 140px 8%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+.founder-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.04);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: 20%;
+    left: -15%;
+    pointer-events: none;
+}
+
+.founder-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 430px;
+    align-items: center;
+    gap: 100px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.founder-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.founder-label span {
+    width: 30px;
+    height: 1px;
+    background: #fff;
+}
+
+.founder-content h2 {
+    font-size: clamp(42px, 5vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.founder-content h2 strong {
+    color: #777;
+    font-weight: 500;
+}
+
+.founder-description {
+    max-width: 570px;
+    color: #858585;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.founder-description strong {
+    color: #fff;
+}
+
+.founder-signature {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.founder-signature span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.founder-signature small {
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* ================= FOUNDER CARD ================= */
+
+.founder-card {
+    position: relative;
+    background: #0b0b0b;
+    border: 1px solid #222;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-10px);
+    border-color: #555;
+}
+
+.card-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    filter: blur(100px);
+    top: -100px;
+    right: -80px;
+}
+
+
+/* ================= IMAGE ================= */
+
+.founder-image {
+    height: 300px;
+    background:
+        radial-gradient(
+            circle at center,
+            #2b2b2b 0%,
+            #111 45%,
+            #080808 100%
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    box-shadow:
+        0 0 0 12px rgba(255,255,255,0.02),
+        0 0 80px rgba(255,255,255,0.1);
+}
+
+.image-placeholder span {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -3px;
+}
+
+
+/* ================= INFO ================= */
+
+.founder-card-info {
+    padding: 28px;
+}
+
+.founder-card-info h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.founder-card-info > p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+
+/* ================= STATS ================= */
+
+.founder-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-top: 22px;
+    border-top: 1px solid #222;
+}
+
+.founder-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.founder-stats strong {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.founder-stats span {
+    color: #777;
+    margin-top: -25px;
+    margin-left: 35px;
+}
+
+.founder-stats small {
+    color: #666;
+    font-size: 10px;
+    margin-top: 8px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .founder-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .founder-card {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .founder-section {
+        padding: 90px 6%;
+    }
+
+    .founder-content h2 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .founder-description {
+        font-size: 14px;
+    }
+
+    .founder-image {
+        height: 250px;
+    }
+
+}
+
+/* ================= INSTAGRAM BUTTON ================= */
+
+.founder-instagram {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #fff;
+    text-decoration: none;
+
+    border: 1px solid #252525;
+    border-radius: 12px;
+
+    background: #111;
+
+    transition: 0.3s ease;
+}
+
+.founder-instagram:hover {
+    background: #1a1a1a;
+    border-color: #555;
+    transform: translateY(-3px);
+}
+
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #777;
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+.instagram-arrow {
+    margin-left: auto;
+    color: #777;
+    font-size: 18px;
+}

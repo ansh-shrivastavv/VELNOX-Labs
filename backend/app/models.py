@@ -1,34 +1,32 @@
-from sqlalchemy import Column, Integer, String, Text
-from backend.models.database import Base
+from sqlalchemy import Column, Integer, String, DateTime
+from datetime import datetime
 
-class Project(Base):
+from app.database import Base
 
-    __tablename__ = "projects"
 
-    id = Column(Integer, primary_key=True, index=True)
-
-    name = Column(String(255), nullable=False)
-
-    category = Column(String(100))
-
-    description = Column(Text)
-
-    live_url = Column(String(255))
-
-    github_url = Column(String(255))
-
-    thumbnail = Column(String(255))
-
-    from sqlalchemy import Column, Integer, String
-from ..models.database import Base
-
+# -------------------------
+# Admin Model
+# -------------------------
 
 class Admin(Base):
-
     __tablename__ = "admins"
 
     id = Column(Integer, primary_key=True, index=True)
+    username = Column(String(50), unique=True, nullable=False)
+    email = Column(String(100), unique=True, nullable=False)
+    password = Column(String(255), nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
 
-    username = Column(String, unique=True)
 
-    password = Column(String)
+# -------------------------
+# Service Model
+# -------------------------
+
+class Service(Base):
+    __tablename__ = "services"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(100), nullable=False)
+    description = Column(String(500), nullable=False)
+    icon = Column(String(100), nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)

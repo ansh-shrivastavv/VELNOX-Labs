@@ -1,0 +1,628 @@
+/* =====================================================
+   NEXORA — CHOOSE YOUR MISSION
+===================================================== */
+
+.nx-mission-pricing {
+
+    position: relative;
+
+    padding: 160px 7%;
+
+    background: #000;
+
+    color: #fff;
+
+    overflow: hidden;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.nx-mission-header {
+
+    max-width: 760px;
+
+    margin-bottom: 75px;
+
+}
+
+
+.nx-mission-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nx-mission-label span {
+
+    width: 30px;
+
+    height: 1px;
+
+    background: #777;
+
+}
+
+
+.nx-mission-header h2 {
+
+    margin: 0;
+
+    font-size: clamp(
+
+        55px,
+
+        8vw,
+
+        130px
+
+    );
+
+    line-height: .82;
+
+    letter-spacing: -9px;
+
+}
+
+
+.nx-mission-header h2 em {
+
+    display: block;
+
+    color: transparent;
+
+    font-style: normal;
+
+    -webkit-text-stroke: 1px #555;
+
+}
+
+
+.nx-mission-header p {
+
+    max-width: 390px;
+
+    margin-top: 32px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ================= LIST ================= */
+
+.nx-mission-list {
+
+    border-top: 1px solid #222;
+
+}
+
+
+/* ================= ITEM ================= */
+
+.nx-mission-item {
+
+    border-bottom: 1px solid #222;
+
+    transition: .5s ease;
+
+}
+
+
+.nx-mission-item:hover {
+
+    border-color: #555;
+
+}
+
+
+/* ================= MAIN ROW ================= */
+
+.nx-mission-main {
+
+    min-height: 125px;
+
+    display: grid;
+
+    grid-template-columns:
+
+        70px
+
+        1fr
+
+        180px
+
+        55px;
+
+    align-items: center;
+
+    gap: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.nx-mission-number {
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.nx-mission-name h3 {
+
+    margin: 0;
+
+    font-size: clamp(
+
+        24px,
+
+        3vw,
+
+        42px
+
+    );
+
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.nx-mission-name p {
+
+    max-width: 400px;
+
+    margin: 8px 0 0;
+
+    color: #555;
+
+    font-size: 11px;
+
+}
+
+
+.nx-mission-price {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.nx-mission-price small {
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-mission-price strong {
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+
+}
+
+
+.nx-mission-arrow {
+
+    width: 48px;
+
+    height: 48px;
+
+    border: 1px solid #333;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .45s ease;
+
+}
+
+
+.nx-mission-item:hover
+
+.nx-mission-arrow,
+
+.nx-mission-item.active
+
+.nx-mission-arrow {
+
+    background: #fff;
+
+    color: #000;
+
+    transform: rotate(45deg);
+
+}
+
+
+/* ================= DETAILS ================= */
+
+.nx-mission-details {
+
+    max-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+
+        1.3fr
+
+        1fr
+
+        170px;
+
+    gap: 40px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+
+        max-height .6s ease,
+
+        opacity .4s ease,
+
+        padding .6s ease;
+
+}
+
+
+.nx-mission-item.active
+
+.nx-mission-details {
+
+    max-height: 220px;
+
+    padding:
+
+        0
+
+        70px
+
+        35px;
+
+    opacity: 1;
+
+}
+
+
+/* ================= DETAIL CONTENT ================= */
+
+.nx-detail-content span {
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-detail-content p {
+
+    max-width: 320px;
+
+    margin-top: 15px;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= FEATURES ================= */
+
+.nx-mission-details ul {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.nx-mission-details li {
+
+    color: #888;
+
+    font-size: 10px;
+
+}
+
+
+.nx-mission-details li span {
+
+    margin-right: 8px;
+
+    color: #555;
+
+}
+
+
+/* ================= DETAIL BUTTON ================= */
+
+.nx-mission-details > a {
+
+    align-self: end;
+
+    color: #fff;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+.nx-mission-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 50px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+}
+
+
+.nx-mission-footer span {
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-mission-footer a {
+
+    color: #fff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .nx-mission-pricing {
+
+        padding: 110px 22px;
+
+    }
+
+
+    .nx-mission-header {
+
+        margin-bottom: 55px;
+
+    }
+
+
+    .nx-mission-header h2 {
+
+        font-size: 57px;
+
+        line-height: .86;
+
+        letter-spacing: -5px;
+
+    }
+
+
+    .nx-mission-header p {
+
+        font-size: 12px;
+
+    }
+
+
+    .nx-mission-main {
+
+        min-height: 105px;
+
+        grid-template-columns:
+
+            32px
+
+            1fr
+
+            42px;
+
+        gap: 12px;
+
+    }
+
+
+    .nx-mission-number {
+
+        align-self: start;
+
+        padding-top: 4px;
+
+        font-size: 9px;
+
+    }
+
+
+    .nx-mission-name h3 {
+
+        font-size: 20px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .nx-mission-name p {
+
+        max-width: 210px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .nx-mission-price {
+
+        display: none;
+
+    }
+
+
+    .nx-mission-arrow {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 15px;
+
+    }
+
+
+    .nx-mission-details {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 22px;
+
+    }
+
+
+    .nx-mission-item.active
+
+    .nx-mission-details {
+
+        max-height: 430px;
+
+        padding:
+
+            0
+
+            0
+
+            30px
+
+            44px;
+
+    }
+
+
+    .nx-detail-content p {
+
+        margin-top: 10px;
+
+        font-size: 11px;
+
+    }
+
+
+    .nx-mission-details ul {
+
+        gap: 12px;
+
+    }
+
+
+    .nx-mission-details > a {
+
+        align-self: flex-start;
+
+        padding-top: 8px;
+
+    }
+
+
+    .nx-mission-footer {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+}

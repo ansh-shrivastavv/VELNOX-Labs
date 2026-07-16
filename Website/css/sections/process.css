@@ -1,0 +1,411 @@
+/* =========================================
+   NEXORA — OUR PROCESS
+========================================= */
+
+.nx-process {
+
+    padding: 160px 7%;
+
+    background: #000;
+
+    color: #fff;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.nx-process-header {
+
+    max-width: 760px;
+
+    margin-bottom: 85px;
+
+}
+
+
+.nx-process-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nx-process-label span {
+
+    width: 28px;
+
+    height: 1px;
+
+    background: #555;
+
+}
+
+
+.nx-process-header h2 {
+
+    margin: 0;
+
+    font-size: clamp(
+
+        55px,
+
+        8vw,
+
+        125px
+
+    );
+
+    line-height: .82;
+
+    letter-spacing: -8px;
+
+}
+
+
+.nx-process-header h2 em {
+
+    display: block;
+
+    color: transparent;
+
+    font-style: normal;
+
+    -webkit-text-stroke: 1px #555;
+
+}
+
+
+.nx-process-header p {
+
+    max-width: 350px;
+
+    margin-top: 30px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ================= LIST ================= */
+
+.nx-process-list {
+
+    border-top: 1px solid #222;
+
+}
+
+
+/* ================= ITEM ================= */
+
+.nx-process-item {
+
+    display: grid;
+
+    grid-template-columns:
+
+        80px
+
+        1fr
+
+        55px;
+
+    align-items: center;
+
+    gap: 30px;
+
+    min-height: 155px;
+
+    border-bottom: 1px solid #222;
+
+    transition: .4s ease;
+
+}
+
+
+.nx-process-item:hover {
+
+    padding-left: 18px;
+
+    border-color: #555;
+
+}
+
+
+/* ================= NUMBER ================= */
+
+.nx-process-number {
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ================= TITLE ================= */
+
+.nx-process-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    max-width: 800px;
+
+    gap: 40px;
+
+}
+
+
+.nx-process-title h3 {
+
+    margin: 0;
+
+    font-size: clamp(
+
+        28px,
+
+        4vw,
+
+        55px
+
+    );
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+}
+
+
+.nx-process-title p {
+
+    max-width: 300px;
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= ICON ================= */
+
+.nx-process-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 46px;
+
+    height: 46px;
+
+    border: 1px solid #333;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-size: 18px;
+
+    transition: .4s ease;
+
+}
+
+
+.nx-process-item:hover
+
+.nx-process-icon {
+
+    background: #fff;
+
+    color: #000;
+
+    transform: rotate(45deg);
+
+}
+
+
+/* ================= BOTTOM ================= */
+
+.nx-process-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+}
+
+
+.nx-process-bottom span {
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-process-bottom a {
+
+    color: #fff;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    .nx-process {
+
+        padding: 110px 22px;
+
+    }
+
+
+    .nx-process-header {
+
+        margin-bottom: 60px;
+
+    }
+
+
+    .nx-process-header h2 {
+
+        font-size: 60px;
+
+        line-height: .86;
+
+        letter-spacing: -5px;
+
+    }
+
+
+    .nx-process-header p {
+
+        font-size: 12px;
+
+    }
+
+
+    .nx-process-item {
+
+        grid-template-columns:
+
+            32px
+
+            1fr
+
+            42px;
+
+        min-height: 125px;
+
+        gap: 12px;
+
+    }
+
+
+    .nx-process-item:hover {
+
+        padding-left: 0;
+
+    }
+
+
+    .nx-process-title {
+
+        display: block;
+
+    }
+
+
+    .nx-process-title h3 {
+
+        font-size: 25px;
+
+        letter-spacing: -1.5px;
+
+    }
+
+
+    .nx-process-title p {
+
+        max-width: 220px;
+
+        margin-top: 9px;
+
+        font-size: 10px;
+
+    }
+
+
+    .nx-process-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 15px;
+
+    }
+
+
+    .nx-process-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+}

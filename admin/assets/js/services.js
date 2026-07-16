@@ -1,227 +1,362 @@
-/* ==========================================
-   NEXORA SERVICES
-========================================== */
+let services = [
 
-const addBtn = document.getElementById("addServiceBtn");
-const modal = document.getElementById("serviceModal");
-const closeModal = document.getElementById("closeModal");
-const form = document.getElementById("serviceForm");
-const table = document.getElementById("serviceTable");
+{
+id:1,
+name:"Web Development",
+icon:"fa-solid fa-code",
+status:"Active"
+},
 
-let services = JSON.parse(localStorage.getItem("services")) || [];
+{
+id:2,
+name:"Video Editing",
+icon:"fa-solid fa-video",
+status:"Active"
+},
 
-/* ==========================
-   Open / Close Modal
-========================== */
-
-addBtn.onclick = () => {
-    modal.classList.add("active");
-};
-
-closeModal.onclick = () => {
-    modal.classList.remove("active");
-};
-
-window.onclick = (e) => {
-    if (e.target === modal) {
-        modal.classList.remove("active");
-    }
-};
-
-/* ==========================
-   Render Table
-========================== */
-
-function renderServices() {
-
-    table.innerHTML = "";
-
-    if (services.length === 0) {
-
-        table.innerHTML = `
-            <tr>
-                <td colspan="6" style="text-align:center;padding:30px;">
-                    No Services Found
-                </td>
-            </tr>
-        `;
-
-        return;
-    }
-
-    services.forEach((service, index) => {
-
-        table.innerHTML += `
-
-        <tr>
-
-            <td>
-                <i class="${service.icon}" style="font-size:22px;"></i>
-            </td>
-
-            <td>${service.name}</td>
-
-            <td>${service.category}</td>
-
-            <td>${service.price}</td>
-
-            <td>
-                <span class="status active">
-                    Active
-                </span>
-            </td>
-
-            <td class="actions">
-
-                <button onclick="editService(${index})">
-                    <i class="ri-edit-line"></i>
-                </button>
-
-                <button onclick="deleteService(${index})">
-                    <i class="ri-delete-bin-line"></i>
-                </button>
-
-            </td>
-
-        </tr>
-
-        `;
-
-    });
-
+{
+id:3,
+name:"Graphic Design",
+icon:"fa-solid fa-palette",
+status:"Active"
 }
 
-/* ==========================
-   Save Service
-========================== */
+];
 
-form.addEventListener("submit", function (e) {
 
-    e.preventDefault();
 
-    services.push({
+const serviceList =
+document.getElementById("serviceList");
 
-        name: document.getElementById("serviceName").value,
 
-        category: document.getElementById("serviceCategory").value,
 
-        price: document.getElementById("servicePrice").value,
 
-        icon: document.getElementById("serviceIcon").value ||
+function loadServices(){
 
-            "ri-service-line"
 
-    });
+serviceList.innerHTML="";
 
-    localStorage.setItem(
 
-        "services",
+services.forEach((service,index)=>{
 
-        JSON.stringify(services)
 
-    );
+serviceList.innerHTML += `
 
-    renderServices();
 
-    form.reset();
+<tr>
 
-    modal.classList.remove("active");
+
+<td>${index+1}</td>
+
+
+<td>
+${service.name}
+</td>
+
+
+<td>
+
+<i class="${service.icon} icon"></i>
+
+</td>
+
+
+
+<td>
+
+<span class="status">
+
+${service.status}
+
+</span>
+
+</td>
+
+
+
+<td>
+
+
+<a href="edit.html?id=${service.id}"
+class="action-btn edit">
+
+Edit
+
+</a>
+
+
+<button 
+onclick="deleteService(${index})"
+class="action-btn delete">
+
+Delete
+
+</button>
+
+
+</td>
+
+
+</tr>
+
+
+
+`;
+
 
 });
 
-/* ==========================
-   Delete
-========================== */
-
-function deleteService(index) {
-
-    if (!confirm("Delete this service?")) return;
-
-    services.splice(index, 1);
-
-    localStorage.setItem(
-
-        "services",
-
-        JSON.stringify(services)
-
-    );
-
-    renderServices();
 
 }
 
-/* ==========================
-   Edit
-========================== */
 
-function editService(index) {
 
-    const service = services[index];
 
-    document.getElementById("serviceName").value = service.name;
+function deleteService(index){
 
-    document.getElementById("serviceCategory").value = service.category;
+services.splice(index,1);
 
-    document.getElementById("servicePrice").value = service.price;
-
-    document.getElementById("serviceIcon").value = service.icon;
-
-    services.splice(index, 1);
-
-    localStorage.setItem(
-
-        "services",
-
-        JSON.stringify(services)
-
-    );
-
-    renderServices();
-
-    modal.classList.add("active");
+loadServices();
 
 }
 
-/* ==========================
-   Sidebar Navigation
-========================== */
 
-const dashboardBtn = document.getElementById("dashboardBtn");
-const portfolioBtn = document.getElementById("portfolioBtn");
 
-if (dashboardBtn) {
-    dashboardBtn.onclick = () => {
-        window.location.href = "dashboard.html";
-    };
+loadServices();
+
+// ==========================================
+// NEXORA Services Module
+// ==========================================
+
+// LocalStorage Key
+
+const STORAGE_KEY = "nexora_services";
+
+
+
+// ==========================================
+// Save Service
+// ==========================================
+
+const serviceForm = document.getElementById("serviceForm");
+
+if (serviceForm) {
+
+    serviceForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("serviceName").value.trim();
+
+        const icon = document.getElementById("serviceIcon").value.trim();
+
+        const description = document.getElementById("serviceDescription").value.trim();
+
+        const status = document.getElementById("serviceStatus").value;
+
+        if (!name || !icon || !description) {
+
+            alert("Please fill all fields.");
+
+            return;
+
+        }
+
+        const services = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+        services.push({
+
+            id: Date.now(),
+
+            name,
+
+            icon,
+
+            description,
+
+            status
+
+        });
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(services));
+
+        alert("Service Added Successfully.");
+
+        window.location.href = "index.html";
+
+    });
+
 }
 
-if (portfolioBtn) {
-    portfolioBtn.onclick = () => {
-        window.location.href = "portfolio.html";
-    };
+
+
+// ==========================================
+// Load Services
+// ==========================================
+
+const tableBody = document.querySelector("tbody");
+
+if (tableBody) {
+
+    const services = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    tableBody.innerHTML = "";
+
+    if (services.length === 0) {
+
+        tableBody.innerHTML = `
+
+            <tr>
+
+                <td colspan="4" style="text-align:center; padding:25px;">
+
+                    No Services Found
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+    services.forEach(service => {
+
+        tableBody.innerHTML += `
+
+            <tr>
+
+                <td>
+
+                    <i class="${service.icon}"></i>
+
+                </td>
+
+                <td>
+
+                    ${service.name}
+
+                </td>
+
+                <td>
+
+                    <span class="status ${service.status === "Active" ? "active" : "inactive"}">
+
+                        ${service.status}
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    <button class="edit-btn"
+
+                        onclick="editService(${service.id})">
+
+                        Edit
+
+                    </button>
+
+                    <button class="delete-btn"
+
+                        onclick="deleteService(${service.id})">
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
 }
 
-/* ==========================
-   Logout
-========================== */
 
-const logoutBtn = document.getElementById("logoutBtn");
 
-if (logoutBtn) {
+// ==========================================
+// Delete
+// ==========================================
 
-    logoutBtn.onclick = () => {
+function deleteService(id) {
 
-        localStorage.removeItem("isLoggedIn");
+    const confirmDelete = confirm("Delete this service?");
 
-        window.location.href = "login.html";
+    if (!confirmDelete) return;
 
-    };
+    let services = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    services = services.filter(service => service.id !== id);
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(services));
+
+    location.reload();
 
 }
 
-/* ==========================
-   Init
-========================== */
 
-renderServices();
+
+// ==========================================
+// Edit (Temporary)
+// ==========================================
+
+localStorage.setItem("editServiceId", id);
+
+window.location.href = "edit.html";
+
+
+// ==========================================
+// Console
+// ==========================================
+
+console.log("Services Module Loaded");
+
+const editForm = document.getElementById("editForm");
+
+if (editForm) {
+
+    const id = Number(localStorage.getItem("editServiceId"));
+
+    let services = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    const service = services.find(item => item.id === id);
+
+    if (service) {
+
+        document.getElementById("serviceName").value = service.name;
+
+        document.getElementById("serviceIcon").value = service.icon;
+
+        document.getElementById("serviceDescription").value = service.description;
+
+        document.getElementById("serviceStatus").value = service.status;
+
+    }
+
+    editForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        service.name = document.getElementById("serviceName").value;
+
+        service.icon = document.getElementById("serviceIcon").value;
+
+        service.description = document.getElementById("serviceDescription").value;
+
+        service.status = document.getElementById("serviceStatus").value;
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(services));
+
+        localStorage.removeItem("editServiceId");
+
+        alert("Service Updated Successfully");
+
+        window.location.href = "index.html";
+
+    });
+
+}

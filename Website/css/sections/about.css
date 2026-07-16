@@ -1,0 +1,519 @@
+/* =========================================
+   NEXORA — ABOUT SECTION
+========================================= */
+
+.nx-about {
+
+    padding: 160px 7%;
+
+    background: #000;
+
+    color: #fff;
+
+}
+
+
+/* ================= TOP ================= */
+
+.nx-about-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #222;
+
+}
+
+
+.nx-about-label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nx-about-label span {
+
+    width: 28px;
+
+    height: 1px;
+
+    background: #555;
+
+}
+
+
+.nx-about-year {
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ================= CONTENT ================= */
+
+.nx-about-content {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 100px;
+
+    padding: 90px 0;
+
+}
+
+
+.nx-about-heading h2 {
+
+    margin: 0;
+
+    font-size: clamp(
+
+        65px,
+
+        9vw,
+
+        145px
+
+    );
+
+    line-height: .8;
+
+    letter-spacing: -10px;
+
+}
+
+
+.nx-about-heading h2 em {
+
+    display: block;
+
+    color: transparent;
+
+    font-style: normal;
+
+    -webkit-text-stroke: 1px #555;
+
+}
+
+
+/* ================= COPY ================= */
+
+.nx-about-copy {
+
+    max-width: 420px;
+
+    padding-top: 12px;
+
+}
+
+
+.nx-about-intro {
+
+    margin: 0 0 28px;
+
+    color: #fff;
+
+    font-size: 21px;
+
+    line-height: 1.4;
+
+    letter-spacing: -.5px;
+
+}
+
+
+.nx-about-intro strong {
+
+    font-weight: 400;
+
+    color: #777;
+
+}
+
+
+.nx-about-copy > p:not(.nx-about-intro) {
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+.nx-about-copy > p strong {
+
+    color: #fff;
+
+    font-weight: 400;
+
+}
+
+
+/* ================= LINK ================= */
+
+.nx-about-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #555;
+
+    color: #fff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+}
+
+
+.nx-about-link span {
+
+    font-size: 17px;
+
+    transition: .35s ease;
+
+}
+
+
+.nx-about-link:hover span {
+
+    transform: rotate(45deg);
+
+}
+
+
+/* ================= FOUNDER ================= */
+
+.nx-about-founder {
+
+    display: grid;
+
+    grid-template-columns:
+
+        80px
+
+        1fr
+
+        200px;
+
+    align-items: end;
+
+    gap: 30px;
+
+    padding: 35px 0;
+
+    border-top: 1px solid #222;
+
+    border-bottom: 1px solid #222;
+
+}
+
+
+.nx-founder-number {
+
+    color: #555;
+
+    font-size: 10px;
+
+}
+
+
+.nx-founder-name > span {
+
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-founder-name h3 {
+
+    margin: 15px 0 0;
+
+    font-size: clamp(
+
+        35px,
+
+        5vw,
+
+        70px
+
+    );
+
+    font-weight: 500;
+
+    line-height: .9;
+
+    letter-spacing: -4px;
+
+}
+
+
+.nx-founder-name h3 em {
+
+    color: transparent;
+
+    font-style: normal;
+
+    -webkit-text-stroke: 1px #555;
+
+}
+
+
+.nx-founder-meta {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.nx-founder-meta span {
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.nx-founder-meta a {
+
+    color: #fff;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+}
+
+
+/* ================= STATS ================= */
+
+.nx-about-stats {
+
+    display: grid;
+
+    grid-template-columns:
+
+        1fr
+
+        1fr
+
+        1fr;
+
+    gap: 20px;
+
+    padding-top: 35px;
+
+}
+
+
+.nx-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.nx-stat strong {
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+
+}
+
+
+.nx-stat span {
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    .nx-about {
+
+        padding: 110px 22px;
+
+    }
+
+
+    .nx-about-top {
+
+        padding-bottom: 22px;
+
+    }
+
+
+    .nx-about-year {
+
+        font-size: 7px;
+
+    }
+
+
+    .nx-about-content {
+
+        display: block;
+
+        padding: 65px 0;
+
+    }
+
+
+    .nx-about-heading h2 {
+
+        font-size: 67px;
+
+        line-height: .85;
+
+        letter-spacing: -6px;
+
+    }
+
+
+    .nx-about-copy {
+
+        padding-top: 45px;
+
+    }
+
+
+    .nx-about-intro {
+
+        font-size: 19px;
+
+    }
+
+
+    .nx-about-copy > p:not(.nx-about-intro) {
+
+        font-size: 12px;
+
+    }
+
+
+    .nx-about-founder {
+
+        grid-template-columns:
+
+            32px
+
+            1fr;
+
+        gap: 15px;
+
+        padding: 30px 0;
+
+    }
+
+
+    .nx-founder-meta {
+
+        grid-column: 2;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        padding-top: 15px;
+
+        border-top: 1px solid #222;
+
+    }
+
+
+    .nx-founder-name h3 {
+
+        font-size: 42px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .nx-about-stats {
+
+        gap: 10px;
+
+    }
+
+
+    .nx-stat strong {
+
+        font-size: 32px;
+
+    }
+
+
+    .nx-stat span {
+
+        font-size: 7px;
+
+        line-height: 1.5;
+
+    }
+
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Service | NEXORA Admin</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/services.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>NEXORA</h2>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+        <nav>
+
+            <a href="../../dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="index.html" class="active">
+                <i class="fa-solid fa-briefcase"></i>
+                Services
+            </a>
+
+            <a href="../portfolio/index.html">
+                <i class="fa-solid fa-image"></i>
+                Portfolio
+            </a>
+
+            <a href="../messages/index.html">
+                <i class="fa-solid fa-envelope"></i>
+                Messages
+            </a>
+
+            <a href="../clients/index.html">
+                <i class="fa-solid fa-users"></i>
+                Clients
+            </a>
+
+            <a href="../team/index.html">
+                <i class="fa-solid fa-user-group"></i>
+                Team
+            </a>
+
+            <a href="../settings/index.html">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Add Service</h1>
+
+                <p>Create a new website service.</p>
+
+            </div>
+
+        </header>
+
+        <div class="form-card">
+
+            <form id="serviceForm">
+
+                <div class="form-group">
+
+                    <label>Service Name</label>
+
+                    <input
+                        type="text"
+                        id="serviceName"
+                        placeholder="Enter service name"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Font Awesome Icon</label>
+
+                    <input
+                        type="text"
+                        id="serviceIcon"
+                        placeholder="fa-solid fa-code"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Short Description</label>
+
+                    <textarea
+                        id="serviceDescription"
+                        rows="5"
+                        placeholder="Write service description..."
+                        required></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Status</label>
+
+                    <select id="serviceStatus">
+
+                        <option value="Active">Active</option>
+
+                        <option value="Hidden">Hidden</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Service
+
+                    </button>
+
+                    <a
+                        href="index.html"
+                        class="cancel-btn">
+
+                        Cancel
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../../assets/js/auth.js"></script>
+<script src="../../assets/js/services.js"></script>
+
+</body>
+
+</html>

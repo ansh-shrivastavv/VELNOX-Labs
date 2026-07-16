@@ -1,0 +1,133 @@
+/* ===================================
+        Messages Page
+=================================== */
+
+.table-card{
+
+    margin-top:30px;
+
+    background:#111;
+
+    border:1px solid #222;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+/* ============================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#181818;
+
+}
+
+thead th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#fff;
+
+    font-size:15px;
+
+}
+
+tbody td{
+
+    padding:18px;
+
+    border-top:1px solid #222;
+
+    color:#ddd;
+
+    vertical-align:top;
+
+}
+
+tbody tr:hover{
+
+    background:#171717;
+
+}
+
+/* ============================= */
+
+.message{
+
+    max-width:350px;
+
+    line-height:1.6;
+
+    color:#cfcfcf;
+
+    word-break:break-word;
+
+}
+
+/* ============================= */
+
+.delete-btn{
+
+    border:none;
+
+    background:#dc2626;
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+/* ============================= */
+
+.empty{
+
+    text-align:center;
+
+    color:#888;
+
+    padding:30px;
+
+}
+
+/* ============================= */
+
+@media(max-width:768px){
+
+    .table-card{
+
+        overflow-x:auto;
+
+    }
+
+    table{
+
+        min-width:850px;
+
+    }
+
+}

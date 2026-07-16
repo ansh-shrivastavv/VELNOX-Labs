@@ -1,107 +1,188 @@
-/* ==========================================================
-   NEXORA ADMIN
-   dashboard.js
-========================================================== */
+// =========================================
+// NEXORA Dashboard V2
+// =========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+// Logout
 
-    // ==========================
-    // Logout
-    // ==========================
+const logoutBtn = document.getElementById("logoutBtn");
 
-    const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
 
-    if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
 
-        logoutBtn.addEventListener("click", () => {
+        const confirmLogout = confirm("Logout from Admin Panel?");
 
-            const confirmLogout = confirm("Are you sure you want to logout?");
+        if (!confirmLogout) return;
 
-            if (confirmLogout) {
+        localStorage.removeItem("adminLoggedIn");
 
-                localStorage.removeItem("isLoggedIn");
-
-                window.location.href = "login.html";
-
-            }
-
-        });
-
-    }
-
-    // ==========================
-    // Sidebar Navigation
-    // ==========================
-
-    const pages = {
-
-        portfolioBtn: "pages/portfolio/index.html",
-
-        servicesBtn: "pages/services/index.html",
-
-        messagesBtn: "pages/messages/index.html",
-
-        clientsBtn: "pages/clients/index.html",
-
-        teamBtn: "pages/team/index.html",
-
-        settingsBtn: "pages/settings/index.html"
-
-    };
-
-    Object.keys(pages).forEach(id => {
-
-        const btn = document.getElementById(id);
-
-        if (btn) {
-
-            btn.addEventListener("click", () => {
-
-                window.location.href = pages[id];
-
-            });
-
-        }
+        window.location.href = "login.html";
 
     });
 
-    // ==========================
-    // Card Counter Animation
-    // ==========================
+}
 
-    function animateCounter(id) {
 
-        const element = document.getElementById(id);
 
-        if (!element) return;
+// =========================================
+// Greeting
+// =========================================
 
-        const target = Number(element.innerText);
+const greeting = document.querySelector(".welcome h2");
 
-        let current = 0;
+if (greeting) {
 
-        const speed = Math.max(1, Math.floor(target / 50));
+    const hour = new Date().getHours();
 
-        const interval = setInterval(() => {
+    let text = "";
 
-            current += speed;
+    if (hour < 12) {
 
-            if (current >= target) {
-
-                current = target;
-
-                clearInterval(interval);
-
-            }
-
-            element.innerText = current;
-
-        }, 20);
+        text = "Good Morning ☀️";
 
     }
 
-    animateCounter("projectCount");
-    animateCounter("serviceCount");
-    animateCounter("clientCount");
-    animateCounter("messageCount");
+    else if (hour < 17) {
+
+        text = "Good Afternoon 🌤";
+
+    }
+
+    else {
+
+        text = "Good Evening 🌙";
+
+    }
+
+    greeting.textContent = text;
+
+}
+
+
+
+// =========================================
+// Current Date
+// =========================================
+
+const welcomeText = document.querySelector(".welcome p");
+
+if (welcomeText) {
+
+    const options = {
+
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+
+    };
+
+    const today = new Date().toLocaleDateString("en-IN", options);
+
+    welcomeText.innerHTML =
+
+        `Welcome back to the NEXORA Admin Panel.<br>${today}`;
+
+}
+
+
+
+// =========================================
+// Active Sidebar Link
+// =========================================
+
+const navLinks = document.querySelectorAll(".sidebar nav a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.forEach(item => item.classList.remove("active"));
+
+        link.classList.add("active");
+
+    });
 
 });
+
+
+
+// =========================================
+// Quick Actions
+// =========================================
+
+const actionButtons = document.querySelectorAll(".action-grid button");
+
+actionButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        alert(btn.innerText);
+
+    });
+
+});
+
+
+
+// =========================================
+// Notification Button
+// =========================================
+
+const notifyBtn = document.querySelector(".fa-bell");
+
+if (notifyBtn) {
+
+    notifyBtn.parentElement.addEventListener("click", () => {
+
+        alert("No Notifications");
+
+    });
+
+}
+
+
+
+// =========================================
+// Profile Button
+// =========================================
+
+const profileBtn = document.querySelector(".fa-user");
+
+if (profileBtn) {
+
+    profileBtn.parentElement.addEventListener("click", () => {
+
+        alert("Profile Coming Soon");
+
+    });
+
+}
+
+
+
+// =========================================
+// Mobile Sidebar
+// =========================================
+
+const sidebar = document.querySelector(".sidebar");
+
+const menuBtn = document.getElementById("menuBtn");
+
+if (menuBtn && sidebar) {
+
+    menuBtn.addEventListener("click", () => {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+
+
+// =========================================
+// Dashboard Loaded
+// =========================================
+
+console.log("NEXORA Dashboard Loaded Successfully 🚀");

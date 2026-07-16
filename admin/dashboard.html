@@ -3,209 +3,306 @@
 
 <head>
 
-    <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NEXORA | Dashboard</title>
+    <title>NEXORA Admin Dashboard</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/admin.css">
-<link rel="stylesheet" href="assets/css/dashboard.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
 
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- Login Protection -->
-    <script>
+<div class="layout">
 
-        if (localStorage.getItem("isLoggedIn") !== "true") {
-            window.location.href = "login.html";
-        }
+    <!-- Sidebar -->
 
-    </script>
+    <aside class="sidebar">
 
-    <div class="dashboard">
+        <div class="logo">
 
-        <!-- Sidebar -->
+            <h2>NEXORA</h2>
 
-        <aside class="sidebar">
+            <span>Admin Panel</span>
 
-            <div class="logo">
-                <h2>NEXORA</h2>
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="pages/services/index.html">
+                <i class="fa-solid fa-briefcase"></i>
+                Services
+            </a>
+
+            <a href="pages/portfolio/index.html">
+                <i class="fa-solid fa-image"></i>
+                Portfolio
+            </a>
+
+            <a href="pages/messages/index.html">
+                <i class="fa-solid fa-envelope"></i>
+                Messages
+            </a>
+
+            <a href="pages/clients/index.html">
+                <i class="fa-solid fa-users"></i>
+                Clients
+            </a>
+
+            <a href="pages/team/index.html">
+                <i class="fa-solid fa-user-group"></i>
+                Team
+            </a>
+
+            <a href="pages/settings/index.html">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <button id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+            <small>Version 2.0</small>
+
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Dashboard</h1>
+
+                <p>Welcome back, Ansh 👋</p>
+
             </div>
 
-            <ul class="menu">
+            <div class="top-actions">
 
-                <li class="active">
-                    <i class="ri-dashboard-line"></i>
-                    <span>Dashboard</span>
-                </li>
+                <button class="icon-btn">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
 
-                <li id="portfolioBtn">
-                    <i class="ri-briefcase-line"></i>
-                    <span>Portfolio</span>
-                </li>
+                <button class="icon-btn">
+                    <i class="fa-solid fa-user"></i>
+                </button>
 
-                <li id="servicesBtn">
-                    <i class="ri-service-line"></i>
-                    <span>Services</span>
-                </li>
+            </div>
 
-                <li id="messagesBtn">
-                    <i class="ri-message-3-line"></i>
+        </header>
+
+        <!-- Welcome -->
+
+        <section class="welcome">
+
+            <h2>Good Evening 👋</h2>
+
+            <p>
+                Welcome back to the NEXORA Admin Panel.
+            </p>
+
+        </section>
+
+        <!-- Stats -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <span>Total Clients</span>
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <h2>0</h2>
+
+                <small>No clients available</small>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <span>Active Services</span>
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                </div>
+
+                <h2>0</h2>
+
+                <small>No services added</small>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-top">
+
                     <span>Messages</span>
-                </li>
 
-                <li id="clientsBtn">
-                    <i class="ri-group-line"></i>
-                    <span>Clients</span>
-                </li>
-
-                <li id="teamBtn">
-                    <i class="ri-team-line"></i>
-                    <span>Team</span>
-                </li>
-
-                <li id="settingsBtn">
-                    <i class="ri-settings-3-line"></i>
-                    <span>Settings</span>
-                </li>
-
-                <li id="logoutBtn">
-
-                    <i class="ri-logout-box-r-line"></i>
-
-                    <span>Logout</span>
-
-                </li>
-
-            </ul>
-
-        </aside>
-
-        <!-- Main -->
-
-        <main class="content">
-
-            <!-- Header -->
-
-            <header class="topbar">
-
-                <div>
-
-                    <h1>Dashboard</h1>
-
-                    <p>Welcome back, Admin 👋</p>
+                    <i class="fa-solid fa-comments"></i>
 
                 </div>
 
-                <div class="profile">
+                <h2>0</h2>
 
-                    <div class="search-box">
+                <small>No new messages</small>
 
-                        <i class="ri-search-line"></i>
+            </div>
 
-                        <input
-                            type="text"
-                            placeholder="Search...">
+            <div class="card">
 
-                    </div>
+                <div class="card-top">
 
-                    <i class="ri-notification-3-line notification"></i>
+                    <span>Website Status</span>
 
-                    <img
-                        src="assets/images/admin.png"
-                        alt="Admin">
+                    <i class="fa-solid fa-globe"></i>
 
                 </div>
 
-            </header>
+                <h2 style="color:#22c55e;">Online</h2>
 
-            <!-- Cards -->
+                <small>nexora.vercel.app</small>
 
-            <section class="cards">
+            </div>
 
-                <div class="card">
+        </section>
+                <!-- Quick Actions -->
 
-                    <h3>Total Projects</h3>
+        <section class="quick-actions">
 
-                    <span id="projectCount">12</span>
+            <h2>Quick Actions</h2>
 
-                </div>
+            <div class="action-grid">
 
-                <div class="card">
+                <a href="pages/services/add.html" class="quick-btn">
 
-                    <h3>Total Services</h3>
+                    <i class="fa-solid fa-plus"></i>
 
-                    <span id="serviceCount">8</span>
+                    <span>Add Service</span>
 
-                </div>
+                </a>
 
-                <div class="card">
+                <a href="pages/portfolio/add.html" class="quick-btn">
 
-                    <h3>Total Clients</h3>
+                    <i class="fa-solid fa-image"></i>
 
-                    <span id="clientCount">24</span>
+                    <span>Add Portfolio</span>
 
-                </div>
+                </a>
 
-                <div class="card">
+                <a href="pages/clients/add.html" class="quick-btn">
 
-                    <h3>Messages</h3>
+                    <i class="fa-solid fa-user-plus"></i>
 
-                    <span id="messageCount">15</span>
+                    <span>Add Client</span>
 
-                </div>
+                </a>
 
-            </section>
+                <a href="pages/team/add.html" class="quick-btn">
 
-            <!-- Recent Activity -->
+                    <i class="fa-solid fa-user-group"></i>
 
-            <section class="recent">
+                    <span>Add Team</span>
 
-                <div class="recent-card">
+                </a>
 
-                    <h2>Recent Activity</h2>
+            </div>
 
-                    <ul>
+        </section>
 
-                        <li>✅ New Portfolio Added</li>
+        <!-- Recent Activity -->
 
-                        <li>✅ Client Message Received</li>
+        <section class="recent">
 
-                        <li>✅ Service Updated</li>
+            <h2>Recent Activity</h2>
 
-                        <li>✅ Team Profile Edited</li>
+            <div class="activity-box">
 
-                    </ul>
+                <div class="activity-item">
 
-                </div>
+                    <i class="fa-solid fa-circle-check"></i>
 
-                <div class="recent-card">
-
-                    <h2>Quick Actions</h2>
-
-                    <button>Add Project</button>
-                    <button>Add Service</button>
-                    <button>View Messages</button>
+                    <span>Dashboard initialized successfully.</span>
 
                 </div>
 
-            </section>
+                <div class="activity-item">
 
-        </main>
+                    <i class="fa-solid fa-circle-check"></i>
 
-    </div>
+                    <span>Admin login completed.</span>
 
-    <!-- JS -->
+                </div>
 
-    <script src="assets/js/dashboard.js"></script>
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>No new messages available.</span>
+
+                </div>
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>System is running normally.</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="assets/js/auth.js"></script>
+
+<script src="assets/js/dashboard.js"></script>
 
 </body>
 

@@ -1,0 +1,1933 @@
+/* =====================================================
+   NEXORA — HERO SECTION
+   PREMIUM DARK FUTURISTIC
+===================================================== */
+
+
+/* ================= HERO ================= */
+
+.nx-hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 150px 7% 60px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background: #000;
+
+    color: #fff;
+
+}
+
+
+/* ================= ATMOSPHERE ================= */
+
+.nx-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -5;
+
+    background:
+
+        radial-gradient(
+            circle at 72% 42%,
+            rgba(255,255,255,.09),
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle at 18% 80%,
+            rgba(255,255,255,.035),
+            transparent 25%
+        );
+
+}
+
+
+/* ================= GRID ================= */
+
+.nx-hero-bg {
+
+    position: absolute;
+
+    inset: -20%;
+
+    z-index: -6;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    transform:
+        perspective(600px)
+        rotateX(55deg)
+        translateY(18%);
+
+    transform-origin: center bottom;
+
+    mask-image:
+        linear-gradient(
+            to top,
+            #000,
+            transparent 75%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to top,
+            #000,
+            transparent 75%
+        );
+
+    animation:
+        gridMove
+        18s
+        linear
+        infinite;
+
+}
+
+
+@keyframes gridMove {
+
+    from {
+
+        transform:
+            perspective(600px)
+            rotateX(55deg)
+            translateY(18%);
+
+    }
+
+    to {
+
+        transform:
+            perspective(600px)
+            rotateX(55deg)
+            translateY(25%);
+
+    }
+
+}
+
+
+/* ================= NOISE ================= */
+
+.nx-noise {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    opacity: .035;
+
+    background-image:
+
+        url(
+            "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"
+        );
+
+}
+
+
+/* ================= GLOWS ================= */
+
+.nx-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(110px);
+
+}
+
+
+.nx-glow-one {
+
+    width: 500px;
+
+    height: 500px;
+
+    top: 10%;
+
+    right: 4%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.13),
+            transparent 65%
+        );
+
+    animation:
+
+        glowFloat
+        8s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.nx-glow-two {
+
+    width: 350px;
+
+    height: 350px;
+
+    bottom: -100px;
+
+    left: 15%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.06),
+            transparent 65%
+        );
+
+}
+
+
+@keyframes glowFloat {
+
+    from {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50px,30px)
+            scale(1.15);
+
+    }
+
+}
+
+
+/* ================= TOP META ================= */
+
+.nx-hero-meta {
+
+    position: absolute;
+
+    top: 100px;
+
+    left: 7%;
+
+    right: 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-meta-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.nx-meta-left i {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+
+        0 0 15px #fff;
+
+    animation:
+
+        liveDot
+        2s
+        infinite;
+
+}
+
+
+@keyframes liveDot {
+
+    0%,
+    100% {
+
+        opacity: .3;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ================= CONTENT ================= */
+
+.nx-hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    padding-top: 55px;
+
+}
+
+
+.nx-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nx-eyebrow-line {
+
+    width: 38px;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff,
+            transparent
+        );
+
+}
+
+
+/* ================= TITLE ================= */
+
+.nx-hero-title {
+
+    position: relative;
+
+    margin: 0;
+
+    font-size:
+
+        clamp(
+            75px,
+            12vw,
+            190px
+        );
+
+    line-height: .78;
+
+    letter-spacing: -13px;
+
+    font-weight: 700;
+
+}
+
+
+.title-line {
+
+    display: block;
+
+    position: relative;
+
+    width: max-content;
+
+}
+
+
+.title-line:first-child {
+
+    text-shadow:
+
+        0 0 70px
+
+        rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+}
+
+
+.title-outline {
+
+    color: transparent;
+
+    -webkit-text-stroke:
+
+        1px
+
+        rgba(
+            255,
+            255,
+            255,
+            .4
+        );
+
+    text-shadow:
+
+        0 0 30px
+
+        rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+}
+
+
+.title-line em {
+
+    position: relative;
+
+    color: #fff;
+
+    font-style: normal;
+
+}
+
+
+.title-line em::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 5%;
+
+    right: -5%;
+
+    bottom: -12px;
+
+    height: 2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff,
+            transparent
+        );
+
+    opacity: .5;
+
+}
+
+
+/* ================= HERO BOTTOM ================= */
+
+.nx-hero-bottom {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 70px;
+
+    margin-top: 65px;
+
+}
+
+
+.nx-hero-description {
+
+    max-width: 360px;
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ================= CTA ================= */
+
+.nx-hero-cta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: .4s ease;
+
+}
+
+
+.cta-circle {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+
+    height: 58px;
+
+    border: 1px solid #444;
+
+    border-radius: 50%;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            .02
+        );
+
+    font-size: 20px;
+
+    transition: .4s ease;
+
+}
+
+
+.nx-hero-cta:hover .cta-circle {
+
+    background: #fff;
+
+    color: #000;
+
+    border-color: #fff;
+
+    transform:
+
+        rotate(45deg)
+
+        scale(1.08);
+
+}
+
+
+/* ================= STATS ================= */
+
+.nx-hero-stats {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    gap: 60px;
+
+    margin-top: 45px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #202020;
+
+}
+
+
+.nx-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.nx-stat strong {
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+}
+
+
+.nx-stat span {
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ================= ORBIT ================= */
+
+.nx-orbit-wrapper {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 10%;
+
+    width: 470px;
+
+    height: 470px;
+
+    transform:
+
+        translateY(-50%);
+
+    pointer-events: none;
+
+}
+
+
+.nx-orbit {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid #242424;
+
+}
+
+
+.orbit-large {
+
+    animation:
+
+        rotateOrbit
+
+        24s
+
+        linear
+
+        infinite;
+
+}
+
+
+.orbit-small {
+
+    inset: 55px;
+
+    border-style: dashed;
+
+    border-color: #333;
+
+    animation:
+
+        rotateOrbitReverse
+
+        17s
+
+        linear
+
+        infinite;
+
+}
+
+
+@keyframes rotateOrbit {
+
+    to {
+
+        transform:
+
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes rotateOrbitReverse {
+
+    to {
+
+        transform:
+
+            rotate(-360deg);
+
+    }
+
+}
+
+
+.nx-orbit-wrapper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 110px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(
+                255,
+                255,
+                255,
+                .11
+            ),
+
+            transparent 68%
+
+        );
+
+    filter: blur(25px);
+
+}
+
+
+.nx-orbit-core {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 145px;
+
+    height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform:
+
+        translate(
+            -50%,
+            -50%
+        );
+
+    border: 1px solid #444;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+
+            circle at 35% 25%,
+
+            #242424,
+
+            #050505 65%
+
+        );
+
+    box-shadow:
+
+        0 0 0 15px
+
+        rgba(
+            255,
+            255,
+            255,
+            .015
+        ),
+
+        0 0 80px
+
+        rgba(
+            255,
+            255,
+            255,
+            .1
+        );
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    letter-spacing: -5px;
+
+}
+
+
+.nx-orbit-dot {
+
+    position: absolute;
+
+    top: 3px;
+
+    left: 50%;
+
+    width: 9px;
+
+    height: 9px;
+
+    transform:
+
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+
+        0 0 20px #fff,
+
+        0 0 50px
+
+        rgba(
+            255,
+            255,
+            255,
+            .5
+        );
+
+}
+
+
+/* ================= FLOATING CARDS ================= */
+
+.nx-floating-card {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #262626;
+
+    border-radius: 8px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(
+                255,
+                255,
+                255,
+                .08
+            ),
+
+            rgba(
+                255,
+                255,
+                255,
+                .015
+            )
+
+        );
+
+    backdrop-filter:
+
+        blur(18px);
+
+    box-shadow:
+
+        0 20px 60px
+
+        rgba(
+            0,
+            0,
+            0,
+            .5
+        );
+
+    animation:
+
+        floatingCard
+
+        5s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+
+.nx-card-top {
+
+    top: 25%;
+
+    right: 4%;
+
+}
+
+
+.nx-card-bottom {
+
+    right: 28%;
+
+    bottom: 19%;
+
+    animation-delay: -2s;
+
+}
+
+
+@keyframes floatingCard {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-12px);
+
+    }
+
+}
+
+
+.floating-number {
+
+    color: #555;
+
+    font-size: 10px;
+
+}
+
+
+.floating-label {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ================= SCROLL ================= */
+
+.nx-scroll {
+
+    position: absolute;
+
+    right: 7%;
+
+    bottom: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.scroll-line {
+
+    width: 45px;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            #777
+
+        );
+
+}
+
+
+/* ================= CURSOR ================= */
+
+.nx-cursor {
+
+    position: fixed;
+
+    z-index: 9999;
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform:
+
+        translate(
+            -50%,
+            -50%
+        )
+
+        scale(0);
+
+    border: 1px solid #555;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #000;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    pointer-events: none;
+
+    transition:
+
+        transform .3s ease;
+
+}
+
+
+.nx-hero:hover .nx-cursor {
+
+    transform:
+
+        translate(
+            -50%,
+            -50%
+        )
+
+        scale(1);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .nx-hero-title {
+
+        font-size: 105px;
+
+    }
+
+
+    .nx-orbit-wrapper {
+
+        right: -90px;
+
+        opacity: .45;
+
+    }
+
+}
+
+
+/* =====================================================
+   NEXORA — PREMIUM MOBILE HERO
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .nx-hero {
+
+        min-height: 100svh;
+
+        padding: 0 22px;
+
+        display: flex;
+
+        align-items: stretch;
+
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #000;
+
+    }
+
+
+    /* ================= BACKGROUND ================= */
+
+    .nx-hero::after {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        z-index: -2;
+
+        background:
+
+            radial-gradient(
+
+                circle at 85% 22%,
+
+                rgba(255,255,255,.09),
+
+                transparent 28%
+
+            ),
+
+            radial-gradient(
+
+                circle at 15% 85%,
+
+                rgba(255,255,255,.05),
+
+                transparent 30%
+
+            );
+
+    }
+
+
+    .nx-hero-bg {
+
+        inset: -30%;
+
+        background-size: 42px 42px;
+
+        opacity: .35;
+
+    }
+
+
+    .nx-noise {
+
+        opacity: .025;
+
+    }
+
+
+    /* ================= META ================= */
+
+    .nx-hero-meta {
+
+        position: absolute;
+
+        top: 92px;
+
+        left: 22px;
+
+        right: 22px;
+
+        z-index: 10;
+
+        font-size: 8px;
+
+        letter-spacing: 1.8px;
+
+    }
+
+
+    .nx-meta-right {
+
+        display: none;
+
+    }
+
+
+    .nx-meta-left {
+
+        gap: 8px;
+
+    }
+
+
+    .nx-meta-left i {
+
+        width: 5px;
+
+        height: 5px;
+
+    }
+
+
+    /* ================= MAIN CONTENT ================= */
+
+    .nx-hero-content {
+
+        width: 100%;
+
+        padding-top: 145px;
+
+        padding-bottom: 90px;
+
+        z-index: 5;
+
+    }
+
+
+    /* ================= EYEBROW ================= */
+
+    .nx-eyebrow {
+
+        margin-bottom: 24px;
+
+        gap: 10px;
+
+        font-size: 8px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    .nx-eyebrow-line {
+
+        width: 28px;
+
+    }
+
+
+    /* ================= TITLE ================= */
+
+    .nx-hero-title {
+
+        margin: 0;
+
+        font-size: clamp(
+
+            60px,
+
+            18vw,
+
+            86px
+
+        );
+
+        line-height: .82;
+
+        letter-spacing: -6px;
+
+    }
+
+
+    .title-line {
+
+        width: max-content;
+
+    }
+
+
+    .title-outline {
+
+        -webkit-text-stroke:
+
+            .8px
+
+            rgba(
+
+                255,
+
+                255,
+
+                255,
+
+                .45
+
+            );
+
+    }
+
+
+    .title-line em::after {
+
+        bottom: -7px;
+
+        height: 1px;
+
+    }
+
+
+    /* ================= BOTTOM CONTENT ================= */
+
+    .nx-hero-bottom {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 28px;
+
+        margin-top: 48px;
+
+    }
+
+
+    .nx-hero-description {
+
+        max-width: 285px;
+
+        color: #777;
+
+        font-size: 13px;
+
+        line-height: 1.75;
+
+    }
+
+
+    /* ================= CTA ================= */
+
+    .nx-hero-cta {
+
+        position: relative;
+
+        z-index: 20;
+
+        gap: 13px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .cta-circle {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 18px;
+
+    }
+
+
+    .nx-hero-cta:hover .cta-circle {
+
+        transform: rotate(45deg);
+
+    }
+
+
+    /* ================= MOBILE STATS ================= */
+
+    .nx-hero-stats {
+
+        position: absolute;
+
+        left: 22px;
+
+        right: 22px;
+
+        bottom: 35px;
+
+        z-index: 10;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        margin: 0;
+
+        padding-top: 16px;
+
+        border-top: 1px solid #222;
+
+    }
+
+
+    .nx-stat {
+
+        gap: 4px;
+
+    }
+
+
+    .nx-stat strong {
+
+        font-size: 16px;
+
+        font-weight: 500;
+
+    }
+
+
+    .nx-stat span {
+
+        font-size: 7px;
+
+        letter-spacing: 1.4px;
+
+        color: #555;
+
+    }
+
+
+    /* ================= ORBIT ================= */
+
+    .nx-orbit-wrapper {
+
+        top: auto;
+
+        right: -145px;
+
+        bottom: -100px;
+
+        width: 390px;
+
+        height: 390px;
+
+        z-index: 1;
+
+        opacity: .42;
+
+        pointer-events: none;
+
+    }
+
+
+    .orbit-small {
+
+        inset: 48px;
+
+    }
+
+
+    .nx-orbit-wrapper::before {
+
+        inset: 95px;
+
+    }
+
+
+    .nx-orbit-core {
+
+        width: 105px;
+
+        height: 105px;
+
+        font-size: 28px;
+
+    }
+
+
+    .nx-orbit-dot {
+
+        width: 7px;
+
+        height: 7px;
+
+    }
+
+
+    /* ================= FLOATING CARDS ================= */
+
+    .nx-floating-card {
+
+        display: none;
+
+    }
+
+
+    /* ================= SCROLL ================= */
+
+    .nx-scroll {
+
+        display: none;
+
+    }
+
+
+    /* ================= CURSOR ================= */
+
+    .nx-cursor {
+
+        display: none;
+
+    }
+
+
+    /* ================= GLOWS ================= */
+
+    .nx-glow-one {
+
+        width: 300px;
+
+        height: 300px;
+
+        top: 20%;
+
+        right: -150px;
+
+        opacity: .6;
+
+    }
+
+
+    .nx-glow-two {
+
+        width: 250px;
+
+        height: 250px;
+
+        bottom: -100px;
+
+        left: -120px;
+
+        opacity: .5;
+
+    }
+
+}
+
+/* =====================================================
+   NEXORA — CLEAN MOBILE HERO
+===================================================== */
+
+.mobile-hero {
+
+    display: none;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .nx-hero {
+
+        display: none !important;
+
+    }
+
+
+    .mobile-hero {
+
+        position: relative;
+
+        min-height: 100svh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        padding: 28px 22px 25px;
+
+        overflow: hidden;
+
+        background: #000;
+
+        color: #fff;
+
+    }
+
+
+    /* ================= TOP ================= */
+
+    .mobile-hero-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        border-bottom: 1px solid #202020;
+
+        padding-bottom: 18px;
+
+    }
+
+
+    .mobile-logo {
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .mobile-menu {
+
+        color: #666;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    /* ================= MAIN ================= */
+
+    .mobile-hero-main {
+
+        position: relative;
+
+        z-index: 2;
+
+        margin-top: auto;
+
+        margin-bottom: auto;
+
+        padding: 80px 0 65px;
+
+    }
+
+
+    .mobile-kicker {
+
+        display: block;
+
+        margin-bottom: 22px;
+
+        color: #666;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    /* ================= TITLE ================= */
+
+    .mobile-title {
+
+        margin: 0;
+
+        font-size: clamp(
+
+            65px,
+
+            20vw,
+
+            92px
+
+        );
+
+        line-height: .82;
+
+        letter-spacing: -6px;
+
+        font-weight: 700;
+
+    }
+
+
+    .mobile-title span {
+
+        display: block;
+
+        color: transparent;
+
+        -webkit-text-stroke: 1px #555;
+
+    }
+
+
+    .mobile-title strong {
+
+        display: block;
+
+        font-weight: 700;
+
+    }
+
+
+    /* ================= DESCRIPTION ================= */
+
+    .mobile-description {
+
+        max-width: 270px;
+
+        margin: 35px 0 0;
+
+        color: #777;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* ================= CTA ================= */
+
+    .mobile-cta {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+        margin-top: 35px;
+
+        color: #fff;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        text-decoration: none;
+
+    }
+
+
+    .mobile-cta b {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 48px;
+
+        height: 48px;
+
+        border: 1px solid #444;
+
+        border-radius: 50%;
+
+        font-size: 18px;
+
+        font-weight: 400;
+
+        transition: .35s ease;
+
+    }
+
+
+    .mobile-cta:active b {
+
+        background: #fff;
+
+        color: #000;
+
+        transform: rotate(45deg);
+
+    }
+
+
+    /* ================= BOTTOM ================= */
+
+    .mobile-hero-bottom {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding-top: 18px;
+
+        border-top: 1px solid #202020;
+
+        color: #555;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    /* ================= BACKGROUND DETAIL ================= */
+
+    .mobile-hero::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 280px;
+
+        height: 280px;
+
+        top: 30%;
+
+        right: -180px;
+
+        border: 1px solid #171717;
+
+        border-radius: 50%;
+
+        box-shadow:
+
+            0 0 0 35px #0b0b0b,
+
+            0 0 0 36px #171717,
+
+            0 0 0 75px #080808,
+
+            0 0 0 76px #151515;
+
+        pointer-events: none;
+
+    }
+
+
+    .mobile-hero::after {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        background:
+
+            linear-gradient(
+
+                120deg,
+
+                transparent 45%,
+
+                rgba(
+
+                    255,
+
+                    255,
+
+                    255,
+
+                    .035
+
+                ),
+
+                transparent 55%
+
+            );
+
+    }
+
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Portfolio | NEXORA Admin</title>
+
+    <link rel="stylesheet"
+          href="../../assets/css/dashboard.css">
+
+    <link rel="stylesheet"
+          href="../../assets/css/portfolio.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>NEXORA</h2>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+        <nav>
+
+            <a href="../../dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="../services/index.html">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                Services
+
+            </a>
+
+            <a href="index.html" class="active">
+
+                <i class="fa-solid fa-image"></i>
+
+                Portfolio
+
+            </a>
+
+            <a href="../messages/index.html">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Messages
+
+            </a>
+
+            <a href="../settings/index.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Add Portfolio</h1>
+
+                <p>Create a new portfolio project.</p>
+
+            </div>
+
+        </header>
+
+        <div class="form-card">
+
+            <form id="portfolioForm">
+
+                <div class="form-group">
+
+                    <label>Project Name</label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Enter project name"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Category</label>
+
+                    <input
+                        type="text"
+                        id="projectCategory"
+                        placeholder="Website / App / Design"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Project Image URL</label>
+
+                    <input
+                       <input type="file" id="projectImage" accept="image/*">
+                </div>
+
+                <div class="form-group">
+
+                    <label>Live Project Link</label>
+
+                    <input
+                        type="url"
+                        id="projectLink"
+                        placeholder="https://example.com">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Status</label>
+
+                    <select id="projectStatus">
+
+                        <option value="Active">Active</option>
+
+                        <option value="Hidden">Hidden</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Project
+
+                    </button>
+
+                    <a
+                        href="index.html"
+                        class="cancel-btn">
+
+                        Cancel
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../../assets/js/auth.js"></script>
+
+<script src="../../assets/js/portfolio.js"></script>
+
+</body>
+
+</html>

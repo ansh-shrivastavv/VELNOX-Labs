@@ -1,0 +1,424 @@
+/* =========================================
+   NEXORA — FOOTER
+========================================= */
+
+.nx-footer {
+
+    padding: 120px 7% 28px;
+
+    background: #000;
+
+    color: #fff;
+
+}
+
+
+/* ================= TOP ================= */
+
+.nx-footer-top {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding-bottom: 100px;
+
+    border-bottom: 1px solid #222;
+
+}
+
+
+.nx-footer-heading > span {
+
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nx-footer-heading h2 {
+
+    margin: 0;
+
+    font-size: clamp(
+
+        60px,
+
+        9vw,
+
+        145px
+
+    );
+
+    line-height: .8;
+
+    letter-spacing: -10px;
+
+}
+
+
+.nx-footer-heading h2 em {
+
+    display: block;
+
+    color: transparent;
+
+    font-style: normal;
+
+    -webkit-text-stroke: 1px #555;
+
+}
+
+
+/* ================= CTA ================= */
+
+.nx-footer-cta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 22px;
+
+    border: 1px solid #333;
+
+    color: #fff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition: .4s ease;
+
+}
+
+
+.nx-footer-cta span {
+
+    font-size: 20px;
+
+    transition: .4s ease;
+
+}
+
+
+.nx-footer-cta:hover {
+
+    background: #fff;
+
+    color: #000;
+
+}
+
+
+.nx-footer-cta:hover span {
+
+    transform: rotate(45deg);
+
+}
+
+
+/* ================= MAIN ================= */
+
+.nx-footer-main {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    padding: 70px 0;
+
+}
+
+
+/* ================= BRAND ================= */
+
+.nx-footer-logo {
+
+    color: #fff;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+
+    text-decoration: none;
+
+}
+
+
+.nx-footer-logo span {
+
+    margin-left: 3px;
+
+    color: #666;
+
+    font-size: 8px;
+
+    vertical-align: top;
+
+}
+
+
+.nx-footer-brand p {
+
+    max-width: 280px;
+
+    margin-top: 22px;
+
+    color: #555;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ================= LINKS ================= */
+
+.nx-footer-links {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.nx-footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+}
+
+
+.nx-footer-title {
+
+    margin-bottom: 10px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nx-footer-column a {
+
+    position: relative;
+
+    color: #888;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+
+}
+
+
+.nx-footer-column a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -5px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: #fff;
+
+    transition: .3s ease;
+
+}
+
+
+.nx-footer-column a:hover {
+
+    color: #fff;
+
+}
+
+
+.nx-footer-column a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* ================= BOTTOM ================= */
+
+.nx-footer-bottom {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.nx-footer-bottom:nth-child(2) {
+
+    text-align: center;
+
+}
+
+
+.nx-footer-bottom a {
+
+    justify-self: end;
+
+    color: #888;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+
+}
+
+
+.nx-footer-bottom a:hover {
+
+    color: #fff;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    .nx-footer {
+
+        padding: 100px 22px 25px;
+
+    }
+
+
+    .nx-footer-top {
+
+        display: block;
+
+        padding-bottom: 65px;
+
+    }
+
+
+    .nx-footer-heading h2 {
+
+        font-size: 65px;
+
+        line-height: .85;
+
+        letter-spacing: -6px;
+
+    }
+
+
+    .nx-footer-cta {
+
+        width: fit-content;
+
+        margin-top: 45px;
+
+    }
+
+
+    .nx-footer-main {
+
+        display: block;
+
+        padding: 55px 0;
+
+    }
+
+
+    .nx-footer-brand p {
+
+        font-size: 11px;
+
+    }
+
+
+    .nx-footer-links {
+
+        margin-top: 55px;
+
+        gap: 35px;
+
+    }
+
+
+    .nx-footer-bottom {
+
+        display: flex;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        font-size: 7px;
+
+    }
+
+
+    .nx-footer-bottom a {
+
+        justify-self: auto;
+
+    }
+
+}

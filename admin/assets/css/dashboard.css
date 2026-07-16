@@ -1,255 +1,232 @@
-/* ==========================================================
-   NEXORA ADMIN DASHBOARD
-   dashboard.css
-========================================================== */
-
-
-/* ===========================
-   Root Variables
-=========================== */
-
-:root{
-
-    --primary:#6C63FF;
-    --primary-dark:#5A52E8;
-
-    --bg:#0F172A;
-    --card:#182235;
-    --card-hover:#202D45;
-
-    --text:#FFFFFF;
-    --text-light:#A8B3CF;
-
-    --border:#263248;
-
-    --danger:#FF4D67;
-    --success:#18C37E;
-
-}
-
-
-/* ===========================
-   Reset
-=========================== */
+/* ===========================================
+        NEXORA ADMIN DASHBOARD V2
+=========================================== */
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#050505;
+
+    --sidebar:#0d0d0d;
+
+    --card:#111111;
+
+    --border:#202020;
+
+    --primary:#3b82f6;
+
+    --primary-hover:#2563eb;
+
+    --text:#ffffff;
+
+    --muted:#9ca3af;
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+    --radius:18px;
+
+    --transition:.25s ease;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
 
 }
 
 body{
 
-    font-family:'Inter',sans-serif;
     background:var(--bg);
+
     color:var(--text);
-    overflow-x:hidden;
+
+    font-family:"Poppins",sans-serif;
 
 }
 
-a{
+/* ===========================================
+            Layout
+=========================================== */
 
-    text-decoration:none;
+.layout{
 
-}
+    display:grid;
 
-li{
+    grid-template-columns:240px 1fr;
 
-    list-style:none;
-
-}
-
-
-/* ===========================
-   Dashboard Layout
-=========================== */
-
-.dashboard{
-
-    display:flex;
     min-height:100vh;
 
 }
 
-
-/* ===========================
-   Sidebar
-=========================== */
+/* ===========================================
+            Sidebar
+=========================================== */
 
 .sidebar{
 
-    width:280px;
-
-    background:var(--card);
+    background:var(--sidebar);
 
     border-right:1px solid var(--border);
-
-    padding:35px 22px;
 
     display:flex;
 
     flex-direction:column;
 
-    transition:.35s;
+    justify-content:space-between;
 
 }
 
-
-/* Logo */
-
 .logo{
 
-    margin-bottom:55px;
+    padding:30px;
+
+    border-bottom:1px solid var(--border);
 
 }
 
 .logo h2{
 
-    font-size:2rem;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
     color:var(--primary);
 
-}
+    font-size:28px;
 
-
-/* Menu */
-
-.menu{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
+    letter-spacing:2px;
 
 }
 
+.logo span{
 
-/* Menu Item */
+    display:block;
 
-.menu li{
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+.sidebar nav{
+
+    padding:22px;
+
+}
+
+.sidebar nav a{
 
     display:flex;
 
     align-items:center;
 
-    gap:15px;
+    gap:14px;
 
-    padding:16px 18px;
+    text-decoration:none;
 
-    border-radius:15px;
+    color:#d7d7d7;
 
-    color:var(--text-light);
+    padding:15px 18px;
+
+    margin-bottom:10px;
+
+    border-radius:14px;
+
+    transition:var(--transition);
+
+}
+
+.sidebar nav a:hover{
+
+    background:#181818;
+
+}
+
+.sidebar nav a.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.sidebar nav a i{
+
+    width:20px;
+
+    text-align:center;
+
+}
+
+/* ===========================================
+        Sidebar Footer
+=========================================== */
+
+.sidebar-footer{
+
+    padding:25px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.sidebar-footer button{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#191919;
+
+    color:white;
 
     cursor:pointer;
 
-    transition:.3s ease;
-
-    font-size:1rem;
-
-    font-weight:500;
+    transition:.25s;
 
 }
 
+.sidebar-footer button:hover{
 
-/* Icon */
-
-.menu li i{
-
-    font-size:1.3rem;
+    background:#dc2626;
 
 }
 
+.sidebar-footer small{
 
-/* Hover */
+    display:block;
 
-.menu li:hover{
+    text-align:center;
 
-    background:var(--card-hover);
+    margin-top:15px;
 
-    color:#fff;
-
-    transform:translateX(6px);
-
-}
-
-
-/* Active */
-
-.menu li.active{
-
-    background:var(--primary);
-
-    color:#fff;
-
-    box-shadow:0 10px 25px rgba(108,99,255,.35);
+    color:var(--muted);
 
 }
 
+/* ===========================================
+            Main
+=========================================== */
 
-/* Logout */
-
-#logoutBtn{
-
-    margin-top:auto;
-
-    color:#FF8080;
-
-}
-
-#logoutBtn:hover{
-
-    background:rgba(255,77,103,.15);
-
-}
-
-
-/* Sidebar Scroll */
-
-.sidebar{
-
-    overflow-y:auto;
-
-}
-
-.sidebar::-webkit-scrollbar{
-
-    width:6px;
-
-}
-
-.sidebar::-webkit-scrollbar-thumb{
-
-    background:var(--primary);
-
-    border-radius:50px;
-
-}
-
-/* ==========================================================
-   MAIN CONTENT
-========================================================== */
-
-.content{
-
-    flex:1;
+.main{
 
     padding:35px;
 
-    overflow-y:auto;
-
 }
 
-
-/* ==========================================================
-   TOPBAR
-========================================================== */
+/* ===========================================
+            Topbar
+=========================================== */
 
 .topbar{
 
@@ -265,96 +242,148 @@ li{
 
 .topbar h1{
 
-    font-size:2rem;
-
-    font-weight:700;
+    font-size:32px;
 
 }
 
 .topbar p{
 
-    margin-top:8px;
+    color:var(--muted);
 
-    color:var(--text-light);
-
-}
-
-
-/* ==========================================================
-   PROFILE AREA
-========================================================== */
-
-.profile{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
+    margin-top:5px;
 
 }
 
-
-/* ==========================================================
-   SEARCH BOX
-========================================================== */
-
-.search-box{
+.top-actions{
 
     display:flex;
 
-    align-items:center;
+    gap:15px;
 
-    gap:12px;
+}
 
-    width:260px;
+.icon-btn{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--card);
+
+    color:white;
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.icon-btn:hover{
+
+    background:var(--primary);
+
+}
+/* ===========================================
+            Welcome
+=========================================== */
+
+.welcome{
 
     background:var(--card);
 
     border:1px solid var(--border);
 
-    padding:12px 18px;
+    border-radius:var(--radius);
 
-    border-radius:14px;
+    padding:30px;
 
-}
-
-.search-box i{
-
-    color:var(--text-light);
-
-    font-size:1.1rem;
+    margin-bottom:30px;
 
 }
 
-.search-box input{
+.welcome h2{
 
-    width:100%;
+    font-size:28px;
 
-    background:transparent;
-
-    border:none;
-
-    outline:none;
-
-    color:#fff;
-
-    font-size:.95rem;
+    margin-bottom:10px;
 
 }
 
-.search-box input::placeholder{
+.welcome p{
 
-    color:var(--text-light);
+    color:var(--muted);
+
+    line-height:1.6;
 
 }
 
+/* ===========================================
+            Dashboard Cards
+=========================================== */
 
-/* ==========================================================
-   NOTIFICATION
-========================================================== */
+.cards{
 
-.notification{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:all .25s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 10px 30px rgba(59,130,246,.15);
+
+}
+
+.card-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:22px;
+
+}
+
+.card-top span{
+
+    color:var(--muted);
+
+    font-size:15px;
+
+}
+
+.card-top i{
 
     width:48px;
 
@@ -366,349 +395,282 @@ li{
 
     align-items:center;
 
-    background:var(--card);
+    background:rgba(59,130,246,.12);
 
-    border-radius:50%;
+    color:var(--primary);
 
-    cursor:pointer;
+    border-radius:14px;
 
-    transition:.3s;
-
-    font-size:1.2rem;
+    font-size:20px;
 
 }
 
-.notification:hover{
+.card h2{
 
-    background:var(--primary);
+    font-size:34px;
 
-}
-
-
-/* ==========================================================
-   PROFILE IMAGE
-========================================================== */
-
-.profile img{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:2px solid var(--primary);
+    margin-bottom:8px;
 
 }
 
+.card small{
 
-/* ==========================================================
-   DASHBOARD CARDS
-========================================================== */
+    color:var(--muted);
 
-.cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-    gap:22px;
+    font-size:14px;
 
 }
 
+/* ===========================================
+            Quick Actions
+=========================================== */
 
-/* ==========================================================
-   CARD
-========================================================== */
+.quick-actions{
 
-.card{
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:28px;
-
-    transition:.35s;
-
-    cursor:pointer;
+    margin-bottom:35px;
 
 }
 
-.card:hover{
-
-    transform:translateY(-8px);
-
-    background:var(--card-hover);
-
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-}
-
-
-/* ==========================================================
-   CARD TITLE
-========================================================== */
-
-.card h3{
-
-    color:var(--text-light);
-
-    font-size:1rem;
+.quick-actions h2{
 
     margin-bottom:18px;
 
 }
 
-
-/* ==========================================================
-   CARD NUMBER
-========================================================== */
-
-.card span{
-
-    display:block;
-
-    font-size:2.2rem;
-
-    font-weight:700;
-
-    color:var(--primary);
-
-}
-
-/* ==========================================================
-   RECENT SECTION
-========================================================== */
-
-.recent{
+.action-grid{
 
     display:grid;
 
-    grid-template-columns:2fr 1fr;
+    grid-template-columns:repeat(4,1fr);
 
-    gap:25px;
-
-    margin-top:35px;
+    gap:20px;
 
 }
 
-
-/* ==========================================================
-   RECENT CARD
-========================================================== */
-
-.recent-card{
-
-    background:rgba(24,34,53,.85);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:22px;
-
-    padding:28px;
-
-    transition:.35s;
-
-}
-
-.recent-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--primary);
-
-    box-shadow:0 18px 40px rgba(108,99,255,.15);
-
-}
-
-
-/* ==========================================================
-   CARD TITLE
-========================================================== */
-
-.recent-card h2{
-
-    font-size:1.3rem;
-
-    margin-bottom:22px;
-
-    font-weight:700;
-
-}
-
-
-/* ==========================================================
-   ACTIVITY LIST
-========================================================== */
-
-.recent-card ul{
+.quick-btn{
 
     display:flex;
 
     flex-direction:column;
 
-    gap:18px;
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:all .25s ease;
 
 }
 
-.recent-card ul li{
+.quick-btn:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+
+.quick-btn i{
+
+    font-size:28px;
+
+}
+
+.quick-btn span{
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+/* ===========================================
+        Website Status
+=========================================== */
+
+.status-online{
+
+    color:var(--success);
+
+    font-weight:600;
+
+}
+
+.status-offline{
+
+    color:var(--danger);
+
+    font-weight:600;
+
+}
+/* ==========================================
+        Recent Activity
+========================================== */
+
+.recent{
+
+    margin-top:35px;
+
+}
+
+.recent h2{
+
+    margin-bottom:18px;
+
+    font-size:22px;
+
+}
+
+.activity-box{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+}
+
+.activity-item{
 
     display:flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:15px;
 
-    color:var(--text-light);
+    padding:16px 0;
 
-    padding:14px 18px;
-
-    background:rgba(255,255,255,.03);
-
-    border:1px solid rgba(255,255,255,.05);
-
-    border-radius:14px;
-
-    transition:.3s;
+    border-bottom:1px solid var(--border);
 
 }
 
-.recent-card ul li:hover{
+.activity-item:last-child{
 
-    background:rgba(108,99,255,.12);
-
-    border-color:var(--primary);
-
-    color:#fff;
-
-    transform:translateX(8px);
+    border-bottom:none;
 
 }
 
+.activity-item i{
 
-/* ==========================================================
-   QUICK ACTIONS
-========================================================== */
+    color:var(--success);
 
-.recent-card button{
+    font-size:18px;
 
-    width:100%;
+}
 
-    margin-bottom:15px;
+.activity-item span{
 
-    padding:15px;
+    color:#d8d8d8;
 
-    border:none;
+    font-size:15px;
 
-    border-radius:14px;
+}
+
+/* ==========================================
+            Buttons
+========================================== */
+
+button{
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+button:focus{
+
+    outline:none;
+
+}
+
+/* ==========================================
+        Smooth Animation
+========================================== */
+
+.card,
+.quick-btn,
+.icon-btn,
+.sidebar nav a,
+.sidebar-footer button{
+
+    transition:all .25s ease;
+
+}
+
+.card:hover{
+
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+
+}
+
+.icon-btn:hover{
+
+    box-shadow:0 0 18px rgba(59,130,246,.25);
+
+}
+
+/* ==========================================
+        Scrollbar
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b0b0b;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2d2d2d;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
 
     background:var(--primary);
 
-    color:#fff;
+}
 
-    font-size:1rem;
+/* ==========================================
+        Selection
+========================================== */
 
-    font-weight:600;
+::selection{
 
-    cursor:pointer;
+    background:var(--primary);
 
-    transition:.3s;
+    color:white;
 
 }
 
-.recent-card button:hover{
+/* ==========================================
+        Tablet
+========================================== */
 
-    background:var(--primary-dark);
-
-    transform:translateY(-3px);
-
-    box-shadow:0 12px 25px rgba(108,99,255,.35);
-
-}
-
-.recent-card button:last-child{
-
-    margin-bottom:0;
-
-}
-
-
-/* ==========================================================
-   GLASS EFFECT
-========================================================== */
-
-.card,
-.recent-card,
-.search-box,
-.notification{
-
-    backdrop-filter:blur(18px);
-
-}
-
-
-/* ==========================================================
-   FADE ANIMATION
-========================================================== */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.cards{
-
-    animation:fadeUp .8s ease;
-
-}
-
-.recent{
-
-    animation:fadeUp 1s ease;
-
-}
-
-
-/* ==========================================================
-   SMOOTH TRANSITIONS
-========================================================== */
-
-*{
-
-    transition:background .3s,
-               color .3s,
-               border .3s,
-               transform .3s;
-
-}
-
-/* ==========================================================
-   RESPONSIVE - 1200px
-========================================================== */
-
-@media (max-width:1200px){
+@media(max-width:1100px){
 
     .cards{
 
@@ -716,103 +678,33 @@ li{
 
     }
 
+    .action-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
 }
 
+/* ==========================================
+        Mobile
+========================================== */
 
-/* ==========================================================
-   RESPONSIVE - 992px
-========================================================== */
+@media(max-width:768px){
 
-@media (max-width:992px){
-
-    .sidebar{
-
-        width:90px;
-
-        padding:30px 12px;
-
-    }
-
-    .logo h2{
-
-        display:none;
-
-    }
-
-    .menu li{
-
-        justify-content:center;
-
-    }
-
-    .menu li span{
-
-        display:none;
-
-    }
-
-    .content{
-
-        padding:25px;
-
-    }
-
-    .recent{
+    .layout{
 
         grid-template-columns:1fr;
 
     }
 
-}
-
-
-/* ==========================================================
-   RESPONSIVE - 768px
-========================================================== */
-
-@media (max-width:768px){
-
-    .dashboard{
-
-        flex-direction:column;
-
-    }
-
     .sidebar{
 
-        width:100%;
-
-        height:auto;
-
-        border-right:none;
-
-        border-bottom:1px solid var(--border);
+        display:none;
 
     }
 
-    .menu{
-
-        flex-direction:row;
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-    }
-
-    .menu li{
-
-        width:70px;
-
-        height:70px;
-
-        padding:0;
-
-        justify-content:center;
-
-    }
-
-    .content{
+    .main{
 
         padding:20px;
 
@@ -828,38 +720,41 @@ li{
 
     }
 
-    .profile{
-
-        width:100%;
-
-        justify-content:space-between;
-
-    }
-
-    .search-box{
-
-        width:100%;
-
-    }
-
     .cards{
 
         grid-template-columns:1fr;
 
     }
 
+    .action-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .welcome{
+
+        padding:22px;
+
+    }
+
+    .welcome h2{
+
+        font-size:24px;
+
+    }
+
 }
 
+/* ==========================================
+        Small Mobile
+========================================== */
 
-/* ==========================================================
-   RESPONSIVE - 480px
-========================================================== */
-
-@media (max-width:480px){
+@media(max-width:480px){
 
     .topbar h1{
 
-        font-size:1.6rem;
+        font-size:26px;
 
     }
 
@@ -869,174 +764,66 @@ li{
 
     }
 
-    .recent-card{
+    .card h2{
+
+        font-size:28px;
+
+    }
+
+    .quick-btn{
 
         padding:20px;
 
     }
 
-    .card span{
+    .activity-item{
 
-        font-size:1.8rem;
-
-    }
-
-    .recent-card h2{
-
-        font-size:1.1rem;
+        align-items:flex-start;
 
     }
 
 }
 
+/* ==========================================
+        Utility Classes
+========================================== */
 
-/* ==========================================================
-   BUTTON FOCUS
-========================================================== */
+.hidden{
 
-button:focus{
-
-    outline:none;
-
-    box-shadow:0 0 0 3px rgba(108,99,255,.35);
+    display:none !important;
 
 }
 
+.text-center{
 
-/* ==========================================================
-   INPUT FOCUS
-========================================================== */
-
-input:focus{
-
-    outline:none;
+    text-align:center;
 
 }
 
+.text-primary{
 
-/* ==========================================================
-   SELECTION
-========================================================== */
-
-::selection{
-
-    background:var(--primary);
-
-    color:#fff;
+    color:var(--primary);
 
 }
 
+.text-success{
 
-/* ==========================================================
-   SCROLLBAR
-========================================================== */
-
-::-webkit-scrollbar{
-
-    width:10px;
+    color:var(--success);
 
 }
 
-::-webkit-scrollbar-track{
+.text-danger{
 
-    background:#111827;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:var(--primary);
-
-    border-radius:20px;
+    color:var(--danger);
 
 }
 
-::-webkit-scrollbar-thumb:hover{
+.text-muted{
 
-    background:var(--primary-dark);
-
-}
-
-
-/* ==========================================================
-   CARD ENTRY ANIMATION
-========================================================== */
-
-.card{
-
-    animation:cardPop .6s ease both;
+    color:var(--muted);
 
 }
 
-.card:nth-child(2){
-
-    animation-delay:.1s;
-
-}
-
-.card:nth-child(3){
-
-    animation-delay:.2s;
-
-}
-
-.card:nth-child(4){
-
-    animation-delay:.3s;
-
-}
-
-@keyframes cardPop{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(.9);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-/* ==========================================================
-   NOTIFICATION HOVER
-========================================================== */
-
-.notification:hover{
-
-    transform:rotate(15deg) scale(1.08);
-
-}
-
-
-/* ==========================================================
-   PROFILE IMAGE
-========================================================== */
-
-.profile img{
-
-    transition:.3s;
-
-}
-
-.profile img:hover{
-
-    transform:scale(1.08);
-
-    box-shadow:0 10px 30px rgba(108,99,255,.35);
-
-}
-
-
-/* ==========================================================
-   FINISHED
-========================================================== */
+/* ==========================================
+        End
+========================================== */

@@ -1,21 +1,34 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# Database
+from app.database import Base, engine
+
+# Models (Database Tables Load Karne Ke Liye)
+import app.models
+
+# Routers
+from app.routes.auth import router as auth_router
+from app.routes.dashboard import router as dashboard_router
+from app.routes.services import router as services_router
+
+
+# Create Database Tables
+Base.metadata.create_all(bind=engine)
+
+
+# FastAPI App
 app = FastAPI(
-    title="NEXORA API",
-    description="Backend API for NEXORA Agency CMS",
-    version="1.0.0"
+    title="NEXORA Backend API",
+    version="1.0.0",
+    description="Backend API for NEXORA Admin Panel"
 )
 
-# ===========================
-# CORS
-# ===========================
 
+# CORS
 origins = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
-    "http://127.0.0.1:3000",
-    "http://localhost:3000",
 ]
 
 app.add_middleware(
@@ -26,52 +39,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ===========================
-# Root Endpoint
-# ===========================
 
-@app.get("/")
-async def root():
-    return {
-        "project": "NEXORA CMS",
-        "version": "1.0.0",
-        "status": "Running 🚀"
-    }
-
-# ===========================
-# Health Check
-# ===========================
-
-@app.get("/health")
-async def health():
-    return {
-        "status": "healthy"
-    }
-
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-
-from ..models.database import Base, engine
-
-Base.metadata.create_all(bind=engine)
-
-app = FastAPI(
-    title="NEXORA API",
-    version="1.0.0"
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Include Routers
+app.include_router(auth_router)
+app.include_router(dashboard_router)
+app.include_router(services_router)
 
 
+# Home Route
 @app.get("/")
 def home():
-
     return {
-        "message": "NEXORA Backend Running 🚀"
+        "success": True,
+        "message": "Welcome to NEXORA Backend 🚀",
+        "version": "1.0.0"
     }
