@@ -1,93 +1,25 @@
-/* =========================================
-   NEXORA — ABOUT JS
-========================================= */
+/* ================= ABOUT SECTION JS ================= */
 
-document.addEventListener(
+const aboutSection = document.querySelector(".about-section");
 
-    "DOMContentLoaded",
+const aboutObserver = new IntersectionObserver((entries) => {
 
-    () => {
+    entries.forEach(entry => {
 
-        const about =
+        if (entry.isIntersecting) {
 
-            document.querySelector(
+            aboutSection.classList.add("about-visible");
 
-                ".nx-about"
+        }
 
-            );
+    });
 
+}, {
+    threshold: 0.2
+});
 
-        if (!about) return;
+if (aboutSection) {
 
+    aboutObserver.observe(aboutSection);
 
-        const elements =
-
-            about.querySelectorAll(
-
-                ".nx-about-content, " +
-
-                ".nx-about-founder, " +
-
-                ".nx-about-stats"
-
-            );
-
-
-        const observer =
-
-            new IntersectionObserver(
-
-                entries => {
-
-
-                    entries.forEach(
-
-                        entry => {
-
-
-                            if (
-
-                                entry.isIntersecting
-
-                            ) {
-
-                                entry.target.classList.add(
-
-                                    "nx-about-visible"
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold: .15
-
-                }
-
-            );
-
-
-        elements.forEach(
-
-            (element, index) => {
-
-                element.style.transitionDelay =
-
-                    `${index * .12}s`;
-
-                observer.observe(element);
-
-            }
-
-        );
-
-    }
-
-);
+}

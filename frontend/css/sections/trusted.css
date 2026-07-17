@@ -1,259 +1,233 @@
-/* ========================================= */
-/* NEXORA V2 | TRUSTED CSS                   */
-/* File: css/sections/trusted.css             */
-/* ========================================= */
+/* =====================================================
+   NEXORA — TRUSTED SECTION
+===================================================== */
 
+.trusted-section {
 
-/* ========================================= */
-/* TRUSTED SECTION                           */
-/* ========================================= */
+    padding: 90px 0;
 
+    background: #fafafa;
 
-.trusted {
-
-
-    padding:70px 0;
-
-
-    border-top:
-
-    1px solid var(--border);
-
-
-    border-bottom:
-
-    1px solid var(--border);
-
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
 
 }
-
-
-
-
 
 .trusted-container {
 
+    width: min(1100px, 92%);
 
-    display:flex;
+    margin: auto;
 
+    display: flex;
 
-    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
 
-
-    align-items:center;
-
-
-    gap:40px;
-
+    gap: 60px;
 
 }
 
+/* ================= CONTENT ================= */
 
+.trusted-content {
 
-
-
-/* ========================================= */
-/* TITLE                                     */
-/* ========================================= */
-
-
-.trusted-title {
-
-
-    color:
-
-    var(--text-muted);
-
-
-    font-size:14px;
-
-
-    letter-spacing:1px;
-
-
-    text-transform:uppercase;
-
+    max-width: 450px;
 
 }
 
+.trusted-label {
 
+    display: inline-block;
 
+    margin-bottom: 15px;
 
+    color: #999999;
 
+    font-size: 10px;
 
-/* ========================================= */
-/* LOGOS                                     */
-/* ========================================= */
+    font-weight: 700;
 
+    letter-spacing: 2px;
+
+}
+
+.trusted-content h2 {
+
+    margin: 0;
+
+    color: #111111;
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+}
+
+.trusted-content h2 span {
+
+    color: #999999;
+
+}
+
+.trusted-content p {
+
+    margin-top: 18px;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+/* ================= STATS ================= */
+
+.trusted-stats {
+
+    display: flex;
+
+    gap: 35px;
+
+}
+
+.trust-stat {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+.trust-stat strong {
+
+    color: #111111;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+}
+
+.trust-stat span {
+
+    color: #999999;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+}
+
+/* ================= LOGOS ================= */
 
 .trusted-logos {
 
+    width: min(1100px, 92%);
 
-    width:100%;
+    margin: 70px auto 0;
 
+    padding-top: 28px;
 
-    display:grid;
+    border-top: 1px solid #e7e7e7;
 
+    display: flex;
 
-    grid-template-columns:
+    justify-content: space-between;
 
-    repeat(5,1fr);
+    align-items: center;
 
+    gap: 25px;
 
-    gap:25px;
-
-
-    align-items:center;
-
-
-}
-
-
-
-
-
-.trusted-logo {
-
-
-    height:80px;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    border-radius:
-
-    var(--radius-md);
-
-
-    border:
-
-    1px solid var(--border);
-
-
-    background:
-
-    rgba(255,255,255,.03);
-
-
-    color:
-
-    rgba(255,255,255,.5);
-
-
-    font-size:18px;
-
-
-    font-weight:700;
-
-
-    letter-spacing:1px;
-
-
-    transition:
-
-    var(--transition);
-
+    flex-wrap: wrap;
 
 }
 
+.trusted-logos span {
 
+    color: #b0b0b0;
 
+    font-size: 11px;
 
+    font-weight: 800;
 
-.trusted-logo:hover {
+    letter-spacing: 1.5px;
 
-
-    color:white;
-
-
-    border-color:
-
-    rgba(37,99,235,.5);
-
-
-    transform:
-
-    translateY(-5px);
-
+    transition: 0.3s ease;
 
 }
 
+.trusted-logos span:hover {
 
+    color: #111111;
 
+}
 
+/* ================= MOBILE ================= */
 
+@media (max-width: 768px) {
 
+    .trusted-section {
 
-/* ========================================= */
-/* RESPONSIVE                                */
-/* ========================================= */
+        padding: 70px 0;
 
+    }
 
-@media(max-width:900px){
+    .trusted-container {
 
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 40px;
+
+    }
+
+    .trusted-stats {
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 25px;
+
+    }
+
+    .trust-stat strong {
+
+        font-size: 28px;
+
+    }
+
+    .trust-stat span {
+
+        font-size: 9px;
+
+    }
 
     .trusted-logos {
 
+        justify-content: center;
 
-        grid-template-columns:
+        gap: 20px 28px;
 
-        repeat(3,1fr);
-
+        margin-top: 50px;
 
     }
-
 
 }
 
+/* ================= COUNTER ANIMATION ================= */
 
+.counter {
 
-
-
-@media(max-width:600px){
-
-
-    .trusted {
-
-
-        padding:50px 0;
-
-
-    }
-
-
-
-    .trusted-logos {
-
-
-        grid-template-columns:
-
-        repeat(2,1fr);
-
-
-        gap:15px;
-
-
-    }
-
-
-
-    .trusted-logo {
-
-
-        height:65px;
-
-
-        font-size:14px;
-
-
-    }
-
+    transition: 0.3s ease;
 
 }

@@ -1,422 +1,173 @@
-/* =========================================
-   NEXORA — CONTACT SECTION
-========================================= */
+/* =====================================================
+   NEXORA CONTACT PAGE
+   WHITE THEME
+===================================================== */
 
-.nx-contact {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    position: relative;
+body {
 
-    padding: 160px 7%;
+    font-family: Arial, Helvetica, sans-serif;
 
-    background: #000;
+    background: #ffffff;
 
-    color: #fff;
+    color: #111111;
 
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* ================= CONTACT PAGE ================= */
 
-.nx-contact-header {
+.contact-page {
 
-    max-width: 800px;
+    min-height: 100vh;
 
-    margin-bottom: 90px;
+    padding: 40px 8% 80px;
 
 }
 
 
-.nx-contact-label {
+/* ================= BACK BUTTON ================= */
 
-    display: flex;
+.back-btn {
+
+    display: inline-flex;
 
     align-items: center;
 
-    gap: 12px;
-
-    margin-bottom: 28px;
-
-    color: #666;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-}
-
-
-.nx-contact-label span {
-
-    width: 28px;
-
-    height: 1px;
-
-    background: #555;
-
-}
-
-
-.nx-contact-header h2 {
-
-    margin: 0;
-
-    font-size: clamp(
-
-        55px,
-
-        8vw,
-
-        125px
-
-    );
-
-    line-height: .82;
-
-    letter-spacing: -8px;
-
-}
-
-
-.nx-contact-header h2 em {
-
-    display: block;
-
-    color: transparent;
-
-    font-style: normal;
-
-    -webkit-text-stroke: 1px #555;
-
-}
-
-
-.nx-contact-header p {
-
-    max-width: 360px;
-
-    margin-top: 30px;
-
-    color: #666;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-
-}
-
-
-/* =========================================
-   CONTACT WRAPPER
-========================================= */
-
-.nx-contact-wrapper {
-
-    display: grid;
-
-    grid-template-columns: .8fr 1.2fr;
-
-    gap: 100px;
-
-    padding-top: 60px;
-
-    border-top: 1px solid #222;
-
-}
-
-
-/* =========================================
-   CONTACT INFO
-========================================= */
-
-.nx-contact-info {
-
-    padding-top: 10px;
-
-}
-
-
-.nx-contact-small {
-
-    color: #666;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.nx-contact-info h3 {
-
-    margin: 25px 0 20px;
-
-    font-size: 42px;
-
-    font-weight: 500;
-
-    line-height: .95;
-
-    letter-spacing: -3px;
-
-}
-
-
-.nx-contact-info h3 span {
-
-    display: block;
-
-    color: transparent;
-
-    -webkit-text-stroke: 1px #555;
-
-}
-
-
-.nx-contact-info > p {
-
-    max-width: 280px;
-
-    color: #666;
-
-    font-size: 12px;
-
-    line-height: 1.8;
-
-}
-
-
-.nx-contact-social {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 17px;
-
-    margin-top: 45px;
-
-}
-
-
-.nx-contact-social a {
-
-    color: #fff;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
+    gap: 8px;
 
     text-decoration: none;
 
-    transition: .3s ease;
+    color: #555;
+
+    font-size: 14px;
+
+    margin-bottom: 80px;
+
+    transition: 0.3s ease;
+
+}
+
+.back-btn:hover {
+
+    color: #000;
+
+    transform: translateX(-5px);
 
 }
 
 
-.nx-contact-social a:hover {
+/* ================= CONTAINER ================= */
 
-    color: #777;
+.contact-container {
 
-}
+    max-width: 1250px;
 
+    margin: auto;
 
-/* =========================================
-   FORM
-========================================= */
+    display: grid;
 
-.nx-contact-form {
+    grid-template-columns: 1fr 1fr;
 
-    display: flex;
+    gap: 100px;
 
-    flex-direction: column;
-
-    gap: 30px;
+    align-items: center;
 
 }
 
 
-.nx-form-group {
+/* ================= LEFT CONTENT ================= */
 
-    display: flex;
+.contact-tag {
 
-    flex-direction: column;
+    display: inline-block;
 
-    gap: 12px;
-
-}
-
-
-.nx-form-group label {
-
-    color: #666;
-
-    font-size: 8px;
+    font-size: 12px;
 
     letter-spacing: 2px;
 
-}
+    font-weight: 700;
 
+    color: #777;
 
-.nx-form-group input,
-
-.nx-form-group select,
-
-.nx-form-group textarea {
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    padding: 15px 0;
-
-    border: none;
-
-    border-bottom: 1px solid #333;
-
-    outline: none;
-
-    background: transparent;
-
-    color: #fff;
-
-    font-family: inherit;
-
-    font-size: 13px;
-
-    transition: .3s ease;
+    margin-bottom: 25px;
 
 }
 
 
-.nx-form-group input::placeholder,
+.contact-info h1 {
 
-.nx-form-group textarea::placeholder {
+    font-size: clamp(42px, 5vw, 72px);
 
-    color: #444;
+    line-height: 1.05;
 
-}
+    letter-spacing: -3px;
 
+    font-weight: 700;
 
-.nx-form-group input:focus,
-
-.nx-form-group select:focus,
-
-.nx-form-group textarea:focus {
-
-    border-color: #fff;
+    margin-bottom: 30px;
 
 }
 
 
-.nx-form-group select {
+.contact-info h1 span {
 
-    cursor: pointer;
+    display: block;
 
-}
-
-
-.nx-form-group select option {
-
-    background: #111;
-
-    color: #fff;
+    color: #999;
 
 }
 
 
-.nx-form-group textarea {
+.contact-info > p {
 
-    min-height: 110px;
+    max-width: 500px;
 
-    resize: vertical;
+    color: #777;
+
+    line-height: 1.8;
+
+    font-size: 16px;
 
 }
 
 
-/* =========================================
-   SUBMIT BUTTON
-========================================= */
+/* ================= DETAILS ================= */
 
-.nx-submit-btn {
+.contact-details {
+
+    margin-top: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+}
+
+
+.detail-item {
 
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
-
-    width: 100%;
-
-    padding: 18px 20px;
-
-    border: 1px solid #333;
-
-    background: transparent;
-
-    color: #fff;
-
-    font-family: inherit;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: .4s ease;
+    gap: 15px;
 
 }
 
 
-.nx-submit-btn span {
+.detail-icon {
 
-    font-size: 20px;
+    width: 45px;
 
-    transition: .4s ease;
-
-}
-
-
-.nx-submit-btn:hover {
-
-    background: #fff;
-
-    color: #000;
-
-}
-
-
-.nx-submit-btn:hover span {
-
-    transform: rotate(45deg);
-
-}
-
-
-.nx-submit-btn:disabled {
-
-    opacity: .6;
-
-    cursor: not-allowed;
-
-}
-
-
-/* =========================================
-   SUCCESS POPUP OVERLAY
-========================================= */
-
-.nx-success-overlay {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 99999;
+    height: 45px;
 
     display: flex;
 
@@ -424,32 +175,214 @@
 
     justify-content: center;
 
-    padding: 20px;
+    border: 1px solid #e5e5e5;
 
-    background: rgba(
+    border-radius: 50%;
 
-        0,
+    font-size: 18px;
 
-        0,
+}
 
-        0,
 
-        .82
+.detail-item small {
 
-    );
+    color: #999;
 
-    backdrop-filter: blur(16px);
+    display: block;
+
+    margin-bottom: 4px;
+
+}
+
+
+.detail-item p {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* ================= FORM ================= */
+
+.contact-form-wrapper {
+
+    background: #fafafa;
+
+    border: 1px solid #eaeaea;
+
+    border-radius: 24px;
+
+    padding: 45px;
+
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.input-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+.input-group input,
+
+.input-group textarea {
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 1px solid #dedede;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #111;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+
+}
+
+
+.input-group textarea {
+
+    resize: vertical;
+
+}
+
+
+.input-group input:focus,
+
+.input-group textarea:focus {
+
+    border-color: #111;
+
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+
+}
+
+
+.input-group input::placeholder,
+
+.input-group textarea::placeholder {
+
+    color: #aaa;
+
+}
+
+
+/* ================= BUTTON ================= */
+
+.submit-btn {
+
+    width: 100%;
+
+    border: none;
+
+    background: #111;
+
+    color: #fff;
+
+    padding: 17px 22px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+
+.submit-btn:hover {
+
+    background: #333;
+
+    transform: translateY(-3px);
+
+}
+
+
+.arrow {
+
+    font-size: 20px;
+
+}
+
+
+/* ================= SUCCESS POPUP ================= */
+
+.success-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.45);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     opacity: 0;
 
     visibility: hidden;
 
-    transition: .4s ease;
+    transition: 0.3s ease;
 
 }
 
 
-.nx-success-overlay.show {
+.success-popup.active {
 
     opacity: 1;
 
@@ -458,87 +391,47 @@
 }
 
 
-/* =========================================
-   SUCCESS BOX
-========================================= */
+.success-box {
 
-.nx-success-popup {
+    background: #fff;
 
-    position: relative;
+    padding: 40px;
 
-    width: min(
+    width: 90%;
 
-        100%,
+    max-width: 400px;
 
-        420px
-
-    );
-
-    box-sizing: border-box;
-
-    padding: 45px 35px;
-
-    border: 1px solid #333;
-
-    background: #080808;
+    border-radius: 22px;
 
     text-align: center;
 
-    transform: translateY(25px) scale(.96);
+    transform: scale(0.8);
 
-    transition: .4s ease;
-
-}
-
-
-.nx-success-overlay.show
-
-.nx-success-popup {
-
-    transform: translateY(0) scale(1);
+    transition: 0.3s ease;
 
 }
 
 
-/* =========================================
-   CLOSE ICON
-========================================= */
+.success-popup.active .success-box {
 
-.nx-popup-close {
-
-    position: absolute;
-
-    top: 14px;
-
-    right: 18px;
-
-    border: none;
-
-    background: transparent;
-
-    color: #666;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    transition: .3s ease;
+    transform: scale(1);
 
 }
 
 
-.nx-popup-close:hover {
+.success-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: auto auto 20px;
+
+    border-radius: 50%;
+
+    background: #111;
 
     color: #fff;
-
-}
-
-
-/* =========================================
-   SUCCESS ICON
-========================================= */
-
-.nx-success-icon {
 
     display: flex;
 
@@ -546,179 +439,98 @@
 
     justify-content: center;
 
-    width: 58px;
+    font-size: 28px;
 
-    height: 58px;
+}
 
-    margin: 0 auto 25px;
 
-    border: 1px solid #555;
+.success-box h2 {
 
-    border-radius: 50%;
+    margin-bottom: 10px;
+
+}
+
+
+.success-box p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.success-box button {
+
+    margin-top: 25px;
+
+    border: none;
+
+    background: #111;
 
     color: #fff;
 
-    font-size: 22px;
+    padding: 12px 28px;
 
-}
-
-
-.nx-success-popup > span {
-
-    color: #666;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.nx-success-popup h3 {
-
-    margin: 18px 0 12px;
-
-    font-size: 35px;
-
-    font-weight: 500;
-
-    letter-spacing: -2px;
-
-}
-
-
-.nx-success-popup p {
-
-    max-width: 280px;
-
-    margin: 0 auto;
-
-    color: #666;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-}
-
-
-/* =========================================
-   DONE BUTTON
-========================================= */
-
-.nx-popup-done {
-
-    margin-top: 28px;
-
-    padding: 12px 25px;
-
-    border: 1px solid #333;
-
-    background: transparent;
-
-    color: #fff;
-
-    font-family: inherit;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
+    border-radius: 8px;
 
     cursor: pointer;
 
-    transition: .3s ease;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
 
 }
 
 
-.nx-popup-done:hover {
+@media (max-width: 600px) {
 
-    background: #fff;
+    .contact-page {
 
-    color: #000;
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-
-    .nx-contact {
-
-        padding: 110px 22px;
+        padding: 25px 20px 60px;
 
     }
 
+    .back-btn {
 
-    .nx-contact-header {
-
-        margin-bottom: 60px;
-
-    }
-
-
-    .nx-contact-header h2 {
-
-        font-size: 60px;
-
-        line-height: .86;
-
-        letter-spacing: -5px;
+        margin-bottom: 50px;
 
     }
 
+    .contact-info h1 {
 
-    .nx-contact-header p {
+        font-size: 45px;
 
-        font-size: 12px;
-
-    }
-
-
-    .nx-contact-wrapper {
-
-        display: block;
-
-        padding-top: 45px;
+        letter-spacing: -2px;
 
     }
 
+    .form-row {
 
-    .nx-contact-info {
+        grid-template-columns: 1fr;
 
-        padding-bottom: 55px;
-
-    }
-
-
-    .nx-contact-info h3 {
-
-        font-size: 35px;
+        gap: 0;
 
     }
 
+    .contact-form-wrapper {
 
-    .nx-contact-form {
+        padding: 25px;
 
-        gap: 25px;
-
-    }
-
-
-    .nx-success-popup {
-
-        padding: 40px 25px;
-
-    }
-
-
-    .nx-success-popup h3 {
-
-        font-size: 32px;
+        border-radius: 18px;
 
     }
 

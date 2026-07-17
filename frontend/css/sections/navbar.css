@@ -1,620 +1,360 @@
-/* =========================================
-   NEXORA NAVBAR
-========================================= */
+/* =====================================================
+   FLOATING NAVBAR — LIGHT THEME
+===================================================== */
 
-.nx-navbar {
+.floating-navbar {
 
     position: fixed;
-
     top: 20px;
     left: 50%;
 
-    z-index: 10000;
+    width: min(1150px, 92%);
 
-    width: min(92%, 1150px);
-    height: 64px;
+    transform: translateX(-50%);
 
-    padding: 0 10px 0 24px;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+/* SCROLLED EFFECT */
+
+.floating-navbar.scrolled {
+
+    top: 12px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+
+}
+
+/* ================= CONTAINER ================= */
+
+.nav-container {
+
+    height: 72px;
+
+    padding: 0 22px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border: 1px solid rgba(255,255,255,.12);
-
-    border-radius: 100px;
-
-    background: rgba(8,8,8,.82);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    transform: translateX(-50%);
-
-    transition:
-
-        top .35s ease,
-        background .35s ease,
-        border .35s ease;
-
 }
 
+/* ================= LOGO ================= */
 
-.nx-navbar.scrolled {
-
-    top: 12px;
-
-    background: rgba(0,0,0,.96);
-
-    border-color: rgba(255,255,255,.2);
-
-}
-
-
-/* =========================================
-   LOGO
-========================================= */
-
-.nx-logo {
-
-    color: #fff;
-
-    font-size: 16px;
-    font-weight: 600;
-
-    letter-spacing: -.6px;
-
-    text-decoration: none;
-
-}
-
-
-.nx-logo span {
-
-    margin-left: 3px;
-
-    color: #666;
-
-    font-size: 7px;
-
-    vertical-align: top;
-
-}
-
-
-/* =========================================
-   DESKTOP NAV
-========================================= */
-
-.nx-nav-links {
+.logo {
 
     display: flex;
-
     align-items: center;
-
-    gap: 4px;
-
-}
-
-
-.nx-nav-links a {
-
-    padding: 10px 15px;
-
-    border-radius: 50px;
-
-    color: #777;
-
-    font-size: 10px;
-
-    text-decoration: none;
-
-    transition: .3s ease;
-
-}
-
-
-.nx-nav-links a:hover,
-.nx-nav-links a.active {
-
-    background: #fff;
-
-    color: #000;
-
-}
-
-
-/* =========================================
-   CTA
-========================================= */
-
-.nx-nav-cta {
-
-    display: flex;
-
-    align-items: center;
-
     gap: 10px;
 
-    padding: 13px 18px;
-
-    border-radius: 50px;
-
-    background: #fff;
-
-    color: #000;
-
-    font-size: 9px;
-
     text-decoration: none;
-
-    transition: .3s ease;
-
-}
-
-
-.nx-nav-cta span {
-
-    font-size: 16px;
-
-    transition: .3s ease;
+    color: #111;
 
 }
 
+.logo-icon {
 
-.nx-nav-cta:hover {
+    width: 38px;
+    height: 38px;
 
-    background: #222;
+    display: grid;
+    place-items: center;
 
-    color: #fff;
+    background: #111;
+    color: white;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: 800;
 
 }
 
+.logo-text {
 
-.nx-nav-cta:hover span {
+    display: flex;
+    flex-direction: column;
 
-    transform: rotate(45deg);
+    font-size: 17px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    line-height: 1;
 
 }
 
+.logo-text small {
 
-/* =========================================
-   MOBILE BUTTON
-========================================= */
+    margin-top: 5px;
 
-.nx-menu-btn {
+    color: #888;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+}
+
+/* ================= LINKS ================= */
+
+.nav-links {
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.nav-link {
 
     position: relative;
 
-    z-index: 10002;
+    color: #707070;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: #111;
+
+}
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: #111;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+
+    width: 18px;
+
+}
+
+/* ================= ACTION ================= */
+
+.nav-actions {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.nav-cta {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 17px;
+
+    background: #111;
+    color: white;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+}
+
+.nav-cta:hover {
+
+    transform: translateY(-2px);
+
+    background: #333;
+
+}
+
+/* ================= MOBILE BUTTON ================= */
+
+.menu-toggle {
 
     display: none;
 
-    align-items: center;
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #e5e5e5;
+
+    background: white;
+
+    border-radius: 10px;
+
+    flex-direction: column;
     justify-content: center;
-
-    width: 43px;
-    height: 43px;
-
-    padding: 0;
-
-    border: 1px solid #333;
-
-    border-radius: 50%;
-
-    background: #111;
+    align-items: center;
+    gap: 5px;
 
     cursor: pointer;
 
 }
 
+.menu-toggle span {
 
-.nx-menu-btn span {
+    width: 19px;
+    height: 2px;
 
-    position: absolute;
+    background: #111;
 
-    width: 15px;
-    height: 1px;
+    border-radius: 10px;
 
-    background: #fff;
-
-    transition: .35s ease;
-
-}
-
-
-.nx-menu-btn span:first-child {
-
-    transform: translateY(-3px);
+    transition: 0.3s ease;
 
 }
 
+/* ================= MOBILE ================= */
 
-.nx-menu-btn span:last-child {
+@media (max-width: 768px) {
 
-    transform: translateY(3px);
+    .floating-navbar {
 
-}
+        top: 12px;
+        width: 94%;
 
-
-/* =========================================
-   MENU OPEN ICON
-========================================= */
-
-.nx-navbar.menu-open
-.nx-menu-btn span:first-child {
-
-    transform: rotate(45deg);
-
-}
-
-
-.nx-navbar.menu-open
-.nx-menu-btn span:last-child {
-
-    transform: rotate(-45deg);
-
-}
-
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-.nx-mobile-menu {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 9999;
-
-    width: 100%;
-    height: 100dvh;
-
-    background: #000;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transform: translateY(-20px);
-
-    transition:
-
-        opacity .35s ease,
-        visibility .35s ease,
-        transform .35s ease;
-
-}
-
-
-.nx-mobile-menu.open {
-
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-
-    transform: translateY(0);
-
-}
-
-
-/* =========================================
-   MOBILE INNER
-========================================= */
-
-.nx-mobile-inner {
-
-    width: 100%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    flex-direction: column;
-
-    padding:
-
-        105px
-
-        22px
-
-        25px;
-
-}
-
-
-/* =========================================
-   MOBILE TOP
-========================================= */
-
-.nx-mobile-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    padding-bottom: 22px;
-
-    border-bottom: 1px solid #222;
-
-    color: #555;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* =========================================
-   MOBILE LINKS
-========================================= */
-
-.nx-mobile-links {
-
-    margin-top: 25px;
-
-}
-
-
-.nx-mobile-links a {
-
-    display: grid;
-
-    grid-template-columns:
-
-        35px
-
-        1fr
-
-        30px;
-
-    align-items: center;
-
-    min-height: 66px;
-
-    border-bottom: 1px solid #222;
-
-    color: #fff;
-
-    text-decoration: none;
-
-    opacity: 0;
-
-    transform: translateY(20px);
-
-    transition:
-
-        opacity .45s ease,
-        transform .45s ease;
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a:nth-child(1) {
-
-    transition-delay: .08s;
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a:nth-child(2) {
-
-    transition-delay: .13s;
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a:nth-child(3) {
-
-    transition-delay: .18s;
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a:nth-child(4) {
-
-    transition-delay: .23s;
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a:nth-child(5) {
-
-    transition-delay: .28s;
-
-}
-
-
-.nx-mobile-menu.open
-.nx-mobile-links a:nth-child(6) {
-
-    transition-delay: .33s;
-
-}
-
-
-/* NUMBER */
-
-.nx-mobile-links small {
-
-    color: #555;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* TEXT */
-
-.nx-link-text {
-
-    font-size: 30px;
-
-    letter-spacing: -2px;
-
-    transition: .3s ease;
-
-}
-
-
-/* ARROW */
-
-.nx-mobile-links b {
-
-    color: #555;
-
-    font-size: 18px;
-
-    font-weight: 400;
-
-    transition: .3s ease;
-
-}
-
-
-.nx-mobile-links a:hover
-.nx-link-text {
-
-    color: #888;
-
-}
-
-
-.nx-mobile-links a:hover b {
-
-    color: #fff;
-
-    transform: rotate(45deg);
-
-}
-
-
-/* =========================================
-   MOBILE BOTTOM
-========================================= */
-
-.nx-mobile-bottom {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-top: auto;
-
-    padding-top: 20px;
-
-    border-top: 1px solid #222;
-
-}
-
-
-.nx-mobile-bottom span {
-
-    color: #555;
-
-    font-size: 7px;
-
-    letter-spacing: 1.5px;
-
-}
-
-
-.nx-mobile-bottom a {
-
-    color: #fff;
-
-    font-size: 8px;
-
-    text-decoration: none;
-
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 800px) {
-
-
-    .nx-navbar {
-
-        top: 14px;
-
-        width: calc(100% - 28px);
-
-        height: 58px;
-
-        padding-left: 18px;
+        border-radius: 15px;
 
     }
 
+    .nav-container {
 
-    .nx-nav-links,
-    .nx-nav-cta {
+        height: 64px;
+        padding: 0 15px;
+
+    }
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: white;
+
+        border: 1px solid #eeeeee;
+
+        border-radius: 15px;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition: 0.3s ease;
+
+    }
+
+    .nav-links.active {
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+
+    }
+
+    .nav-link {
+
+        width: 100%;
+        font-size: 14px;
+
+    }
+
+    .nav-link::after {
 
         display: none;
 
     }
 
+    .nav-cta {
 
-    .nx-menu-btn {
+        display: none;
+
+    }
+
+    .menu-toggle {
 
         display: flex;
 
     }
 
-}
+    /* MENU ANIMATION */
 
+    .menu-toggle.active span:nth-child(1) {
 
-@media (max-width: 380px) {
-
-
-    .nx-mobile-inner {
-
-        padding-left: 18px;
-        padding-right: 18px;
+        transform: rotate(45deg) translate(5px, 5px);
 
     }
 
+    .menu-toggle.active span:nth-child(2) {
 
-    .nx-link-text {
-
-        font-size: 26px;
+        opacity: 0;
 
     }
 
+    .menu-toggle.active span:nth-child(3) {
 
-    .nx-mobile-links a {
-
-        min-height: 60px;
+        transform: rotate(-45deg) translate(5px, -5px);
 
     }
 

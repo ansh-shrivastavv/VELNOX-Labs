@@ -1,337 +1,198 @@
 /* =====================================================
    NEXORA — HERO SECTION
-   PREMIUM DARK FUTURISTIC
+   LIGHT THEME
 ===================================================== */
 
-
-/* ================= HERO ================= */
-
-.nx-hero {
-
-    position: relative;
+.hero {
 
     min-height: 100vh;
 
-    padding: 150px 7% 60px;
+    padding: 160px 0 80px;
+
+    background: #ffffff;
 
     overflow: hidden;
 
-    isolation: isolate;
-
-    background: #000;
-
-    color: #fff;
+    position: relative;
 
 }
 
+/* ================= CONTAINER ================= */
 
-/* ================= ATMOSPHERE ================= */
+.hero-container {
 
-.nx-hero::before {
+    width: min(1150px, 92%);
 
-    content: "";
+    margin: auto;
 
-    position: absolute;
+    min-height: 70vh;
 
-    inset: 0;
+    display: grid;
 
-    z-index: -5;
+    grid-template-columns: 1fr 0.9fr;
 
-    background:
+    align-items: center;
 
-        radial-gradient(
-            circle at 72% 42%,
-            rgba(255,255,255,.09),
-            transparent 20%
-        ),
-
-        radial-gradient(
-            circle at 18% 80%,
-            rgba(255,255,255,.035),
-            transparent 25%
-        );
+    gap: 70px;
 
 }
 
+/* ================= LEFT CONTENT ================= */
 
-/* ================= GRID ================= */
+.hero-content {
 
-.nx-hero-bg {
-
-    position: absolute;
-
-    inset: -20%;
-
-    z-index: -6;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,.04) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.04) 1px,
-            transparent 1px
-        );
-
-    background-size: 70px 70px;
-
-    transform:
-        perspective(600px)
-        rotateX(55deg)
-        translateY(18%);
-
-    transform-origin: center bottom;
-
-    mask-image:
-        linear-gradient(
-            to top,
-            #000,
-            transparent 75%
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            to top,
-            #000,
-            transparent 75%
-        );
-
-    animation:
-        gridMove
-        18s
-        linear
-        infinite;
+    animation: heroReveal 0.9s ease forwards;
 
 }
 
+.hero-badge {
 
-@keyframes gridMove {
+    width: fit-content;
 
-    from {
+    display: flex;
+    align-items: center;
+    gap: 9px;
 
-        transform:
-            perspective(600px)
-            rotateX(55deg)
-            translateY(18%);
+    padding: 8px 13px;
 
-    }
+    margin-bottom: 25px;
 
-    to {
+    background: #f7f7f7;
 
-        transform:
-            perspective(600px)
-            rotateX(55deg)
-            translateY(25%);
+    border: 1px solid #eaeaea;
 
-    }
+    border-radius: 50px;
 
-}
+    color: #666;
 
-
-/* ================= NOISE ================= */
-
-.nx-noise {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 20;
-
-    pointer-events: none;
-
-    opacity: .035;
-
-    background-image:
-
-        url(
-            "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"
-        );
+    font-size: 11px;
+    font-weight: 600;
 
 }
 
+.status-dot {
 
-/* ================= GLOWS ================= */
+    width: 7px;
+    height: 7px;
 
-.nx-glow {
-
-    position: absolute;
+    background: #28a745;
 
     border-radius: 50%;
 
-    pointer-events: none;
-
-    filter: blur(110px);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.12);
 
 }
 
+/* ================= HEADING ================= */
 
-.nx-glow-one {
+.hero h1 {
 
-    width: 500px;
+    max-width: 650px;
 
-    height: 500px;
+    margin: 0;
 
-    top: 10%;
+    color: #111111;
 
-    right: 4%;
+    font-size: clamp(45px, 6vw, 78px);
 
-    background:
+    line-height: 1.02;
 
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.13),
-            transparent 65%
-        );
+    letter-spacing: -3px;
 
-    animation:
-
-        glowFloat
-        8s
-        ease-in-out
-        infinite
-        alternate;
+    font-weight: 800;
 
 }
 
+.hero h1 span {
 
-.nx-glow-two {
-
-    width: 350px;
-
-    height: 350px;
-
-    bottom: -100px;
-
-    left: 15%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.06),
-            transparent 65%
-        );
+    color: #999999;
 
 }
 
+/* ================= DESCRIPTION ================= */
 
-@keyframes glowFloat {
+.hero-content > p {
 
-    from {
+    max-width: 500px;
 
-        transform:
-            translate(0,0)
-            scale(1);
+    margin: 28px 0 32px;
 
-    }
+    color: #707070;
 
-    to {
+    font-size: 16px;
 
-        transform:
-            translate(-50px,30px)
-            scale(1.15);
-
-    }
+    line-height: 1.8;
 
 }
 
+/* ================= BUTTONS ================= */
 
-/* ================= TOP META ================= */
-
-.nx-hero-meta {
-
-    position: absolute;
-
-    top: 100px;
-
-    left: 7%;
-
-    right: 7%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #555;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.nx-meta-left {
+.hero-buttons {
 
     display: flex;
 
     align-items: center;
 
+    gap: 13px;
+
+}
+
+.hero-btn {
+
+    display: flex;
+    align-items: center;
     gap: 10px;
 
-}
+    padding: 14px 20px;
 
+    border-radius: 10px;
 
-.nx-meta-left i {
+    text-decoration: none;
 
-    width: 6px;
+    font-size: 13px;
+    font-weight: 600;
 
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    box-shadow:
-
-        0 0 15px #fff;
-
-    animation:
-
-        liveDot
-        2s
-        infinite;
+    transition: 0.3s ease;
 
 }
 
+.primary-btn {
 
-@keyframes liveDot {
+    background: #111111;
 
-    0%,
-    100% {
-
-        opacity: .3;
-
-    }
-
-    50% {
-
-        opacity: 1;
-
-    }
+    color: #ffffff;
 
 }
 
+.primary-btn:hover {
 
-/* ================= CONTENT ================= */
+    transform: translateY(-3px);
 
-.nx-hero-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    padding-top: 55px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 
 }
 
+.secondary-btn {
 
-.nx-eyebrow {
+    background: #ffffff;
+
+    color: #111111;
+
+    border: 1px solid #e5e5e5;
+
+}
+
+.secondary-btn:hover {
+
+    background: #f7f7f7;
+
+    transform: translateY(-3px);
+
+}
+
+/* ================= SOCIALS ================= */
+
+.hero-socials {
 
     display: flex;
 
@@ -339,209 +200,60 @@
 
     gap: 14px;
 
-    margin-bottom: 28px;
-
-    color: #777;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
+    margin-top: 42px;
 
 }
 
+.hero-socials span {
 
-.nx-eyebrow-line {
+    margin-right: 5px;
 
-    width: 38px;
+    color: #999999;
 
-    height: 1px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #fff,
-            transparent
-        );
+    font-size: 11px;
 
 }
 
+.hero-socials a {
 
-/* ================= TITLE ================= */
+    width: 32px;
+    height: 32px;
 
-.nx-hero-title {
+    display: grid;
 
-    position: relative;
+    place-items: center;
 
-    margin: 0;
+    border: 1px solid #e7e7e7;
 
-    font-size:
+    border-radius: 50%;
 
-        clamp(
-            75px,
-            12vw,
-            190px
-        );
+    color: #555555;
 
-    line-height: .78;
+    font-size: 13px;
 
-    letter-spacing: -13px;
+    text-decoration: none;
 
-    font-weight: 700;
+    transition: 0.3s ease;
 
 }
 
+.hero-socials a:hover {
 
-.title-line {
+    background: #111111;
 
-    display: block;
+    color: #ffffff;
 
-    position: relative;
+    border-color: #111111;
 
-    width: max-content;
-
-}
-
-
-.title-line:first-child {
-
-    text-shadow:
-
-        0 0 70px
-
-        rgba(
-            255,
-            255,
-            255,
-            .08
-        );
+    transform: translateY(-3px);
 
 }
 
+/* ================= VISUAL ================= */
 
-.title-outline {
+.hero-visual {
 
-    color: transparent;
-
-    -webkit-text-stroke:
-
-        1px
-
-        rgba(
-            255,
-            255,
-            255,
-            .4
-        );
-
-    text-shadow:
-
-        0 0 30px
-
-        rgba(
-            255,
-            255,
-            255,
-            .08
-        );
-
-}
-
-
-.title-line em {
-
-    position: relative;
-
-    color: #fff;
-
-    font-style: normal;
-
-}
-
-
-.title-line em::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 5%;
-
-    right: -5%;
-
-    bottom: -12px;
-
-    height: 2px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #fff,
-            transparent
-        );
-
-    opacity: .5;
-
-}
-
-
-/* ================= HERO BOTTOM ================= */
-
-.nx-hero-bottom {
-
-    position: relative;
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 70px;
-
-    margin-top: 65px;
-
-}
-
-
-.nx-hero-description {
-
-    max-width: 360px;
-
-    margin: 0;
-
-    color: #777;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-}
-
-
-/* ================= CTA ================= */
-
-.nx-hero-cta {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    color: #fff;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    transition: .4s ease;
-
-}
-
-
-.cta-circle {
+    min-height: 500px;
 
     display: flex;
 
@@ -549,1384 +261,352 @@
 
     justify-content: center;
 
-    width: 58px;
-
-    height: 58px;
-
-    border: 1px solid #444;
-
-    border-radius: 50%;
-
-    background:
-
-        rgba(
-            255,
-            255,
-            255,
-            .02
-        );
-
-    font-size: 20px;
-
-    transition: .4s ease;
+    position: relative;
 
 }
 
+/* ================= HERO CARD ================= */
 
-.nx-hero-cta:hover .cta-circle {
+.hero-card {
 
-    background: #fff;
+    width: 360px;
+    height: 440px;
 
-    color: #000;
-
-    border-color: #fff;
-
-    transform:
-
-        rotate(45deg)
-
-        scale(1.08);
-
-}
-
-
-/* ================= STATS ================= */
-
-.nx-hero-stats {
+    padding: 25px;
 
     position: relative;
 
-    z-index: 10;
+    background: #f8f8f8;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 24px;
+
+    box-shadow:
+
+        20px 20px 0 #eeeeee,
+
+        0 25px 60px rgba(0, 0, 0, 0.08);
+
+    animation: cardFloat 5s ease-in-out infinite;
+
+}
+
+/* ================= CARD TOP ================= */
+
+.card-top {
 
     display: flex;
 
-    gap: 60px;
+    justify-content: space-between;
 
-    margin-top: 45px;
+    color: #888888;
 
-    padding-top: 18px;
+    font-size: 11px;
 
-    border-top: 1px solid #202020;
+    font-weight: 700;
 
-}
-
-
-.nx-stat {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
+    letter-spacing: 1px;
 
 }
-
-
-.nx-stat strong {
-
-    font-size: 20px;
-
-    font-weight: 500;
-
-}
-
-
-.nx-stat span {
-
-    color: #555;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
 
 /* ================= ORBIT ================= */
 
-.nx-orbit-wrapper {
+.hero-orbit {
 
     position: absolute;
 
     top: 50%;
+    left: 50%;
 
-    right: 10%;
+    width: 250px;
+    height: 250px;
 
-    width: 470px;
-
-    height: 470px;
-
-    transform:
-
-        translateY(-50%);
-
-    pointer-events: none;
+    transform: translate(-50%, -50%);
 
 }
 
-
-.nx-orbit {
+.orbit {
 
     position: absolute;
 
     inset: 0;
 
-    border-radius: 50%;
-
-    border: 1px solid #242424;
-
-}
-
-
-.orbit-large {
-
-    animation:
-
-        rotateOrbit
-
-        24s
-
-        linear
-
-        infinite;
-
-}
-
-
-.orbit-small {
-
-    inset: 55px;
-
-    border-style: dashed;
-
-    border-color: #333;
-
-    animation:
-
-        rotateOrbitReverse
-
-        17s
-
-        linear
-
-        infinite;
-
-}
-
-
-@keyframes rotateOrbit {
-
-    to {
-
-        transform:
-
-            rotate(360deg);
-
-    }
-
-}
-
-
-@keyframes rotateOrbitReverse {
-
-    to {
-
-        transform:
-
-            rotate(-360deg);
-
-    }
-
-}
-
-
-.nx-orbit-wrapper::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 110px;
+    border: 1px solid #d9d9d9;
 
     border-radius: 50%;
 
-    background:
+}
 
-        radial-gradient(
+.orbit-one {
 
-            circle,
-
-            rgba(
-                255,
-                255,
-                255,
-                .11
-            ),
-
-            transparent 68%
-
-        );
-
-    filter: blur(25px);
+    transform: rotate(45deg) scaleY(0.55);
 
 }
 
+.orbit-two {
 
-.nx-orbit-core {
+    transform: rotate(-45deg) scaleY(0.55);
+
+}
+
+.orbit-center {
 
     position: absolute;
 
     top: 50%;
-
     left: 50%;
 
-    width: 145px;
+    width: 75px;
+    height: 75px;
 
-    height: 145px;
+    transform: translate(-50%, -50%);
 
-    display: flex;
+    display: grid;
 
-    align-items: center;
+    place-items: center;
 
-    justify-content: center;
+    background: #111111;
 
-    transform:
-
-        translate(
-            -50%,
-            -50%
-        );
-
-    border: 1px solid #444;
+    color: #ffffff;
 
     border-radius: 50%;
 
-    background:
+    font-size: 32px;
 
-        radial-gradient(
+    font-weight: 800;
 
-            circle at 35% 25%,
-
-            #242424,
-
-            #050505 65%
-
-        );
-
-    box-shadow:
-
-        0 0 0 15px
-
-        rgba(
-            255,
-            255,
-            255,
-            .015
-        ),
-
-        0 0 80px
-
-        rgba(
-            255,
-            255,
-            255,
-            .1
-        );
-
-    font-size: 40px;
-
-    font-weight: 700;
-
-    letter-spacing: -5px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 
 }
 
+/* ================= CARD BOTTOM ================= */
 
-.nx-orbit-dot {
-
-    position: absolute;
-
-    top: 3px;
-
-    left: 50%;
-
-    width: 9px;
-
-    height: 9px;
-
-    transform:
-
-        translateX(-50%);
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    box-shadow:
-
-        0 0 20px #fff,
-
-        0 0 50px
-
-        rgba(
-            255,
-            255,
-            255,
-            .5
-        );
-
-}
-
-
-/* ================= FLOATING CARDS ================= */
-
-.nx-floating-card {
+.card-bottom {
 
     position: absolute;
 
-    z-index: 10;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
 
     display: flex;
 
+    justify-content: space-between;
+
+    color: #999999;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+/* ================= FLOATING ELEMENTS ================= */
+
+.floating-element {
+
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    color: #111111;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.element-one {
+
+    top: 18%;
+
+    right: 5%;
+
+    animation: smallFloat 4s ease-in-out infinite;
+
+}
+
+.element-two {
+
+    bottom: 18%;
+
+    left: 3%;
+
+    animation: smallFloat 4s ease-in-out infinite 1s;
+
+}
+
+/* ================= SCROLL ================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
     align-items: center;
+    gap: 10px;
 
-    gap: 15px;
+    color: #999999;
 
-    padding: 14px 18px;
+    font-size: 10px;
 
-    border: 1px solid #262626;
-
-    border-radius: 8px;
-
-    background:
-
-        linear-gradient(
-
-            135deg,
-
-            rgba(
-                255,
-                255,
-                255,
-                .08
-            ),
-
-            rgba(
-                255,
-                255,
-                255,
-                .015
-            )
-
-        );
-
-    backdrop-filter:
-
-        blur(18px);
-
-    box-shadow:
-
-        0 20px 60px
-
-        rgba(
-            0,
-            0,
-            0,
-            .5
-        );
-
-    animation:
-
-        floatingCard
-
-        5s
-
-        ease-in-out
-
-        infinite;
+    text-decoration: none;
 
 }
 
+/* ================= ANIMATIONS ================= */
 
-.nx-card-top {
+@keyframes heroReveal {
 
-    top: 25%;
+    from {
 
-    right: 4%;
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
 
 }
 
-
-.nx-card-bottom {
-
-    right: 28%;
-
-    bottom: 19%;
-
-    animation-delay: -2s;
-
-}
-
-
-@keyframes floatingCard {
+@keyframes cardFloat {
 
     0%,
     100% {
 
-        transform:
-
-            translateY(0);
+        transform: translateY(0) rotate(2deg);
 
     }
 
     50% {
 
-        transform:
-
-            translateY(-12px);
+        transform: translateY(-15px) rotate(-2deg);
 
     }
 
 }
 
+@keyframes smallFloat {
 
-.floating-number {
+    0%,
+    100% {
 
-    color: #555;
-
-    font-size: 10px;
-
-}
-
-
-.floating-label {
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* ================= SCROLL ================= */
-
-.nx-scroll {
-
-    position: absolute;
-
-    right: 7%;
-
-    bottom: 45px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color: #555;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.scroll-line {
-
-    width: 45px;
-
-    height: 1px;
-
-    background:
-
-        linear-gradient(
-
-            90deg,
-
-            transparent,
-
-            #777
-
-        );
-
-}
-
-
-/* ================= CURSOR ================= */
-
-.nx-cursor {
-
-    position: fixed;
-
-    z-index: 9999;
-
-    width: 75px;
-
-    height: 75px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    transform:
-
-        translate(
-            -50%,
-            -50%
-        )
-
-        scale(0);
-
-    border: 1px solid #555;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    color: #000;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-
-    pointer-events: none;
-
-    transition:
-
-        transform .3s ease;
-
-}
-
-
-.nx-hero:hover .nx-cursor {
-
-    transform:
-
-        translate(
-            -50%,
-            -50%
-        )
-
-        scale(1);
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
-
-    .nx-hero-title {
-
-        font-size: 105px;
+        transform: translateY(0);
 
     }
 
+    50% {
 
-    .nx-orbit-wrapper {
-
-        right: -90px;
-
-        opacity: .45;
+        transform: translateY(-12px);
 
     }
 
 }
-
-
-/* =====================================================
-   NEXORA — PREMIUM MOBILE HERO
-===================================================== */
-
-@media (max-width: 650px) {
-
-    .nx-hero {
-
-        min-height: 100svh;
-
-        padding: 0 22px;
-
-        display: flex;
-
-        align-items: stretch;
-
-        justify-content: center;
-
-        overflow: hidden;
-
-        background: #000;
-
-    }
-
-
-    /* ================= BACKGROUND ================= */
-
-    .nx-hero::after {
-
-        content: "";
-
-        position: absolute;
-
-        inset: 0;
-
-        z-index: -2;
-
-        background:
-
-            radial-gradient(
-
-                circle at 85% 22%,
-
-                rgba(255,255,255,.09),
-
-                transparent 28%
-
-            ),
-
-            radial-gradient(
-
-                circle at 15% 85%,
-
-                rgba(255,255,255,.05),
-
-                transparent 30%
-
-            );
-
-    }
-
-
-    .nx-hero-bg {
-
-        inset: -30%;
-
-        background-size: 42px 42px;
-
-        opacity: .35;
-
-    }
-
-
-    .nx-noise {
-
-        opacity: .025;
-
-    }
-
-
-    /* ================= META ================= */
-
-    .nx-hero-meta {
-
-        position: absolute;
-
-        top: 92px;
-
-        left: 22px;
-
-        right: 22px;
-
-        z-index: 10;
-
-        font-size: 8px;
-
-        letter-spacing: 1.8px;
-
-    }
-
-
-    .nx-meta-right {
-
-        display: none;
-
-    }
-
-
-    .nx-meta-left {
-
-        gap: 8px;
-
-    }
-
-
-    .nx-meta-left i {
-
-        width: 5px;
-
-        height: 5px;
-
-    }
-
-
-    /* ================= MAIN CONTENT ================= */
-
-    .nx-hero-content {
-
-        width: 100%;
-
-        padding-top: 145px;
-
-        padding-bottom: 90px;
-
-        z-index: 5;
-
-    }
-
-
-    /* ================= EYEBROW ================= */
-
-    .nx-eyebrow {
-
-        margin-bottom: 24px;
-
-        gap: 10px;
-
-        font-size: 8px;
-
-        letter-spacing: 2.5px;
-
-    }
-
-
-    .nx-eyebrow-line {
-
-        width: 28px;
-
-    }
-
-
-    /* ================= TITLE ================= */
-
-    .nx-hero-title {
-
-        margin: 0;
-
-        font-size: clamp(
-
-            60px,
-
-            18vw,
-
-            86px
-
-        );
-
-        line-height: .82;
-
-        letter-spacing: -6px;
-
-    }
-
-
-    .title-line {
-
-        width: max-content;
-
-    }
-
-
-    .title-outline {
-
-        -webkit-text-stroke:
-
-            .8px
-
-            rgba(
-
-                255,
-
-                255,
-
-                255,
-
-                .45
-
-            );
-
-    }
-
-
-    .title-line em::after {
-
-        bottom: -7px;
-
-        height: 1px;
-
-    }
-
-
-    /* ================= BOTTOM CONTENT ================= */
-
-    .nx-hero-bottom {
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 28px;
-
-        margin-top: 48px;
-
-    }
-
-
-    .nx-hero-description {
-
-        max-width: 285px;
-
-        color: #777;
-
-        font-size: 13px;
-
-        line-height: 1.75;
-
-    }
-
-
-    /* ================= CTA ================= */
-
-    .nx-hero-cta {
-
-        position: relative;
-
-        z-index: 20;
-
-        gap: 13px;
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    .cta-circle {
-
-        width: 52px;
-
-        height: 52px;
-
-        font-size: 18px;
-
-    }
-
-
-    .nx-hero-cta:hover .cta-circle {
-
-        transform: rotate(45deg);
-
-    }
-
-
-    /* ================= MOBILE STATS ================= */
-
-    .nx-hero-stats {
-
-        position: absolute;
-
-        left: 22px;
-
-        right: 22px;
-
-        bottom: 35px;
-
-        z-index: 10;
-
-        display: flex;
-
-        justify-content: space-between;
-
-        gap: 10px;
-
-        margin: 0;
-
-        padding-top: 16px;
-
-        border-top: 1px solid #222;
-
-    }
-
-
-    .nx-stat {
-
-        gap: 4px;
-
-    }
-
-
-    .nx-stat strong {
-
-        font-size: 16px;
-
-        font-weight: 500;
-
-    }
-
-
-    .nx-stat span {
-
-        font-size: 7px;
-
-        letter-spacing: 1.4px;
-
-        color: #555;
-
-    }
-
-
-    /* ================= ORBIT ================= */
-
-    .nx-orbit-wrapper {
-
-        top: auto;
-
-        right: -145px;
-
-        bottom: -100px;
-
-        width: 390px;
-
-        height: 390px;
-
-        z-index: 1;
-
-        opacity: .42;
-
-        pointer-events: none;
-
-    }
-
-
-    .orbit-small {
-
-        inset: 48px;
-
-    }
-
-
-    .nx-orbit-wrapper::before {
-
-        inset: 95px;
-
-    }
-
-
-    .nx-orbit-core {
-
-        width: 105px;
-
-        height: 105px;
-
-        font-size: 28px;
-
-    }
-
-
-    .nx-orbit-dot {
-
-        width: 7px;
-
-        height: 7px;
-
-    }
-
-
-    /* ================= FLOATING CARDS ================= */
-
-    .nx-floating-card {
-
-        display: none;
-
-    }
-
-
-    /* ================= SCROLL ================= */
-
-    .nx-scroll {
-
-        display: none;
-
-    }
-
-
-    /* ================= CURSOR ================= */
-
-    .nx-cursor {
-
-        display: none;
-
-    }
-
-
-    /* ================= GLOWS ================= */
-
-    .nx-glow-one {
-
-        width: 300px;
-
-        height: 300px;
-
-        top: 20%;
-
-        right: -150px;
-
-        opacity: .6;
-
-    }
-
-
-    .nx-glow-two {
-
-        width: 250px;
-
-        height: 250px;
-
-        bottom: -100px;
-
-        left: -120px;
-
-        opacity: .5;
-
-    }
-
-}
-
-/* =====================================================
-   NEXORA — CLEAN MOBILE HERO
-===================================================== */
-
-.mobile-hero {
-
-    display: none;
-
-}
-
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
 
-    .nx-hero {
+    .hero {
 
-        display: none !important;
-
-    }
-
-
-    .mobile-hero {
-
-        position: relative;
-
-        min-height: 100svh;
-
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: space-between;
-
-        padding: 28px 22px 25px;
-
-        overflow: hidden;
-
-        background: #000;
-
-        color: #fff;
+        padding: 135px 0 70px;
 
     }
 
+    .hero-container {
 
-    /* ================= TOP ================= */
+        grid-template-columns: 1fr;
 
-    .mobile-hero-top {
+        gap: 60px;
 
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        border-bottom: 1px solid #202020;
-
-        padding-bottom: 18px;
+        text-align: center;
 
     }
 
+    .hero-badge {
 
-    .mobile-logo {
-
-        font-size: 13px;
-
-        font-weight: 700;
-
-        letter-spacing: 3px;
+        margin-left: auto;
+        margin-right: auto;
 
     }
 
+    .hero h1 {
 
-    .mobile-menu {
-
-        color: #666;
-
-        font-size: 8px;
-
-        letter-spacing: 2px;
+        letter-spacing: -2px;
 
     }
 
+    .hero-content > p {
 
-    /* ================= MAIN ================= */
+        margin-left: auto;
+        margin-right: auto;
 
-    .mobile-hero-main {
-
-        position: relative;
-
-        z-index: 2;
-
-        margin-top: auto;
-
-        margin-bottom: auto;
-
-        padding: 80px 0 65px;
+        font-size: 14px;
 
     }
 
-
-    .mobile-kicker {
-
-        display: block;
-
-        margin-bottom: 22px;
-
-        color: #666;
-
-        font-size: 8px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    /* ================= TITLE ================= */
-
-    .mobile-title {
-
-        margin: 0;
-
-        font-size: clamp(
-
-            65px,
-
-            20vw,
-
-            92px
-
-        );
-
-        line-height: .82;
-
-        letter-spacing: -6px;
-
-        font-weight: 700;
-
-    }
-
-
-    .mobile-title span {
-
-        display: block;
-
-        color: transparent;
-
-        -webkit-text-stroke: 1px #555;
-
-    }
-
-
-    .mobile-title strong {
-
-        display: block;
-
-        font-weight: 700;
-
-    }
-
-
-    /* ================= DESCRIPTION ================= */
-
-    .mobile-description {
-
-        max-width: 270px;
-
-        margin: 35px 0 0;
-
-        color: #777;
-
-        font-size: 13px;
-
-        line-height: 1.7;
-
-    }
-
-
-    /* ================= CTA ================= */
-
-    .mobile-cta {
-
-        display: inline-flex;
-
-        align-items: center;
-
-        gap: 18px;
-
-        margin-top: 35px;
-
-        color: #fff;
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
-        text-decoration: none;
-
-    }
-
-
-    .mobile-cta b {
-
-        display: flex;
-
-        align-items: center;
+    .hero-buttons {
 
         justify-content: center;
 
-        width: 48px;
-
-        height: 48px;
-
-        border: 1px solid #444;
-
-        border-radius: 50%;
-
-        font-size: 18px;
-
-        font-weight: 400;
-
-        transition: .35s ease;
+        flex-wrap: wrap;
 
     }
 
+    .hero-socials {
 
-    .mobile-cta:active b {
-
-        background: #fff;
-
-        color: #000;
-
-        transform: rotate(45deg);
+        justify-content: center;
 
     }
 
+    .hero-visual {
 
-    /* ================= BOTTOM ================= */
-
-    .mobile-hero-bottom {
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        padding-top: 18px;
-
-        border-top: 1px solid #202020;
-
-        color: #555;
-
-        font-size: 8px;
-
-        letter-spacing: 1.5px;
+        min-height: 430px;
 
     }
 
+    .hero-card {
 
-    /* ================= BACKGROUND DETAIL ================= */
-
-    .mobile-hero::before {
-
-        content: "";
-
-        position: absolute;
-
-        width: 280px;
-
-        height: 280px;
-
-        top: 30%;
-
-        right: -180px;
-
-        border: 1px solid #171717;
-
-        border-radius: 50%;
-
-        box-shadow:
-
-            0 0 0 35px #0b0b0b,
-
-            0 0 0 36px #171717,
-
-            0 0 0 75px #080808,
-
-            0 0 0 76px #151515;
-
-        pointer-events: none;
+        width: 290px;
+        height: 370px;
 
     }
 
+    .hero-orbit {
 
-    .mobile-hero::after {
+        width: 200px;
+        height: 200px;
 
-        content: "";
+    }
 
-        position: absolute;
+    .scroll-indicator {
 
-        inset: 0;
-
-        pointer-events: none;
-
-        background:
-
-            linear-gradient(
-
-                120deg,
-
-                transparent 45%,
-
-                rgba(
-
-                    255,
-
-                    255,
-
-                    255,
-
-                    .035
-
-                ),
-
-                transparent 55%
-
-            );
+        display: none;
 
     }
 

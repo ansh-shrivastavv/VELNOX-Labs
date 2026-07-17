@@ -1,155 +1,28 @@
-/* =====================================================
-   NEXORA — MISSION PRICING JS
-===================================================== */
+/* ================= PRICING CARD ANIMATION ================= */
 
-document.addEventListener(
+const pricingCards = document.querySelectorAll(".pricing-card");
 
-    "DOMContentLoaded",
+const pricingObserver = new IntersectionObserver((entries) => {
 
-    () => {
+    entries.forEach(entry => {
 
+        if (entry.isIntersecting) {
 
-        const items =
+            entry.target.classList.add("pricing-visible");
 
-            document.querySelectorAll(
+            pricingObserver.unobserve(entry.target);
 
-                ".nx-mission-item"
+        }
 
-            );
+    });
 
+}, {
+    threshold: 0.15
+});
 
-        items.forEach(
 
-            item => {
+pricingCards.forEach(card => {
 
+    pricingObserver.observe(card);
 
-                const main =
-
-                    item.querySelector(
-
-                        ".nx-mission-main"
-
-                    );
-
-
-                main.addEventListener(
-
-                    "click",
-
-                    () => {
-
-
-                        const isActive =
-
-                            item.classList.contains(
-
-                                "active"
-
-                            );
-
-
-                        items.forEach(
-
-                            other => {
-
-                                other.classList.remove(
-
-                                    "active"
-
-                                );
-
-                            }
-
-                        );
-
-
-                        if (!isActive) {
-
-                            item.classList.add(
-
-                                "active"
-
-                            );
-
-                        }
-
-                    }
-
-                );
-
-            }
-
-        );
-
-
-        /* =================
-           SCROLL REVEAL
-        ================= */
-
-
-        const pricing =
-
-            document.querySelector(
-
-                ".nx-mission-pricing"
-
-            );
-
-
-        if (!pricing) return;
-
-
-        const observer =
-
-            new IntersectionObserver(
-
-                entries => {
-
-
-                    entries.forEach(
-
-                        entry => {
-
-
-                            if (
-
-                                entry.isIntersecting
-
-                            ) {
-
-
-                                pricing.classList.add(
-
-                                    "is-visible"
-
-                                );
-
-
-                                observer.unobserve(
-
-                                    pricing
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold: .15
-
-                }
-
-            );
-
-
-        observer.observe(pricing);
-
-    }
-
-);
+});

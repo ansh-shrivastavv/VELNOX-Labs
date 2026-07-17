@@ -1,423 +1,191 @@
-/* =========================================
-   NEXORA — FOOTER
-========================================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
-.nx-footer {
+.contact-footer {
 
-    padding: 120px 7% 28px;
+    background: #111111;
 
-    background: #000;
+    color: #ffffff;
 
-    color: #fff;
-
-}
-
-
-/* ================= TOP ================= */
-
-.nx-footer-top {
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    padding-bottom: 100px;
-
-    border-bottom: 1px solid #222;
+    padding: 80px 8% 25px;
 
 }
 
 
-.nx-footer-heading > span {
+/* ================= FOOTER TOP ================= */
 
-    display: block;
+.footer-top {
 
-    margin-bottom: 25px;
+    max-width: 1250px;
 
-    color: #666;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-}
-
-
-.nx-footer-heading h2 {
-
-    margin: 0;
-
-    font-size: clamp(
-
-        60px,
-
-        9vw,
-
-        145px
-
-    );
-
-    line-height: .8;
-
-    letter-spacing: -10px;
-
-}
-
-
-.nx-footer-heading h2 em {
-
-    display: block;
-
-    color: transparent;
-
-    font-style: normal;
-
-    -webkit-text-stroke: 1px #555;
-
-}
-
-
-/* ================= CTA ================= */
-
-.nx-footer-cta {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    padding: 18px 22px;
-
-    border: 1px solid #333;
-
-    color: #fff;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    text-decoration: none;
-
-    transition: .4s ease;
-
-}
-
-
-.nx-footer-cta span {
-
-    font-size: 20px;
-
-    transition: .4s ease;
-
-}
-
-
-.nx-footer-cta:hover {
-
-    background: #fff;
-
-    color: #000;
-
-}
-
-
-.nx-footer-cta:hover span {
-
-    transform: rotate(45deg);
-
-}
-
-
-/* ================= MAIN ================= */
-
-.nx-footer-main {
+    margin: auto;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
 
     gap: 80px;
 
-    padding: 70px 0;
+    padding-bottom: 70px;
 
 }
 
 
 /* ================= BRAND ================= */
 
-.nx-footer-logo {
+.footer-logo {
 
-    color: #fff;
+    display: inline-block;
 
-    font-size: 22px;
-
-    font-weight: 600;
-
-    letter-spacing: -1px;
+    color: #ffffff;
 
     text-decoration: none;
 
-}
+    font-size: 26px;
 
+    font-weight: 800;
 
-.nx-footer-logo span {
+    letter-spacing: -1px;
 
-    margin-left: 3px;
-
-    color: #666;
-
-    font-size: 8px;
-
-    vertical-align: top;
+    margin-bottom: 20px;
 
 }
 
 
-.nx-footer-brand p {
+.footer-brand p {
 
     max-width: 280px;
 
-    margin-top: 22px;
+    color: #999;
 
-    color: #555;
+    line-height: 1.7;
 
-    font-size: 12px;
-
-    line-height: 1.8;
+    font-size: 14px;
 
 }
 
 
 /* ================= LINKS ================= */
 
-.nx-footer-links {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 50px;
-
-}
-
-
-.nx-footer-column {
+.footer-links {
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: flex-start;
-
-    gap: 16px;
+    gap: 14px;
 
 }
 
 
-.nx-footer-title {
+.footer-links h4 {
 
-    margin-bottom: 10px;
+    font-size: 13px;
 
-    color: #555;
+    text-transform: uppercase;
 
-    font-size: 8px;
+    letter-spacing: 1px;
 
-    letter-spacing: 2px;
+    color: #ffffff;
+
+    margin-bottom: 12px;
 
 }
 
 
-.nx-footer-column a {
-
-    position: relative;
+.footer-links a {
 
     color: #888;
 
-    font-size: 11px;
-
     text-decoration: none;
 
-    transition: .3s ease;
+    font-size: 14px;
+
+    transition: 0.3s ease;
 
 }
 
 
-.nx-footer-column a::after {
+.footer-links a:hover {
 
-    content: "";
+    color: #ffffff;
 
-    position: absolute;
-
-    left: 0;
-
-    bottom: -5px;
-
-    width: 0;
-
-    height: 1px;
-
-    background: #fff;
-
-    transition: .3s ease;
-
-}
-
-
-.nx-footer-column a:hover {
-
-    color: #fff;
-
-}
-
-
-.nx-footer-column a:hover::after {
-
-    width: 100%;
+    transform: translateX(5px);
 
 }
 
 
 /* ================= BOTTOM ================= */
 
-.nx-footer-bottom {
+.footer-bottom {
 
-    display: grid;
+    max-width: 1250px;
 
-    grid-template-columns: 1fr 1fr 1fr;
-
-    align-items: center;
-
-    gap: 20px;
+    margin: auto;
 
     padding-top: 25px;
 
-    border-top: 1px solid #222;
+    border-top: 1px solid #292929;
 
-    color: #555;
+    display: flex;
 
-    font-size: 8px;
+    justify-content: space-between;
 
-    letter-spacing: 1.5px;
+    gap: 20px;
 
-}
+    color: #777;
 
-
-.nx-footer-bottom:nth-child(2) {
-
-    text-align: center;
+    font-size: 12px;
 
 }
 
 
-.nx-footer-bottom a {
+.footer-bottom strong {
 
-    justify-self: end;
-
-    color: #888;
-
-    text-decoration: none;
-
-    transition: .3s ease;
+    color: #ffffff;
 
 }
 
 
-.nx-footer-bottom a:hover {
-
-    color: #fff;
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 700px) {
 
+    .contact-footer {
 
-    .nx-footer {
-
-        padding: 100px 22px 25px;
-
-    }
-
-
-    .nx-footer-top {
-
-        display: block;
-
-        padding-bottom: 65px;
+        padding: 60px 25px 25px;
 
     }
 
 
-    .nx-footer-heading h2 {
+    .footer-top {
 
-        font-size: 65px;
+        grid-template-columns: 1fr 1fr;
 
-        line-height: .85;
+        gap: 45px;
 
-        letter-spacing: -6px;
-
-    }
-
-
-    .nx-footer-cta {
-
-        width: fit-content;
-
-        margin-top: 45px;
+        padding-bottom: 50px;
 
     }
 
 
-    .nx-footer-main {
+    .footer-brand {
 
-        display: block;
-
-        padding: 55px 0;
+        grid-column: 1 / -1;
 
     }
 
 
-    .nx-footer-brand p {
-
-        font-size: 11px;
-
-    }
-
-
-    .nx-footer-links {
-
-        margin-top: 55px;
-
-        gap: 35px;
-
-    }
-
-
-    .nx-footer-bottom {
-
-        display: flex;
-
-        align-items: flex-start;
+    .footer-bottom {
 
         flex-direction: column;
 
-        gap: 15px;
+        align-items: center;
 
-        font-size: 7px;
+        text-align: center;
 
-    }
-
-
-    .nx-footer-bottom a {
-
-        justify-self: auto;
+        gap: 10px;
 
     }
 

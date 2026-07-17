@@ -1,55 +1,27 @@
-/* ===================================================
-   FOUNDER SECTION JS
-=================================================== */
+/* ================= FOUNDER SECTION JS ================= */
 
-const counters = document.querySelectorAll(".counter");
+const founderImage = document.querySelector(".founder-image");
 
-const startCounter = (counter) => {
+if (founderImage) {
 
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
+    founderImage.addEventListener("mousemove", (e) => {
 
-    const updateCounter = () => {
+        const rect = founderImage.getBoundingClientRect();
 
-        const increment = target / 60;
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-        if (count < target) {
-            count += increment;
-            counter.innerText = Math.ceil(count);
-            setTimeout(updateCounter, 25);
-        } else {
-            counter.innerText = target;
-        }
-
-    };
-
-    updateCounter();
-};
-
-
-const observer = new IntersectionObserver((entries, observer) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            counters.forEach(counter => {
-                startCounter(counter);
-            });
-
-            observer.disconnect();
-
-        }
+        founderImage.style.transform = `
+            scale(1.04)
+            translate(${x * 8}px, ${y * 8}px)
+        `;
 
     });
 
-}, {
-    threshold: 0.4
-});
+    founderImage.addEventListener("mouseleave", () => {
 
+        founderImage.style.transform = "scale(1)";
 
-const founderSection = document.querySelector(".founder-section");
+    });
 
-if (founderSection) {
-    observer.observe(founderSection);
 }

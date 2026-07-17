@@ -1,297 +1,424 @@
-/* ===================================================
-   FOUNDER SECTION
-=================================================== */
+/* =====================================================
+   NEXORA — FOUNDER SECTION
+===================================================== */
 
 .founder-section {
-    position: relative;
-    padding: 140px 8%;
-    background: #000;
-    color: #fff;
-    overflow: hidden;
-}
 
-.founder-section::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.04);
-    filter: blur(120px);
-    border-radius: 50%;
-    top: 20%;
-    left: -15%;
-    pointer-events: none;
+    padding: 130px 0;
+
+    background: #fafafa;
+
+    border-top: 1px solid #eeeeee;
+
+    overflow: hidden;
+
 }
 
 .founder-container {
-    max-width: 1250px;
+
+    width: min(1100px, 92%);
+
     margin: auto;
+
     display: grid;
-    grid-template-columns: 1fr 430px;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
     align-items: center;
+
     gap: 100px;
+
 }
 
+/* ================= VISUAL ================= */
+
+.founder-visual {
+
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+/* IMAGE WRAPPER */
+
+.founder-image-wrapper {
+
+    width: 350px;
+
+    height: 470px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+    border-radius: 24px;
+
+    box-shadow:
+
+        18px 18px 0 #e6e6e6,
+
+        0 25px 50px rgba(0, 0, 0, 0.08);
+
+}
+
+/* IMAGE */
+
+.founder-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition: 0.5s ease;
+
+}
+
+.founder-image-wrapper:hover .founder-image {
+
+    filter: grayscale(0%);
+
+    transform: scale(1.04);
+
+}
+
+/* IMAGE LABEL */
+
+.founder-image-label {
+
+    position: absolute;
+
+    left: 22px;
+
+    right: 22px;
+
+    bottom: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+/* ================= FLOATING CARD ================= */
+
+.founder-floating-card {
+
+    position: absolute;
+
+    right: -25px;
+
+    top: 22%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+    color: #444444;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    animation: founderFloat 4s ease-in-out infinite;
+
+}
+
+.founder-floating-card i {
+
+    color: #999999;
+
+}
 
 /* ================= CONTENT ================= */
 
-.founder-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #888;
-    margin-bottom: 25px;
-}
+.section-label {
 
-.founder-label span {
-    width: 30px;
-    height: 1px;
-    background: #fff;
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
 }
 
 .founder-content h2 {
-    font-size: clamp(42px, 5vw, 76px);
+
+    max-width: 550px;
+
+    margin: 0;
+
+    color: #111111;
+
+    font-size: clamp(36px, 4vw, 58px);
+
     line-height: 1.05;
-    letter-spacing: -3px;
-    margin-bottom: 30px;
-    font-weight: 500;
+
+    letter-spacing: -2px;
+
 }
 
-.founder-content h2 strong {
-    color: #777;
-    font-weight: 500;
+.founder-content h2 span {
+
+    color: #999999;
+
 }
 
-.founder-description {
-    max-width: 570px;
-    color: #858585;
+.founder-content > p {
+
+    max-width: 540px;
+
+    margin: 22px 0 0;
+
+    color: #777777;
+
+    font-size: 14px;
+
     line-height: 1.8;
-    font-size: 15px;
-    margin-bottom: 18px;
+
 }
 
-.founder-description strong {
-    color: #fff;
+.founder-content strong {
+
+    color: #111111;
+
 }
-
-.founder-signature {
-    margin-top: 35px;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.founder-signature span {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.founder-signature small {
-    color: #666;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-
-/* ================= FOUNDER CARD ================= */
-
-.founder-card {
-    position: relative;
-    background: #0b0b0b;
-    border: 1px solid #222;
-    border-radius: 24px;
-    overflow: hidden;
-    transition: 0.5s ease;
-}
-
-.founder-card:hover {
-    transform: translateY(-10px);
-    border-color: #555;
-}
-
-.card-glow {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: rgba(255, 255, 255, 0.08);
-    filter: blur(100px);
-    top: -100px;
-    right: -80px;
-}
-
-
-/* ================= IMAGE ================= */
-
-.founder-image {
-    height: 300px;
-    background:
-        radial-gradient(
-            circle at center,
-            #2b2b2b 0%,
-            #111 45%,
-            #080808 100%
-        );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-placeholder {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 1px solid #555;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    box-shadow:
-        0 0 0 12px rgba(255,255,255,0.02),
-        0 0 80px rgba(255,255,255,0.1);
-}
-
-.image-placeholder span {
-    font-size: 42px;
-    font-weight: 600;
-    letter-spacing: -3px;
-}
-
 
 /* ================= INFO ================= */
 
-.founder-card-info {
-    padding: 28px;
+.founder-info {
+
+    max-width: 540px;
+
+    margin-top: 32px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e4e4e4;
+
+    display: flex;
+
+    gap: 30px;
+
 }
 
-.founder-card-info h3 {
-    font-size: 24px;
-    margin-bottom: 6px;
-}
+.founder-info-item {
 
-.founder-card-info > p {
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 28px;
-}
+    display: flex;
 
+    align-items: flex-start;
 
-/* ================= STATS ================= */
-
-.founder-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding-top: 22px;
-    border-top: 1px solid #222;
+
 }
 
-.founder-stats div {
-    display: flex;
-    flex-direction: column;
-}
+.info-number {
 
-.founder-stats strong {
-    font-size: 28px;
-    font-weight: 500;
-}
+    color: #aaaaaa;
 
-.founder-stats span {
-    color: #777;
-    margin-top: -25px;
-    margin-left: 35px;
-}
-
-.founder-stats small {
-    color: #666;
     font-size: 10px;
-    margin-top: 8px;
-}
 
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-
-    .founder-container {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .founder-card {
-        max-width: 500px;
-        width: 100%;
-        margin: auto;
-    }
+    font-weight: 700;
 
 }
 
-@media (max-width: 500px) {
-
-    .founder-section {
-        padding: 90px 6%;
-    }
-
-    .founder-content h2 {
-        font-size: 43px;
-        letter-spacing: -2px;
-    }
-
-    .founder-description {
-        font-size: 14px;
-    }
-
-    .founder-image {
-        height: 250px;
-    }
-
-}
-
-/* ================= INSTAGRAM BUTTON ================= */
-
-.founder-instagram {
-    margin-top: 25px;
-    width: 100%;
-    padding: 14px 16px;
+.founder-info-item div {
 
     display: flex;
-    align-items: center;
-    gap: 12px;
 
-    color: #fff;
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+.founder-info-item strong {
+
+    color: #222222;
+
+    font-size: 12px;
+
+}
+
+.founder-info-item small {
+
+    color: #999999;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+
+}
+
+/* ================= BUTTON ================= */
+
+.founder-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 32px;
+
+    padding: 14px 19px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border-radius: 9px;
+
     text-decoration: none;
 
-    border: 1px solid #252525;
-    border-radius: 12px;
+    font-size: 12px;
 
-    background: #111;
+    font-weight: 600;
 
     transition: 0.3s ease;
+
 }
 
-.founder-instagram:hover {
-    background: #1a1a1a;
-    border-color: #555;
+.founder-btn:hover {
+
     transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
 }
 
-.instagram-icon {
-    width: 28px;
-    height: 28px;
+/* ================= ANIMATION ================= */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@keyframes founderFloat {
 
-    border: 1px solid #777;
-    border-radius: 8px;
+    0%,
+    100% {
 
-    font-size: 20px;
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
 }
 
-.instagram-arrow {
-    margin-left: auto;
-    color: #777;
-    font-size: 18px;
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .founder-section {
+
+        padding: 90px 0;
+
+    }
+
+    .founder-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
+    }
+
+    .founder-content {
+
+        text-align: center;
+
+    }
+
+    .founder-content > p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+    .founder-info {
+
+        justify-content: center;
+
+        gap: 18px;
+
+        text-align: left;
+
+    }
+
+    .founder-info-item {
+
+        gap: 6px;
+
+    }
+
+    .founder-info-item small {
+
+        font-size: 8px;
+
+    }
+
+    .founder-btn {
+
+        margin-top: 25px;
+
+    }
+
+    .founder-image-wrapper {
+
+        width: 285px;
+
+        height: 380px;
+
+    }
+
+    .founder-floating-card {
+
+        right: 0;
+
+    }
+
 }

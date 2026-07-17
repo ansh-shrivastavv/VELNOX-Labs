@@ -1,94 +1,28 @@
-/* =========================================
-   NEXORA — PORTFOLIO JS
-========================================= */
+/* ================= PROJECTS ANIMATION ================= */
 
-document.addEventListener(
+const projectCards = document.querySelectorAll(".project-card");
 
-    "DOMContentLoaded",
+const projectObserver = new IntersectionObserver((entries) => {
 
-    () => {
+    entries.forEach(entry => {
 
+        if (entry.isIntersecting) {
 
-        const portfolio =
+            entry.target.classList.add("project-visible");
 
-            document.querySelector(
+            projectObserver.unobserve(entry.target);
 
-                ".nx-portfolio"
+        }
 
-            );
+    });
 
-
-        if (!portfolio) return;
-
-
-        const elements =
-
-            portfolio.querySelectorAll(
-
-                ".nx-portfolio-content, " +
-
-                ".nx-portfolio-bottom"
-
-            );
+}, {
+    threshold: 0.15
+});
 
 
-        const observer =
+projectCards.forEach(card => {
 
-            new IntersectionObserver(
+    projectObserver.observe(card);
 
-                entries => {
-
-
-                    entries.forEach(
-
-                        entry => {
-
-
-                            if (
-
-                                entry.isIntersecting
-
-                            ) {
-
-                                entry.target.classList.add(
-
-                                    "portfolio-visible"
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold: .15
-
-                }
-
-            );
-
-
-        elements.forEach(
-
-            (element, index) => {
-
-
-                element.style.transitionDelay =
-
-                    `${index * .15}s`;
-
-
-                observer.observe(element);
-
-            }
-
-        );
-
-    }
-
-);
+});

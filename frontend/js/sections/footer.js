@@ -1,167 +1,74 @@
-/* =========================================
-   NEXORA — FOOTER JS
-========================================= */
+/* =====================================================
+   NEXORA CONTACT PAGE JS
+===================================================== */
 
-document.addEventListener(
 
-    "DOMContentLoaded",
+/* ================= CONTACT FORM ================= */
 
-    () => {
+const contactForm = document.getElementById("contactForm");
+const successPopup = document.getElementById("successPopup");
 
-        const footer =
+if (contactForm) {
 
-            document.querySelector(
+    contactForm.addEventListener("submit", function (e) {
 
-                ".nx-footer"
+        e.preventDefault();
 
-            );
+        successPopup.classList.add("active");
 
+        contactForm.reset();
 
-        if (!footer) return;
+    });
 
+}
 
-        /* =========================
-           SCROLL REVEAL
-        ========================= */
 
-        const footerElements =
+/* ================= CLOSE POPUP ================= */
 
-            footer.querySelectorAll(
+function closePopup() {
 
-                ".nx-footer-top, " +
+    if (successPopup) {
 
-                ".nx-footer-main, " +
-
-                ".nx-footer-bottom"
-
-            );
-
-
-        const observer =
-
-            new IntersectionObserver(
-
-                entries => {
-
-
-                    entries.forEach(
-
-                        entry => {
-
-
-                            if (
-
-                                entry.isIntersecting
-
-                            ) {
-
-                                entry.target.classList.add(
-
-                                    "nx-footer-visible"
-
-                                );
-
-                                observer.unobserve(
-
-                                    entry.target
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold: 0.15
-
-                }
-
-            );
-
-
-        footerElements.forEach(
-
-            (element, index) => {
-
-
-                element.style.transitionDelay =
-
-                    `${index * 0.12}s`;
-
-
-                observer.observe(element);
-
-            }
-
-        );
-
-
-        /* =========================
-           BACK TO TOP
-        ========================= */
-
-        const backToTop =
-
-            footer.querySelector(
-
-                'a[href="#home"]'
-
-            );
-
-
-        if (backToTop) {
-
-            backToTop.addEventListener(
-
-                "click",
-
-                event => {
-
-
-                    event.preventDefault();
-
-
-                    window.scrollTo({
-
-                        top: 0,
-
-                        behavior: "smooth"
-
-                    });
-
-                }
-
-            );
-
-        }
-
-
-        /* =========================
-           FOOTER YEAR
-        ========================= */
-
-        const yearText =
-
-            footer.querySelector(
-
-                ".nx-footer-bottom span"
-
-            );
-
-
-        if (yearText) {
-
-            yearText.innerHTML =
-
-                `© ${new Date().getFullYear()} NEXORA. ALL RIGHTS RESERVED.`;
-
-        }
+        successPopup.classList.remove("active");
 
     }
 
-);
+}
+
+
+/* ================= CLOSE POPUP OUTSIDE ================= */
+
+if (successPopup) {
+
+    successPopup.addEventListener("click", function (e) {
+
+        if (e.target === successPopup) {
+
+            closePopup();
+
+        }
+
+    });
+
+}
+
+
+/* ================= CURRENT YEAR ================= */
+
+const yearElement = document.querySelector(".footer-bottom p");
+
+if (yearElement) {
+
+    yearElement.innerHTML =
+        `© ${new Date().getFullYear()} NEXORA. All rights reserved.`;
+
+}
+
+
+/* ================= PAGE LOAD ANIMATION ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.body.classList.add("page-loaded");
+
+});

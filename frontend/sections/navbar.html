@@ -1,197 +1,46 @@
-<!-- =========================================
-     NEXORA NAVBAR
-========================================= -->
+<!-- ================= FLOATING NAVBAR ================= -->
 
-<header class="nx-navbar" id="nxNavbar">
+<header class="floating-navbar" id="navbar">
 
-    <!-- LOGO -->
+    <div class="nav-container">
 
-    <a href="#home" class="nx-logo">
-        NEXORA<span>®</span>
-    </a>
+        <!-- LOGO -->
+        <a href="#home" class="logo">
+            <span class="logo-icon">N</span>
 
-
-    <!-- DESKTOP NAVIGATION -->
-
-    <nav class="nx-nav-links">
-
-        <a href="#home" class="active">
-            Home
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-        <a href="#services">
-            Services
-        </a>
-
-        <a href="#portfolio">
-            Work
-        </a>
-
-        <a href="#process">
-            Process
-        </a>
-
-    </nav>
-
-
-    <!-- DESKTOP CTA -->
-
-    <a href="#contact" class="nx-nav-cta">
-        Let's Talk
-        <span>↗</span>
-    </a>
-
-
-    <!-- MOBILE MENU BUTTON -->
-
-    <button
-        type="button"
-        class="nx-menu-btn"
-        id="nxMenuBtn"
-        aria-label="Open Menu"
-        aria-expanded="false"
-    >
-
-        <span></span>
-        <span></span>
-
-    </button>
-
-</header>
-
-
-<!-- =========================================
-     MOBILE MENU
-========================================= -->
-
-<div
-    class="nx-mobile-menu"
-    id="nxMobileMenu"
->
-
-    <div class="nx-mobile-inner">
-
-
-        <!-- MOBILE TOP -->
-
-        <div class="nx-mobile-top">
-
-            <span>
-                MENU / 06
-            </span>
-
-            <span>
+            <span class="logo-text">
                 NEXORA
+                <small>INDIA</small>
             </span>
+        </a>
 
-        </div>
+        <!-- NAVIGATION -->
+        <nav class="nav-links" id="navLinks">
 
-
-        <!-- MOBILE LINKS -->
-
-        <nav class="nx-mobile-links">
-
-            <a href="#home">
-
-                <small>01</small>
-
-                <span class="nx-link-text">
-                    Home
-                </span>
-
-                <b>↗</b>
-
-            </a>
-
-
-            <a href="#about">
-
-                <small>02</small>
-
-                <span class="nx-link-text">
-                    About
-                </span>
-
-                <b>↗</b>
-
-            </a>
-
-
-            <a href="#services">
-
-                <small>03</small>
-
-                <span class="nx-link-text">
-                    Services
-                </span>
-
-                <b>↗</b>
-
-            </a>
-
-
-            <a href="#portfolio">
-
-                <small>04</small>
-
-                <span class="nx-link-text">
-                    Work
-                </span>
-
-                <b>↗</b>
-
-            </a>
-
-
-            <a href="#process">
-
-                <small>05</small>
-
-                <span class="nx-link-text">
-                    Process
-                </span>
-
-                <b>↗</b>
-
-            </a>
-
-
-            <a href="#contact">
-
-                <small>06</small>
-
-                <span class="nx-link-text">
-                    Contact
-                </span>
-
-                <b>↗</b>
-
-            </a>
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            
 
         </nav>
 
+        <!-- ACTION -->
+        <div class="nav-actions">
 
-        <!-- MOBILE BOTTOM -->
-
-        <div class="nx-mobile-bottom">
-
-            <span>
-                CREATIVE DIGITAL STUDIO
-            </span>
-
-            <a
-                href="https://instagram.com/yrransh.hu"
-                target="_blank"
-            >
-                @yrransh.hu ↗
+            <a href="#contact" class="nav-cta">
+                Let's Talk
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
 
     </div>
 
-</div>
+</header>

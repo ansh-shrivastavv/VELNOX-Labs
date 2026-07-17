@@ -1,340 +1,533 @@
-/* =========================================
-   NEXORA — PORTFOLIO
-========================================= */
+/* =====================================================
+   NEXORA — PROJECTS SECTION
+===================================================== */
 
-.nx-portfolio {
+.projects-section {
 
-    padding: 160px 7%;
+    padding: 130px 0;
 
-    background: #000;
+    background: #fafafa;
 
-    color: #fff;
+    border-top: 1px solid #eeeeee;
 
 }
 
+.projects-container {
 
-/* ================= TOP ================= */
+    width: min(1100px, 92%);
 
-.nx-portfolio-top {
+    margin: auto;
+
+}
+
+/* ================= HEADER ================= */
+
+.projects-header {
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-end;
 
     justify-content: space-between;
 
-    padding-bottom: 30px;
+    gap: 50px;
 
-    border-bottom: 1px solid #222;
-
-}
-
-
-.nx-portfolio-label {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color: #666;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
+    margin-bottom: 60px;
 
 }
 
+.section-label {
 
-.nx-portfolio-label span {
+    display: inline-block;
 
-    width: 28px;
+    margin-bottom: 18px;
 
-    height: 1px;
+    color: #999999;
 
-    background: #555;
+    font-size: 10px;
 
-}
-
-
-.nx-portfolio-status {
-
-    color: #555;
-
-    font-size: 8px;
+    font-weight: 700;
 
     letter-spacing: 2px;
 
 }
 
-
-/* ================= CONTENT ================= */
-
-.nx-portfolio-content {
-
-    display: grid;
-
-    grid-template-columns: 1.2fr 1fr;
-
-    gap: 100px;
-
-    padding: 100px 0;
-
-}
-
-
-/* ================= HEADING ================= */
-
-.nx-portfolio-heading h2 {
+.projects-header h2 {
 
     margin: 0;
 
-    font-size: clamp(
+    color: #111111;
 
-        65px,
+    font-size: clamp(38px, 5vw, 60px);
 
-        9vw,
-
-        145px
-
-    );
-
-    line-height: .8;
-
-    letter-spacing: -10px;
-
-}
-
-
-.nx-portfolio-heading h2 em {
-
-    display: block;
-
-    color: transparent;
-
-    font-style: normal;
-
-    -webkit-text-stroke: 1px #555;
-
-}
-
-
-/* ================= MESSAGE ================= */
-
-.nx-portfolio-message {
-
-    max-width: 400px;
-
-    padding: 30px;
-
-    border: 1px solid #222;
-
-    transition: .4s ease;
-
-}
-
-
-.nx-portfolio-message:hover {
-
-    border-color: #555;
-
-    transform: translateY(-6px);
-
-}
-
-
-.nx-portfolio-icon {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 48px;
-
-    height: 48px;
-
-    margin-bottom: 45px;
-
-    border: 1px solid #333;
-
-    border-radius: 50%;
-
-    color: #fff;
-
-    font-size: 20px;
-
-}
-
-
-.nx-portfolio-message > span {
-
-    color: #666;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.nx-portfolio-message h3 {
-
-    margin: 18px 0 15px;
-
-    font-size: 32px;
-
-    font-weight: 500;
+    line-height: 1;
 
     letter-spacing: -2px;
 
 }
 
+.projects-header h2 span {
 
-.nx-portfolio-message p {
+    color: #999999;
 
-    max-width: 310px;
+}
 
-    color: #666;
+.projects-header > p {
 
-    font-size: 12px;
+    max-width: 300px;
+
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 13px;
 
     line-height: 1.8;
 
 }
 
+/* ================= GRID ================= */
 
-.nx-portfolio-message a {
+.projects-grid {
 
-    display: inline-flex;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+/* ================= CARD ================= */
+
+.project-card {
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e6e6e6;
+
+    border-radius: 20px;
+
+    transition: 0.4s ease;
+
+}
+
+.project-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+
+}
+
+/* ================= PROJECT IMAGE ================= */
+
+.project-image {
+
+    height: 280px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+}
+
+/* ================= ECOM PREVIEW ================= */
+
+.ecommerce-preview {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f4f4f4,
+            #ffffff
+        );
+
+}
+
+/* PREVIEW NAVBAR */
+
+.preview-navbar {
+
+    display: flex;
 
     align-items: center;
 
-    gap: 14px;
+    justify-content: space-between;
 
-    margin-top: 30px;
+    color: #111111;
 
-    padding-bottom: 10px;
+    font-size: 13px;
 
-    border-bottom: 1px solid #555;
+}
 
-    color: #fff;
+.preview-navbar div {
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+.preview-navbar span {
+
+    width: 5px;
+
+    height: 5px;
+
+    background: #111111;
+
+    border-radius: 50%;
+
+}
+
+/* PREVIEW CONTENT */
+
+.preview-content {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 30px;
+
+}
+
+.preview-content small {
+
+    color: #999999;
 
     font-size: 8px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+
+}
+
+.preview-content h3 {
+
+    max-width: 230px;
+
+    margin: 10px 0 15px;
+
+    color: #111111;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+}
+
+.preview-content button {
+
+    padding: 9px 14px;
+
+    border: none;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+}
+
+/* STATUS */
+
+.project-status {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+.project-status.live {
+
+    background: #111111;
+
+    color: #ffffff;
+
+}
+
+/* ================= PROJECT INFO ================= */
+
+.project-info {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 22px 22px 0;
+
+}
+
+.project-category {
+
+    color: #999999;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+.project-info h3 {
+
+    margin: 7px 0 0;
+
+    color: #111111;
+
+    font-size: 21px;
+
+}
+
+.project-arrow {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border-radius: 50%;
 
     text-decoration: none;
 
-}
+    font-size: 12px;
 
-
-.nx-portfolio-message a span {
-
-    font-size: 16px;
-
-    transition: .35s ease;
+    transition: 0.3s ease;
 
 }
 
-
-.nx-portfolio-message a:hover span {
+.project-arrow:hover {
 
     transform: rotate(45deg);
 
 }
 
+.project-card > p {
 
-/* ================= BOTTOM ================= */
+    padding: 0 22px 22px;
 
-.nx-portfolio-bottom {
+    margin: 15px 0 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+/* ================= COMING SOON ================= */
+
+.coming-soon-visual {
+
+    height: 280px;
 
     display: flex;
 
-    justify-content: space-between;
+    flex-direction: column;
 
-    padding-top: 25px;
+    align-items: center;
 
-    border-top: 1px solid #222;
+    justify-content: center;
 
-    color: #555;
+    gap: 18px;
 
-    font-size: 8px;
+    background: #f3f3f3;
+
+    color: #aaaaaa;
+
+}
+
+.coming-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 50%;
+
+    color: #999999;
+
+    font-size: 21px;
+
+}
+
+.coming-soon-visual > span {
+
+    font-size: 9px;
+
+    font-weight: 700;
 
     letter-spacing: 2px;
 
 }
 
+/* LOCK */
 
-/* =========================================
-   MOBILE
-========================================= */
+.project-lock {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 50%;
+
+    color: #999999;
+
+    font-size: 12px;
+
+}
+
+/* ================= BOTTOM ================= */
+
+.projects-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e4e4e4;
+
+}
+
+.projects-bottom span {
+
+    color: #999999;
+
+    font-size: 11px;
+
+}
+
+.projects-bottom a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+.projects-bottom a i {
+
+    transition: 0.3s ease;
+
+}
+
+.projects-bottom a:hover i {
+
+    transform: translateX(5px);
+
+}
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 700px) {
 
+    .projects-section {
 
-    .nx-portfolio {
-
-        padding: 110px 22px;
-
-    }
-
-
-    .nx-portfolio-top {
-
-        padding-bottom: 22px;
+        padding: 90px 0;
 
     }
 
+    .projects-header {
 
-    .nx-portfolio-status {
+        flex-direction: column;
 
-        font-size: 7px;
+        align-items: flex-start;
 
-    }
+        gap: 20px;
 
-
-    .nx-portfolio-content {
-
-        display: block;
-
-        padding: 65px 0;
+        margin-bottom: 40px;
 
     }
 
+    .projects-grid {
 
-    .nx-portfolio-heading h2 {
-
-        font-size: 67px;
-
-        line-height: .85;
-
-        letter-spacing: -6px;
+        grid-template-columns: 1fr;
 
     }
 
+    .project-image,
+    .coming-soon-visual {
 
-    .nx-portfolio-message {
-
-        margin-top: 55px;
-
-        padding: 25px;
+        height: 240px;
 
     }
 
+    .projects-bottom {
 
-    .nx-portfolio-message h3 {
+        flex-direction: column;
 
-        font-size: 28px;
+        align-items: flex-start;
 
-    }
-
-
-    .nx-portfolio-message p {
-
-        font-size: 11px;
+        gap: 18px;
 
     }
 

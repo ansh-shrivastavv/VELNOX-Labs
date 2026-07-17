@@ -1,89 +1,52 @@
-/* ========================================= */
-/* NEXORA V2 | TRUSTED JAVASCRIPT             */
-/* File: js/sections/trusted.js               */
-/* ========================================= */
+/* ================= TRUSTED COUNTER ================= */
 
+const counters = document.querySelectorAll(".counter");
 
-function initTrusted(){
+const counterObserver = new IntersectionObserver((entries, observer) => {
 
+    entries.forEach(entry => {
 
-    const trusted =
-    document.querySelector("#trusted");
+        if (!entry.isIntersecting) return;
 
+        const counter = entry.target;
 
-    if(!trusted) return;
+        const target = +counter.dataset.target;
 
+        let current = 0;
 
+        const increment = target / 60;
 
+        const updateCounter = () => {
 
-    const logos =
-    trusted.querySelectorAll(
-        ".trusted-logo"
-    );
+            current += increment;
 
+            if (current < target) {
 
+                counter.innerText = Math.ceil(current);
 
-    /* ===================================== */
-    /* Logo Reveal Animation                 */
-    /* ===================================== */
+                requestAnimationFrame(updateCounter);
 
+            } else {
 
-    logos.forEach(
-        (logo,index)=>{
+                counter.innerText = target + "+";
 
+            }
 
-        logo.style.opacity="0";
+        };
 
+        updateCounter();
 
-        logo.style.transform=
-        "translateY(20px)";
-
-
-
-        setTimeout(()=>{
-
-
-            logo.style.transition=
-            "all .5s ease";
-
-
-            logo.style.opacity="1";
-
-
-            logo.style.transform=
-            "translateY(0)";
-
-
-
-        }, index * 100);
-
-
+        observer.unobserve(counter);
 
     });
 
+}, {
+    threshold: 0.5
+});
 
 
+counters.forEach(counter => {
 
+    counterObserver.observe(counter);
 
-    /* ===================================== */
-    /* Add Loaded Class                      */
-    /* ===================================== */
-
-
-    trusted.classList.add(
-        "loaded"
-    );
-
-
-
-}
-
-
-
-/* ========================================= */
-/* Export                                     */
-/* ========================================= */
-
-
-window.initTrusted =
-initTrusted;
+});

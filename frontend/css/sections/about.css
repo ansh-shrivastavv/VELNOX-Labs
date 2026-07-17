@@ -1,518 +1,454 @@
-/* =========================================
+/* =====================================================
    NEXORA — ABOUT SECTION
-========================================= */
+===================================================== */
 
-.nx-about {
+.about-section {
 
-    padding: 160px 7%;
+    padding: 130px 0;
 
-    background: #000;
+    background: #ffffff;
 
-    color: #fff;
+    overflow: hidden;
 
 }
 
+.about-container {
 
-/* ================= TOP ================= */
+    width: min(1100px, 92%);
 
-.nx-about-top {
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 100px;
+
+}
+
+/* ================= VISUAL ================= */
+
+.about-visual {
+
+    min-height: 470px;
+
+    position: relative;
 
     display: flex;
 
     align-items: center;
+
+    justify-content: center;
+
+}
+
+/* ================= ABOUT CARD ================= */
+
+.about-card {
+
+    width: 330px;
+
+    height: 410px;
+
+    padding: 24px;
+
+    position: relative;
+
+    background: #f7f7f7;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 24px;
+
+    box-shadow:
+
+        18px 18px 0 #eeeeee,
+
+        0 25px 50px rgba(0, 0, 0, 0.08);
+
+    transform: rotate(-5deg);
+
+    transition: 0.5s ease;
+
+}
+
+.about-card:hover {
+
+    transform: rotate(0deg) translateY(-8px);
+
+}
+
+/* CARD TOP */
+
+.about-card-top {
+
+    display: flex;
 
     justify-content: space-between;
 
-    padding-bottom: 30px;
+    color: #999999;
 
-    border-bottom: 1px solid #222;
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
 
 }
 
+/* BIG LETTER */
 
-.nx-about-label {
+.about-letter {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #111111;
+
+    font-size: 190px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+}
+
+/* CARD BOTTOM */
+
+.about-card-bottom {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 25px;
+
+    right: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #999999;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+/* ================= FLOATING TAGS ================= */
+
+.about-tag {
+
+    position: absolute;
 
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    color: #666;
+    padding: 12px 16px;
 
-    font-size: 9px;
+    background: #ffffff;
 
-    letter-spacing: 3px;
+    border: 1px solid #e7e7e7;
+
+    border-radius: 12px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+
+    color: #444444;
+
+    font-size: 11px;
+
+    font-weight: 600;
 
 }
 
+.about-tag i {
 
-.nx-about-label span {
-
-    width: 28px;
-
-    height: 1px;
-
-    background: #555;
+    color: #111111;
 
 }
 
+.tag-one {
 
-.nx-about-year {
+    top: 16%;
 
-    color: #555;
+    right: 0;
 
-    font-size: 9px;
+}
+
+.tag-two {
+
+    bottom: 16%;
+
+    left: 0;
+
+}
+
+/* ================= CONTENT ================= */
+
+.section-label {
+
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
 
     letter-spacing: 2px;
 
 }
 
+.about-content h2 {
 
-/* ================= CONTENT ================= */
-
-.nx-about-content {
-
-    display: grid;
-
-    grid-template-columns: 1.2fr 1fr;
-
-    gap: 100px;
-
-    padding: 90px 0;
-
-}
-
-
-.nx-about-heading h2 {
+    max-width: 560px;
 
     margin: 0;
 
-    font-size: clamp(
+    color: #111111;
 
-        65px,
+    font-size: clamp(34px, 4vw, 55px);
 
-        9vw,
+    line-height: 1.08;
 
-        145px
-
-    );
-
-    line-height: .8;
-
-    letter-spacing: -10px;
+    letter-spacing: -2px;
 
 }
 
+.about-content h2 span {
 
-.nx-about-heading h2 em {
+    color: #999999;
+
+}
+
+.about-content > p {
+
+    max-width: 540px;
+
+    margin: 20px 0 0;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+/* ================= SKILLS ================= */
+
+.about-skills {
+
+    max-width: 540px;
+
+    margin-top: 32px;
+
+}
+
+.skill-item {
+
+    margin-bottom: 20px;
+
+}
+
+.skill-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #555555;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+.skill-bar {
+
+    height: 5px;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+    border-radius: 20px;
+
+}
+
+.skill-bar span {
 
     display: block;
 
-    color: transparent;
+    height: 100%;
 
-    font-style: normal;
+    background: #111111;
 
-    -webkit-text-stroke: 1px #555;
+    border-radius: 20px;
 
-}
+    transform-origin: left;
 
-
-/* ================= COPY ================= */
-
-.nx-about-copy {
-
-    max-width: 420px;
-
-    padding-top: 12px;
+    animation: skillLoad 1.5s ease forwards;
 
 }
 
+/* ================= BUTTON ================= */
 
-.nx-about-intro {
-
-    margin: 0 0 28px;
-
-    color: #fff;
-
-    font-size: 21px;
-
-    line-height: 1.4;
-
-    letter-spacing: -.5px;
-
-}
-
-
-.nx-about-intro strong {
-
-    font-weight: 400;
-
-    color: #777;
-
-}
-
-
-.nx-about-copy > p:not(.nx-about-intro) {
-
-    color: #666;
-
-    font-size: 13px;
-
-    line-height: 1.9;
-
-}
-
-
-.nx-about-copy > p strong {
-
-    color: #fff;
-
-    font-weight: 400;
-
-}
-
-
-/* ================= LINK ================= */
-
-.nx-about-link {
+.about-btn {
 
     display: inline-flex;
 
     align-items: center;
 
-    gap: 15px;
+    gap: 10px;
 
-    margin-top: 35px;
+    margin-top: 18px;
 
-    padding-bottom: 10px;
+    padding: 13px 18px;
 
-    border-bottom: 1px solid #555;
+    background: #111111;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 9px;
-
-    letter-spacing: 2px;
+    border-radius: 9px;
 
     text-decoration: none;
 
-}
+    font-size: 12px;
 
+    font-weight: 600;
 
-.nx-about-link span {
-
-    font-size: 17px;
-
-    transition: .35s ease;
+    transition: 0.3s ease;
 
 }
 
+.about-btn:hover {
 
-.nx-about-link:hover span {
+    transform: translateY(-3px);
 
-    transform: rotate(45deg);
-
-}
-
-
-/* ================= FOUNDER ================= */
-
-.nx-about-founder {
-
-    display: grid;
-
-    grid-template-columns:
-
-        80px
-
-        1fr
-
-        200px;
-
-    align-items: end;
-
-    gap: 30px;
-
-    padding: 35px 0;
-
-    border-top: 1px solid #222;
-
-    border-bottom: 1px solid #222;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
 
 }
 
+/* ================= ANIMATION ================= */
 
-.nx-founder-number {
+@keyframes skillLoad {
 
-    color: #555;
+    from {
 
-    font-size: 10px;
-
-}
-
-
-.nx-founder-name > span {
-
-    color: #666;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.nx-founder-name h3 {
-
-    margin: 15px 0 0;
-
-    font-size: clamp(
-
-        35px,
-
-        5vw,
-
-        70px
-
-    );
-
-    font-weight: 500;
-
-    line-height: .9;
-
-    letter-spacing: -4px;
-
-}
-
-
-.nx-founder-name h3 em {
-
-    color: transparent;
-
-    font-style: normal;
-
-    -webkit-text-stroke: 1px #555;
-
-}
-
-
-.nx-founder-meta {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-
-}
-
-
-.nx-founder-meta span {
-
-    color: #555;
-
-    font-size: 8px;
-
-    letter-spacing: 1.5px;
-
-}
-
-
-.nx-founder-meta a {
-
-    color: #fff;
-
-    font-size: 8px;
-
-    letter-spacing: 1.5px;
-
-    text-decoration: none;
-
-}
-
-
-/* ================= STATS ================= */
-
-.nx-about-stats {
-
-    display: grid;
-
-    grid-template-columns:
-
-        1fr
-
-        1fr
-
-        1fr;
-
-    gap: 20px;
-
-    padding-top: 35px;
-
-}
-
-
-.nx-stat {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
-}
-
-
-.nx-stat strong {
-
-    font-size: 42px;
-
-    font-weight: 400;
-
-    letter-spacing: -3px;
-
-}
-
-
-.nx-stat span {
-
-    color: #555;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-
-    .nx-about {
-
-        padding: 110px 22px;
+        transform: scaleX(0);
 
     }
 
+    to {
 
-    .nx-about-top {
-
-        padding-bottom: 22px;
-
-    }
-
-
-    .nx-about-year {
-
-        font-size: 7px;
+        transform: scaleX(1);
 
     }
 
+}
 
-    .nx-about-content {
+/* ================= MOBILE ================= */
 
-        display: block;
+@media (max-width: 768px) {
 
-        padding: 65px 0;
+    .about-section {
 
-    }
-
-
-    .nx-about-heading h2 {
-
-        font-size: 67px;
-
-        line-height: .85;
-
-        letter-spacing: -6px;
+        padding: 90px 0;
 
     }
 
+    .about-container {
 
-    .nx-about-copy {
+        grid-template-columns: 1fr;
 
-        padding-top: 45px;
-
-    }
-
-
-    .nx-about-intro {
-
-        font-size: 19px;
+        gap: 70px;
 
     }
 
+    .about-content {
 
-    .nx-about-copy > p:not(.nx-about-intro) {
-
-        font-size: 12px;
-
-    }
-
-
-    .nx-about-founder {
-
-        grid-template-columns:
-
-            32px
-
-            1fr;
-
-        gap: 15px;
-
-        padding: 30px 0;
+        text-align: center;
 
     }
 
+    .about-content h2 {
 
-    .nx-founder-meta {
-
-        grid-column: 2;
-
-        flex-direction: row;
-
-        justify-content: space-between;
-
-        padding-top: 15px;
-
-        border-top: 1px solid #222;
+        letter-spacing: -1px;
 
     }
 
+    .about-content > p {
 
-    .nx-founder-name h3 {
+        margin-left: auto;
 
-        font-size: 42px;
-
-        letter-spacing: -3px;
-
-    }
-
-
-    .nx-about-stats {
-
-        gap: 10px;
+        margin-right: auto;
 
     }
 
+    .about-skills {
 
-    .nx-stat strong {
+        margin-left: auto;
 
-        font-size: 32px;
+        margin-right: auto;
+
+        text-align: left;
 
     }
 
+    .about-btn {
 
-    .nx-stat span {
+        margin-top: 15px;
 
-        font-size: 7px;
+    }
 
-        line-height: 1.5;
+    .about-visual {
+
+        min-height: 400px;
+
+    }
+
+    .about-card {
+
+        width: 280px;
+
+        height: 360px;
+
+    }
+
+    .about-letter {
+
+        font-size: 160px;
+
+    }
+
+    .tag-one {
+
+        right: 2%;
+
+    }
+
+    .tag-two {
+
+        left: 2%;
 
     }
 

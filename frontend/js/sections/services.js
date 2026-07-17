@@ -1,203 +1,34 @@
-/* =========================================
-   NEXORA — SERVICES JS
-========================================= */
+/* ================= SERVICES ANIMATION ================= */
 
-document.addEventListener(
+const serviceCards = document.querySelectorAll(".service-card");
 
-    "DOMContentLoaded",
+const serviceObserver = new IntersectionObserver((entries) => {
 
-    () => {
+    entries.forEach((entry, index) => {
 
+        if (entry.isIntersecting) {
 
-        const services =
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
 
-            document.querySelectorAll(
+            serviceObserver.unobserve(entry.target);
 
-                ".nx-service-item"
+        }
 
-            );
+    });
 
+}, {
+    threshold: 0.15
+});
 
-        services.forEach(
 
-            service => {
+serviceCards.forEach(card => {
 
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    card.style.transition =
+        "opacity 0.6s ease, transform 0.6s ease";
 
-                const main =
+    serviceObserver.observe(card);
 
-                    service.querySelector(
-
-                        ".nx-service-main"
-
-                    );
-
-
-                main.addEventListener(
-
-                    "click",
-
-                    () => {
-
-
-                        const isActive =
-
-                            service.classList.contains(
-
-                                "active"
-
-                            );
-
-
-                        services.forEach(
-
-                            item => {
-
-                                item.classList.remove(
-
-                                    "active"
-
-                                );
-
-                            }
-
-                        );
-
-
-                        if (!isActive) {
-
-                            service.classList.add(
-
-                                "active"
-
-                            );
-
-                        }
-
-                    }
-
-                );
-
-            }
-
-        );
-
-
-        /* =========================
-           SCROLL REVEAL
-        ========================= */
-
-        const items =
-
-            document.querySelectorAll(
-
-                ".nx-service-item"
-
-            );
-
-
-        const observer =
-
-            new IntersectionObserver(
-
-                entries => {
-
-
-                    entries.forEach(
-
-                        entry => {
-
-
-                            if (
-
-                                entry.isIntersecting
-
-                            ) {
-
-
-                                entry.target.classList.add(
-
-                                    "service-visible"
-
-                                );
-
-
-                                observer.unobserve(
-
-                                    entry.target
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold: .1
-
-                }
-
-            );
-
-
-        items.forEach(
-
-            (item, index) => {
-
-
-                item.style.opacity = "0";
-
-                item.style.transform =
-
-                    "translateY(20px)";
-
-
-                item.style.transition =
-
-                    `opacity .7s ease ${index * .08}s,
-
-                     transform .7s ease ${index * .08}s`;
-
-
-                observer.observe(item);
-
-            }
-
-        );
-
-    }
-
-);
-
-
-/* =========================
-   REVEAL
-========================= */
-
-const serviceRevealStyle =
-
-    document.createElement("style");
-
-
-serviceRevealStyle.textContent = `
-
-    .nx-service-item.service-visible {
-
-        opacity: 1 !important;
-
-        transform: translateY(0) !important;
-
-    }
-
-`;
-
-
-document.head.appendChild(
-
-    serviceRevealStyle
-
-);
+});
