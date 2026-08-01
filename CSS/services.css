@@ -1,0 +1,306 @@
+/*==============================
+      GOOGLE FONT
+==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --bg:#050505;
+    --card:#111111;
+    --card-hover:#171717;
+    --text:#ffffff;
+    --text-light:#9e9e9e;
+    --border:rgba(255,255,255,.08);
+    --white:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/*==============================
+      SERVICES
+==============================*/
+
+.services{
+    position:relative;
+    width:100%;
+    padding:120px 8%;
+    background:#050505;
+    overflow:hidden;
+}
+
+/* Background Glow */
+
+.services::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,
+    rgba(255,255,255,.08),
+    transparent 70%);
+    top:-220px;
+    right:-150px;
+    filter:blur(40px);
+    pointer-events:none;
+}
+
+/*==============================
+      HEADER
+==============================*/
+
+.services-header{
+    max-width:760px;
+    margin:auto;
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.section-tag{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid var(--border);
+    border-radius:50px;
+    color:#d0d0d0;
+    font-size:.8rem;
+    letter-spacing:2px;
+    margin-bottom:22px;
+}
+
+.services-header h2{
+    font-size:clamp(2.5rem,6vw,4.5rem);
+    font-weight:800;
+    line-height:1.1;
+}
+
+.services-header h2 span{
+    color:#888;
+}
+
+.services-header p{
+    margin-top:25px;
+    color:var(--text-light);
+    line-height:1.8;
+    font-size:1rem;
+}
+
+/*==============================
+      GRID
+==============================*/
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+/*==============================
+      CARD
+==============================*/
+
+.service-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s ease;
+
+    overflow:hidden;
+}
+
+/* Top Shine */
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.12),
+    transparent);
+
+    transition:.8s;
+}
+
+.service-card:hover::before{
+
+    left:120%;
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    background:var(--card-hover);
+
+    border-color:rgba(255,255,255,.25);
+
+    box-shadow:
+    0 20px 45px rgba(255,255,255,.05);
+}
+
+/*==============================
+      NUMBER
+==============================*/
+
+.service-number{
+
+    position:absolute;
+
+    top:30px;
+
+    right:30px;
+
+    font-size:1rem;
+
+    color:#555;
+
+    font-weight:700;
+}
+
+/*==============================
+      ICON
+==============================*/
+
+.service-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#fff;
+
+    color:#000;
+
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    transition:.4s;
+}
+
+.service-card:hover .service-icon{
+
+    transform:rotate(-8deg) scale(1.08);
+}
+
+/*==============================
+      TEXT
+==============================*/
+
+.service-card h3{
+
+    font-size:1.45rem;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+}
+
+.service-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+/*==============================
+      BUTTON
+==============================*/
+
+.service-card a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+}
+
+.service-card a span{
+
+    transition:.35s;
+}
+
+.service-card:hover a span{
+
+    transform:translateX(8px);
+}
+
+/*==============================
+      RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+.services{
+
+padding:90px 22px;
+
+}
+
+.services-header{
+
+margin-bottom:55px;
+
+}
+
+.service-card{
+
+padding:32px;
+
+}
+
+.services-grid{
+
+gap:22px;
+
+}
+
+}

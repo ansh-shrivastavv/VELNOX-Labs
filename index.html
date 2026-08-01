@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>VELNOX Web Labs | Premium Web Development Agency</title>
+    <meta name="description"
+        content="VELNOX Web Labs - Premium Web Design, Development & Digital Solutions.">
+    <meta name="keywords"
+        content="VELNOX, Web Development, Website Design, Agency, HTML, CSS, JavaScript">
+    <meta name="author" content="VELNOX Web Labs">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/hero.css">
+    <link rel="stylesheet" href="CSS/about.css">
+    <link rel="stylesheet" href="CSS/services.css">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/works.css">
+</head>
+
+<body>
+
+    <!-- Components -->
+    <div id="navbar"></div>
+
+    <main>
+        <div id="hero"></div>
+        <div id="about"></div>
+        <div id="services"></div>
+        <div id="contact"></div>
+        <div id="works"></div>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- Load HTML Components -->
+    <script>
+        async function loadComponent(id, file) {
+            const response = await fetch(file);
+            document.getElementById(id).innerHTML = await response.text();
+        }
+
+        Promise.all([
+            loadComponent("navbar", "HTML/navbar.html"),
+            loadComponent("hero", "HTML/hero.html"),
+            loadComponent("about", "HTML/about.html"),
+            loadComponent("services", "HTML/services.html"),
+            loadComponent("works", "HTML/works.html"),
+            loadComponent("contact", "HTML/contact.html"),
+            loadComponent("footer", "HTML/footer.html")
+        ]);
+    </script>
+
+    <!-- JS -->
+    <script src="JS/navbar.js"></script>
+    <script src="JS/hero.js"></script>
+    <script src="JS/about.js"></script>
+    <script src="JS/services.js"></script>
+    <script src="JS/works.js"></script>
+    <script src="JS/contact.js"></script>
+    <script src="JS/footer.js"></script>
+
+</body>
+
+</html>
