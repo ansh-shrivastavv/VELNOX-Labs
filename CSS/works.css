@@ -1,0 +1,883 @@
+/*==============================
+          WORKS
+==============================*/
+
+.works{
+    width:100%;
+    padding:120px 8%;
+    background:#050505;
+    position:relative;
+    overflow:hidden;
+}
+
+.works::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    top:-180px;
+    left:-150px;
+    background:radial-gradient(circle,
+    rgba(255,255,255,.08),
+    transparent 70%);
+    filter:blur(40px);
+    pointer-events:none;
+}
+
+/*==============================
+        HEADER
+==============================*/
+
+.works-header{
+    max-width:720px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.works-header h2{
+    font-size:clamp(2.5rem,6vw,4.5rem);
+    font-weight:800;
+    line-height:1.1;
+    margin-top:18px;
+}
+
+.works-header h2 span{
+    color:#8d8d8d;
+}
+
+.works-header p{
+    margin-top:22px;
+    color:#9a9a9a;
+    line-height:1.8;
+}
+
+/*==============================
+        GRID
+==============================*/
+
+.works-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:30px;
+}
+
+/*==============================
+        CARD
+==============================*/
+
+.work-card{
+    position:relative;
+    height:470px;
+    border-radius:26px;
+    overflow:hidden;
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.45s ease;
+    cursor:pointer;
+}
+
+.work-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .8s ease, filter .5s ease;
+}
+
+/* Overlay */
+
+.work-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:35px;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.92),
+        rgba(0,0,0,.45),
+        transparent
+    );
+    opacity:0;
+    transition:.45s ease;
+}
+
+.work-overlay span{
+    color:#cfcfcf;
+    font-size:.85rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.work-overlay h3{
+    color:#fff;
+    font-size:2rem;
+    margin-bottom:18px;
+    font-weight:700;
+}
+
+.work-overlay a{
+    display:inline-flex;
+    width:max-content;
+    padding:12px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    background:#fff;
+    color:#000;
+    font-weight:600;
+    transition:.3s;
+}
+
+.work-overlay a:hover{
+    transform:translateX(6px);
+}
+
+/* Hover */
+
+.work-card:hover{
+    transform:translateY(-12px);
+    border-color:rgba(255,255,255,.25);
+    box-shadow:0 25px 50px rgba(255,255,255,.08);
+}
+
+.work-card:hover img{
+    transform:scale(1.12);
+    filter:grayscale(10%);
+}
+
+.work-card:hover .work-overlay{
+    opacity:1;
+}
+
+/* Shine */
+
+.work-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-130%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+    transform:skewX(-25deg);
+    transition:.8s;
+    z-index:2;
+}
+
+.work-card:hover::before{
+    left:170%;
+}
+
+/*==============================
+      RESPONSIVE
+==============================*/
+
+@media(max-width:991px){
+
+    .works{
+        padding:100px 25px;
+    }
+
+    .works-grid{
+        grid-template-columns:1fr;
+    }
+
+    .work-card{
+        height:400px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .work-card{
+        height:320px;
+        border-radius:20px;
+    }
+
+    .work-overlay{
+        padding:24px;
+    }
+
+    .work-overlay h3{
+        font-size:1.5rem;
+    }
+
+    .work-overlay a{
+        padding:10px 18px;
+        font-size:.9rem;
+    }
+
+}
+
+/*================================================
+      UPCOMING HARDWARE PROJECT
+================================================*/
+
+/* Hardware Card */
+
+.work-upcoming{
+    position:relative;
+    isolation:isolate;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #101010,
+            #050505
+        );
+
+    border-color:rgba(255,255,255,.10);
+
+    perspective:1000px;
+}
+
+
+/* Hardware ambient glow */
+
+.work-upcoming::after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    left:50%;
+    top:38%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.12),
+            transparent 68%
+        );
+
+    filter:blur(35px);
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+
+/* Remove normal image behaviour */
+
+.work-upcoming .hardware-project-visual{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    z-index:1;
+}
+
+
+/*================================================
+        HARDWARE GLOW
+================================================*/
+
+.work-upcoming .hardware-glow{
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.12),
+            transparent 68%
+        );
+
+    filter:blur(25px);
+
+    animation:
+        hardwareGlow 4s ease-in-out infinite;
+}
+
+
+@keyframes hardwareGlow{
+
+    0%,
+    100%{
+        transform:scale(.9);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.1);
+        opacity:.9;
+    }
+
+}
+
+
+/*================================================
+        3D SMARTWATCH
+================================================*/
+
+.mini-watch{
+    position:relative;
+
+    width:125px;
+    height:250px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    transform:
+        rotateX(10deg)
+        rotateY(-15deg)
+        rotateZ(-6deg);
+
+    transform-style:preserve-3d;
+
+    filter:
+        drop-shadow(
+            30px 35px 30px
+            rgba(0,0,0,.75)
+        );
+
+    animation:
+        watchFloat 5s ease-in-out infinite;
+
+    z-index:3;
+}
+
+
+@keyframes watchFloat{
+
+    0%,
+    100%{
+        transform:
+            translateY(0)
+            rotateX(10deg)
+            rotateY(-15deg)
+            rotateZ(-6deg);
+    }
+
+    50%{
+        transform:
+            translateY(-14px)
+            rotateX(10deg)
+            rotateY(-15deg)
+            rotateZ(-6deg);
+    }
+
+}
+
+
+/*================================================
+        WATCH STRAPS
+================================================*/
+
+.mini-strap{
+    width:66px;
+    height:70px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #090909,
+            #292929 45%,
+            #080808
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        inset 4px 0 8px rgba(255,255,255,.04),
+        inset -5px 0 8px rgba(0,0,0,.7);
+}
+
+
+.mini-strap-top{
+    border-radius:
+        28px 28px 5px 5px;
+}
+
+
+.mini-strap-bottom{
+    border-radius:
+        5px 5px 28px 28px;
+}
+
+
+/*================================================
+        WATCH BODY
+================================================*/
+
+.mini-watch-body{
+    position:relative;
+
+    width:125px;
+    height:125px;
+
+    padding:7px;
+
+    border-radius:34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #5b5b5b,
+            #181818 45%,
+            #050505
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.28);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.3),
+        inset -8px -8px 18px rgba(0,0,0,.65),
+        0 0 25px rgba(0,0,0,.8);
+
+    transform:translateZ(12px);
+}
+
+
+/* Metallic edge */
+
+.mini-watch-body::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    pointer-events:none;
+}
+
+
+/*================================================
+        WATCH SCREEN
+================================================*/
+
+.mini-screen{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    border-radius:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:6px;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #292929,
+            #090909 65%,
+            #020202
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,.9);
+}
+
+
+/* Screen reflection */
+
+.mini-screen::after{
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:150px;
+
+    top:-50px;
+    left:-30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.09),
+            transparent
+        );
+
+    transform:rotate(25deg);
+
+    pointer-events:none;
+}
+
+
+/*================================================
+        WATCH UI
+================================================*/
+
+.mini-time{
+    color:#fff;
+
+    font-size:21px;
+
+    font-weight:500;
+
+    letter-spacing:-1px;
+
+    z-index:2;
+}
+
+
+.mini-brand{
+    color:#555;
+
+    font-size:5px;
+
+    letter-spacing:2px;
+
+    z-index:2;
+}
+
+
+.mini-circle{
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    color:#aaa;
+
+    font-size:8px;
+
+    z-index:2;
+}
+
+
+/*================================================
+        HARDWARE OVERLAY
+================================================*/
+
+.work-upcoming .hardware-overlay{
+    z-index:10;
+
+    opacity:1;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.96) 0%,
+            rgba(0,0,0,.75) 25%,
+            rgba(0,0,0,.15) 65%,
+            transparent 100%
+        );
+
+    padding:35px;
+}
+
+
+/* Status */
+
+.project-status{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    width:max-content;
+
+    margin-bottom:12px;
+
+    padding:7px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    border-radius:50px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:blur(12px);
+
+    color:#aaa;
+
+    font-size:.62rem;
+
+    letter-spacing:1.5px;
+}
+
+
+.status-dot{
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:#aaa;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,255,255,.7);
+
+    animation:
+        statusPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes statusPulse{
+
+    0%,
+    100%{
+        opacity:.4;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* Hardware description */
+
+.hardware-overlay p{
+    max-width:390px;
+
+    margin:10px 0 16px;
+
+    color:#999;
+
+    font-size:.78rem;
+
+    line-height:1.7;
+}
+
+
+/* Coming soon button */
+
+.hardware-overlay a{
+    cursor:default;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:#aaa;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    pointer-events:none;
+}
+
+
+.hardware-overlay a:hover{
+    transform:none;
+}
+
+
+/*================================================
+        HARDWARE LABEL
+================================================*/
+
+.hardware-label{
+    position:absolute;
+
+    right:25px;
+    top:80px;
+
+    writing-mode:
+        vertical-rl;
+
+    color:#3d3d3d;
+
+    font-size:.55rem;
+
+    letter-spacing:3px;
+
+    z-index:5;
+}
+
+
+/*================================================
+        HARDWARE HOVER
+================================================*/
+
+.work-upcoming:hover{
+    transform:
+        translateY(-12px)
+        rotateX(1deg);
+
+    border-color:
+        rgba(255,255,255,.28);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.7),
+        0 0 40px
+        rgba(255,255,255,.035);
+}
+
+
+.work-upcoming:hover .mini-watch{
+    animation-duration:3s;
+}
+
+
+/*================================================
+        HARDWARE SHINE
+================================================*/
+
+.work-upcoming::before{
+    z-index:20;
+
+    pointer-events:none;
+}
+
+
+/*================================================
+        BOTTOM WORKS BAR
+================================================*/
+
+.works-bottom{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.works-bottom span{
+    color:#444;
+
+    font-size:.65rem;
+
+    letter-spacing:2px;
+}
+
+
+.works-bottom a{
+    color:#888;
+
+    font-size:.8rem;
+
+    text-decoration:none;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.works-bottom a:hover{
+    color:#fff;
+
+    transform:translateX(5px);
+}
+
+
+/*================================================
+        MOBILE
+================================================*/
+
+@media(max-width:600px){
+
+    .work-upcoming{
+        height:360px;
+    }
+
+    .work-upcoming .hardware-overlay{
+        padding:24px;
+    }
+
+    .hardware-overlay p{
+        font-size:.7rem;
+
+        line-height:1.55;
+    }
+
+    .mini-watch{
+        transform:
+            scale(.82)
+            rotateX(10deg)
+            rotateY(-15deg)
+            rotateZ(-6deg);
+    }
+
+    .hardware-label{
+        right:18px;
+        top:65px;
+    }
+
+    .works-bottom{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+}

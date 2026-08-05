@@ -1,0 +1,702 @@
+/* =========================================
+   VELNOX PREMIUM HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 145px 6vw 90px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 50px;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+
+    max-width: 760px;
+}
+
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 11px 24px;
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 100px;
+
+    color: #858585;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    background: rgba(255,255,255,.015);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.hero h1 {
+    margin: 32px 0 0;
+
+    color: #fff;
+
+    font-size: clamp(54px, 5.6vw, 92px);
+
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    font-weight: 700;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: #fff;
+}
+
+
+.hero h1 em {
+    display: block;
+
+    color: #555;
+
+    font-style: normal;
+}
+
+
+.hero-content p {
+    max-width: 610px;
+
+    margin-top: 35px;
+
+    color: #858585;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 40px;
+}
+
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 27px;
+
+    border-radius: 100px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border .35s ease;
+}
+
+
+.hero-btn.primary {
+    background: #fff;
+
+    color: #000;
+}
+
+
+.hero-btn.secondary {
+    border: 1px solid rgba(255,255,255,.12);
+
+    color: #fff;
+
+    background: rgba(255,255,255,.015);
+}
+
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+.hero-btn.secondary:hover {
+    border-color: rgba(255,255,255,.3);
+
+    background: rgba(255,255,255,.05);
+}
+
+
+/* =========================================
+   ECOSYSTEM
+========================================= */
+
+.hero-ecosystem {
+    position: relative;
+
+    width: 100%;
+    height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ecosystem-glow {
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025) 30%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+.ecosystem {
+    position: relative;
+
+    width: 600px;
+    height: 600px;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    border-radius: 42px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.045),
+            transparent 52%
+        ),
+        linear-gradient(
+            145deg,
+            #0d0d0d,
+            #050505
+        );
+
+    box-shadow:
+        0 50px 120px rgba(0,0,0,.75),
+        inset 0 1px rgba(255,255,255,.04);
+
+    transform-style: preserve-3d;
+}
+
+
+/* =========================================
+   TOP LABEL
+========================================= */
+
+.eco-top {
+    position: absolute;
+
+    top: 27px;
+    left: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.eco-top span {
+    color: #fff;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+}
+
+
+.eco-top small {
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   ORBITS
+========================================= */
+
+.orbit {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border: 1px solid rgba(255,255,255,.055);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+.orbit-1 {
+    width: 220px;
+    height: 220px;
+}
+
+
+.orbit-2 {
+    width: 360px;
+    height: 360px;
+}
+
+
+.orbit-3 {
+    width: 500px;
+    height: 500px;
+
+    border-style: dashed;
+
+    opacity: .5;
+}
+
+
+/* =========================================
+   CONNECTIONS
+========================================= */
+
+.connections {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+.connection-path {
+    fill: none;
+
+    stroke: rgba(255,255,255,.11);
+
+    stroke-width: 1;
+
+    stroke-dasharray: 5 8;
+
+    animation: connectionFlow 6s linear infinite;
+}
+
+
+@keyframes connectionFlow {
+
+    to {
+        stroke-dashoffset: -100;
+    }
+
+}
+
+
+/* =========================================
+   CORE
+========================================= */
+
+.eco-core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 5;
+}
+
+
+.core-ring {
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: 50%;
+
+    animation: coreRotate 12s linear infinite;
+}
+
+
+.core-ring::before {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    top: -3px;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,.8);
+}
+
+
+@keyframes coreRotate {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.core-inner {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #222,
+            #0c0c0c
+        );
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,.06);
+}
+
+
+.core-inner span {
+    color: #fff;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+.eco-core small {
+    position: absolute;
+
+    bottom: -27px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   SERVICE NODES
+========================================= */
+
+.eco-service {
+    position: absolute;
+
+    width: 185px;
+
+    padding: 16px 18px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+
+    z-index: 4;
+
+    transition:
+        transform .4s ease,
+        border .4s ease,
+        background .4s ease;
+}
+
+
+.eco-service:hover {
+    border-color: rgba(255,255,255,.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    transform: translateY(-6px);
+}
+
+
+.service-number {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #444;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.eco-service strong {
+    display: block;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.eco-service small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   NODE POSITIONS
+========================================= */
+
+.service-web {
+    top: 120px;
+    left: -42px;
+}
+
+
+.service-ui {
+    top: 120px;
+    right: -42px;
+}
+
+
+.service-brand {
+    bottom: 115px;
+    left: -42px;
+}
+
+
+.service-app {
+    bottom: 115px;
+    right: -42px;
+}
+
+
+.service-ai {
+    bottom: -35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.service-ai:hover {
+    transform:
+        translateX(-50%)
+        translateY(-6px);
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.eco-status {
+    position: absolute;
+
+    right: 28px;
+    top: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.8);
+
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes statusPulse {
+
+    50% {
+        opacity: .25;
+        transform: scale(.6);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1150px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .hero-ecosystem {
+        margin-top: 30px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 115px 20px 70px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: -2.5px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+
+    .hero-ecosystem {
+        height: 480px;
+    }
+
+    .ecosystem {
+        width: 500px;
+        height: 500px;
+
+        transform: scale(.72);
+    }
+
+}

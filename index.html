@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- SEO -->
+    <title>VELNOX Web Labs | Premium Web Development Agency</title>
+
+    <meta name="description"
+    content="VELNOX Web Labs is a premium web development agency creating modern websites, web apps, UI/UX designs and digital solutions for businesses.">
+
+
+    <meta name="keywords"
+    content="VELNOX Web Labs, Web Development Agency, Website Design, Web Apps, UI UX Design, Digital Solutions, India">
+
+
+    <meta name="author" content="VELNOX Web Labs">
+
+    <meta name="robots" content="index, follow">
+
+
+    <!-- Canonical -->
+    <link rel="canonical"
+    href="https://velnox-labs-eight.vercel.app/">
+
+
+
+    <!-- Open Graph -->
+
+    <meta property="og:title"
+    content="VELNOX Web Labs | Premium Web Development Agency">
+
+
+    <meta property="og:description"
+    content="Building premium websites, web apps and digital experiences for modern businesses.">
+
+
+    <meta property="og:type"
+    content="website">
+
+
+    <meta property="og:url"
+    content="https://velnox-labs-eight.vercel.app/">
+
+
+    <meta property="og:image"
+    content="https://velnox-labs-eight.vercel.app/assets/favicon.png">
+
+
+
+    <!-- Twitter -->
+
+    <meta name="twitter:card"
+    content="summary_large_image">
+
+
+    <meta name="twitter:title"
+    content="VELNOX Web Labs | Premium Web Development Agency">
+
+
+    <meta name="twitter:description"
+    content="Premium web design, development and digital solutions.">
+
+
+    <meta name="twitter:image"
+    content="https://velnox-labs-eight.vercel.app/assets/favicon.png">
+
+
+
+    <!-- Schema -->
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"VELNOX Web Labs",
+      "url":"https://velnox-labs-eight.vercel.app/",
+      "logo":"https://velnox-labs-eight.vercel.app/assets/favicon.png",
+      "description":"Premium Web Development Agency creating websites and digital solutions.",
+      "founder":{
+        "@type":"Person",
+        "name":"Ansh Shrivastav"
+      }
+    }
+    </script>
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/hero.css">
+    <link rel="stylesheet" href="CSS/about.css">
+    <link rel="stylesheet" href="CSS/services.css">
+    <link rel="stylesheet" href="CSS/upccoming.css">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/works.css">
+
+</head>
+
+
+
+<body>
+
+
+    <!-- Components -->
+
+    <div id="navbar"></div>
+
+
+    <main>
+
+        <div id="hero"></div>
+
+        <div id="about"></div>
+
+        <div id="services"></div>
+
+        <div id="works"></div>
+
+        <div id="contact"></div>
+
+    </main>
+
+
+    <div id="footer"></div>
+
+
+
+
+    <!-- Load HTML Components -->
+
+    <script>
+
+    async function loadComponent(id, file) {
+
+        const response = await fetch(file);
+
+        document.getElementById(id).innerHTML =
+        await response.text();
+
+    }
+
+
+    Promise.all([
+
+        loadComponent("navbar", "HTML/navbar.html"),
+
+        loadComponent("hero", "HTML/hero.html"),
+
+        loadComponent("about", "HTML/about.html"),
+
+        loadComponent("services", "HTML/services.html"),
+        loadComponent("upcoming", "HTML/upcoming.html"),
+
+        loadComponent("works", "HTML/works.html"),
+
+        loadComponent("contact", "HTML/contact.html"),
+
+        loadComponent("footer", "HTML/footer.html")
+
+    ]);
+
+    </script>
+
+
+
+
+    <!-- JS -->
+
+    <script src="JS/navbar.js"></script>
+    <script src="JS/hero.js"></script>
+    <script src="JS/about.js"></script>
+    <script src="JS/services.js"></script>
+    <script src="JS/upcoming.js"></script>
+    <script src="JS/works.js"></script>
+    <script src="JS/contact.js"></script>
+    <script src="JS/footer.js"></script>
+
+
+</body>
+
+</html>
