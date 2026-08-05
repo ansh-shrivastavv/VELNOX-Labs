@@ -7,11 +7,12 @@
 
     min-height: 100vh;
     width: 100%;
+    max-width: 100%;
 
     padding: 145px 6vw 90px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
     align-items: center;
     gap: 50px;
@@ -30,7 +31,9 @@
     position: relative;
     z-index: 10;
 
+    width: 100%;
     max-width: 760px;
+    min-width: 0;
 }
 
 
@@ -53,6 +56,8 @@
     background: rgba(255,255,255,.015);
 
     backdrop-filter: blur(10px);
+
+    max-width: 100%;
 }
 
 
@@ -68,12 +73,13 @@
     letter-spacing: -4px;
 
     font-weight: 700;
+
+    max-width: 100%;
 }
 
 
 .hero h1 span {
     display: block;
-
     color: #fff;
 }
 
@@ -88,6 +94,7 @@
 
 
 .hero-content p {
+    width: 100%;
     max-width: 610px;
 
     margin-top: 35px;
@@ -107,18 +114,25 @@
 .hero-actions {
     display: flex;
 
+    flex-wrap: wrap;
+
     gap: 14px;
 
     margin-top: 40px;
+
+    max-width: 100%;
 }
 
 
 .hero-btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 16px 27px;
+
+    min-height: 52px;
 
     border-radius: 100px;
 
@@ -136,7 +150,6 @@
 
 .hero-btn.primary {
     background: #fff;
-
     color: #000;
 }
 
@@ -170,12 +183,18 @@
     position: relative;
 
     width: 100%;
+    max-width: 100%;
+
     height: 650px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
+
+    min-width: 0;
+
+    overflow: visible;
 }
 
 
@@ -184,6 +203,8 @@
 
     width: 480px;
     height: 480px;
+
+    max-width: 90vw;
 
     border-radius: 50%;
 
@@ -201,11 +222,17 @@
 }
 
 
+/* =========================================
+   ECOSYSTEM MAIN
+========================================= */
+
 .ecosystem {
     position: relative;
 
     width: 600px;
     height: 600px;
+
+    flex-shrink: 0;
 
     border: 1px solid rgba(255,255,255,.07);
 
@@ -335,7 +362,8 @@
 
     stroke-dasharray: 5 8;
 
-    animation: connectionFlow 6s linear infinite;
+    animation:
+        connectionFlow 6s linear infinite;
 }
 
 
@@ -382,7 +410,8 @@
 
     border-radius: 50%;
 
-    animation: coreRotate 12s linear infinite;
+    animation:
+        coreRotate 12s linear infinite;
 }
 
 
@@ -622,6 +651,8 @@
     width: 5px;
     height: 5px;
 
+    flex-shrink: 0;
+
     border-radius: 50%;
 
     background: #fff;
@@ -629,7 +660,8 @@
     box-shadow:
         0 0 10px rgba(255,255,255,.8);
 
-    animation: statusPulse 2s ease-in-out infinite;
+    animation:
+        statusPulse 2s ease-in-out infinite;
 }
 
 
@@ -644,59 +676,569 @@
 
 
 /* =========================================
-   RESPONSIVE
+   GLOBAL SAFETY
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+
+.hero *,
+.hero *::before,
+.hero *::after {
+    box-sizing: border-box;
+}
+
+
+.hero img,
+.hero svg,
+.hero canvas,
+.hero video {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   TABLET
 ========================================= */
 
 @media (max-width: 1150px) {
 
     .hero {
         grid-template-columns: 1fr;
+
+        padding-top: 130px;
     }
+
 
     .hero-content {
         max-width: 850px;
     }
 
+
     .hero-ecosystem {
         margin-top: 30px;
+
+        height: 620px;
+    }
+
+
+    .ecosystem {
+        transform: scale(.9);
     }
 
 }
 
 
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+        padding:
+            120px
+            25px
+            80px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            clamp(50px, 9vw, 72px);
+    }
+
+
+    .hero-ecosystem {
+        height: 560px;
+    }
+
+
+    .ecosystem {
+        transform: scale(.82);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 700px) {
 
     .hero {
-        padding: 115px 20px 70px;
+        width: 100%;
+        max-width: 100%;
+
+        min-height: auto;
+
+        padding:
+            105px
+            20px
+            70px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        overflow: hidden;
     }
+
+
+    /* =====================================
+       HERO CONTENT
+    ===================================== */
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .hero-badge {
+        max-width: 100%;
+
+        padding:
+            9px
+            16px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        white-space: nowrap;
+    }
+
 
     .hero h1 {
-        font-size: 48px;
+        width: 100%;
+        max-width: 100%;
 
-        letter-spacing: -2.5px;
+        margin-top: 25px;
+
+        font-size:
+            clamp(42px, 12.8vw, 64px);
+
+        line-height: .96;
+
+        letter-spacing: -2.8px;
+
+        word-break: normal;
+
+        overflow-wrap: normal;
     }
+
+
+    .hero h1 span,
+    .hero h1 em {
+        max-width: 100%;
+    }
+
 
     .hero-content p {
-        font-size: 15px;
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 25px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        color: #858585;
     }
 
+
+    /* =====================================
+       BUTTONS
+    ===================================== */
+
     .hero-actions {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 30px;
+
+        display: flex;
+
         flex-direction: column;
+
+        gap: 12px;
     }
+
 
     .hero-btn {
         width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        padding:
+            15px
+            20px;
+
+        min-height: 54px;
     }
+
+
+    /* =====================================
+       ECOSYSTEM WRAPPER
+    ===================================== */
 
     .hero-ecosystem {
+        width: 100%;
+        max-width: 100%;
+
         height: 480px;
+
+        margin-top: 45px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
     }
 
-    .ecosystem {
-        width: 500px;
-        height: 500px;
 
-        transform: scale(.72);
+    .ecosystem-glow {
+        width: 340px;
+        height: 340px;
+
+        max-width: 85vw;
+    }
+
+
+    /* =====================================
+       MOBILE ECOSYSTEM
+    ===================================== */
+
+    .ecosystem {
+        position: relative;
+
+        width: 440px;
+        height: 440px;
+
+        flex-shrink: 0;
+
+        border-radius: 32px;
+
+        /*
+           Scale the complete ecosystem
+           as ONE object.
+        */
+
+        transform:
+            scale(.72);
+
+        transform-origin: center center;
+    }
+
+
+    /* =====================================
+       MOBILE ORBITS
+    ===================================== */
+
+    .orbit-1 {
+        width: 165px;
+        height: 165px;
+    }
+
+
+    .orbit-2 {
+        width: 270px;
+        height: 270px;
+    }
+
+
+    .orbit-3 {
+        width: 370px;
+        height: 370px;
+    }
+
+
+    /* =====================================
+       MOBILE CORE
+    ===================================== */
+
+    .eco-core {
+        width: 105px;
+        height: 105px;
+    }
+
+
+    .core-inner {
+        width: 64px;
+        height: 64px;
+
+        border-radius: 19px;
+    }
+
+
+    .core-inner span {
+        font-size: 26px;
+    }
+
+
+    /* =====================================
+       MOBILE SERVICE CARDS
+    ===================================== */
+
+    .eco-service {
+        width: 160px;
+
+        padding:
+            13px
+            15px;
+
+        border-radius: 14px;
+    }
+
+
+    .eco-service strong {
+        font-size: 12px;
+    }
+
+
+    .eco-service small {
+        font-size: 8px;
+    }
+
+
+    .service-number {
+        font-size: 8px;
+
+        margin-bottom: 7px;
+    }
+
+
+    /*
+       Keep cards INSIDE the ecosystem.
+    */
+
+    .service-web {
+        top: 75px;
+        left: 12px;
+    }
+
+
+    .service-ui {
+        top: 75px;
+        right: 12px;
+    }
+
+
+    .service-brand {
+        bottom: 75px;
+        left: 12px;
+    }
+
+
+    .service-app {
+        bottom: 75px;
+        right: 12px;
+    }
+
+
+    .service-ai {
+        bottom: 5px;
+
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+    }
+
+
+    .service-ai:hover {
+        transform:
+            translateX(-50%)
+            translateY(-4px);
+    }
+
+
+    /* =====================================
+       MOBILE TOP LABEL
+    ===================================== */
+
+    .eco-top {
+        top: 20px;
+        left: 22px;
+    }
+
+
+    .eco-top span {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .eco-top small {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* =====================================
+       MOBILE STATUS
+    ===================================== */
+
+    .eco-status {
+        top: 22px;
+        right: 22px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+    .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .hero h1 {
+        font-size:
+            clamp(39px, 12.2vw, 54px);
+
+        letter-spacing: -2.4px;
+    }
+
+
+    .hero-content p {
+        font-size: 13.5px;
+    }
+
+
+    .hero-ecosystem {
+        height: 430px;
+
+        margin-top: 35px;
+    }
+
+
+    .ecosystem {
+        width: 400px;
+        height: 400px;
+
+        transform:
+            scale(.67);
+    }
+
+
+    .eco-service {
+        width: 145px;
+
+        padding:
+            12px
+            13px;
+    }
+
+
+    .service-web,
+    .service-ui {
+        top: 70px;
+    }
+
+
+    .service-brand,
+    .service-app {
+        bottom: 70px;
+    }
+
+
+    .service-web,
+    .service-brand {
+        left: 10px;
+    }
+
+
+    .service-ui,
+    .service-app {
+        right: 10px;
+    }
+
+
+    .service-ai {
+        bottom: 4px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+
+    .hero h1 {
+        font-size: 37px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero-ecosystem {
+        height: 390px;
+    }
+
+
+    .ecosystem {
+        width: 370px;
+        height: 370px;
+
+        transform:
+            scale(.61);
+    }
+
+
+    .eco-service {
+        width: 135px;
+    }
+
+
+    .service-web,
+    .service-brand {
+        left: 8px;
+    }
+
+
+    .service-ui,
+    .service-app {
+        right: 8px;
     }
 
 }
