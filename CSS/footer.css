@@ -104,3 +104,270 @@
 }
 
 }
+/* ===========================
+   PREMIUM FOUNDER CARD
+=========================== */
+
+.footer-founder-card{
+    position: relative;
+    overflow: hidden;
+
+    max-width: 980px;
+    margin: 70px auto 50px;
+    padding: 55px 45px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(145deg,#090909,#121212);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(20px);
+
+    transition:.45s ease;
+
+    isolation:isolate;
+}
+
+/* Aurora Glow */
+
+.footer-founder-card::before{
+    content:"";
+    position:absolute;
+    inset:-35%;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(37,99,255,.35),transparent 35%),
+        radial-gradient(circle at 80% 70%,rgba(124,58,237,.30),transparent 35%),
+        radial-gradient(circle at 50% 100%,rgba(59,130,246,.22),transparent 45%);
+
+    filter:blur(90px);
+
+    animation:auroraMove 12s linear infinite;
+
+    z-index:-2;
+}
+
+.footer-founder-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    padding:1px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        130deg,
+        transparent,
+        rgba(59,130,246,.9),
+        rgba(168,85,247,.8),
+        transparent
+    );
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    animation:borderRotate 5s linear infinite;
+
+    opacity:.8;
+
+    pointer-events:none;
+}
+
+.footer-founder-card:hover{
+    transform:translateY(-10px);
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.5),
+    0 0 70px rgba(37,99,255,.20);
+}
+
+
+/* Badge */
+
+.founder-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:9px 20px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(59,130,246,.25);
+
+    background:rgba(59,130,246,.08);
+
+    backdrop-filter:blur(20px);
+
+    margin-bottom:22px;
+}
+
+.founder-badge span{
+    color:#5ea4ff;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* Heading */
+
+.footer-founder-card h2{
+    color:#fff;
+    font-size:clamp(2rem,5vw,3rem);
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.footer-founder-card p{
+    max-width:700px;
+    margin:auto;
+
+    color:#9ca3af;
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+.footer-founder-card strong{
+    color:#fff;
+}
+
+
+/* Buttons */
+
+.founder-buttons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.founder-buttons a{
+
+    position:relative;
+    overflow:hidden;
+
+    padding:15px 30px;
+
+    color:#fff;
+    text-decoration:none;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    transition:.35s;
+}
+
+.founder-buttons a::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+}
+
+.founder-buttons a:hover{
+
+    transform:translateY(-6px);
+
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    box-shadow:
+    0 0 30px rgba(37,99,235,.45);
+
+}
+
+.founder-buttons a:hover::before{
+
+    left:180%;
+
+    transition:.8s;
+
+}
+
+
+/* Animations */
+
+@keyframes auroraMove{
+
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+
+    50%{
+        transform:rotate(180deg) scale(1.15);
+    }
+
+    100%{
+        transform:rotate(360deg) scale(1);
+    }
+
+}
+
+@keyframes borderRotate{
+
+    from{
+        filter:hue-rotate(0deg);
+    }
+
+    to{
+        filter:hue-rotate(360deg);
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .footer-founder-card{
+        padding:35px 25px;
+        border-radius:22px;
+    }
+
+    .footer-founder-card p{
+        font-size:15px;
+    }
+
+    .founder-buttons{
+        flex-direction:column;
+    }
+
+    .founder-buttons a{
+        width:100%;
+    }
+
+}
