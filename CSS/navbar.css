@@ -1,309 +1,204 @@
-/* =========================================
-   VELNOX NAVBAR
-========================================= */
-
-.navbar-wrap {
+.navbar {
     position: fixed;
+    top: 18px;
+    left: 50%;
 
-    top: 20px;
-    left: 0;
-    right: 0;
+    width: min(1180px, 92%);
+
+    transform: translateX(-50%);
 
     z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 0 25px;
-
-    pointer-events: none;
 }
 
+.navbar-container {
+    width: 100%;
+    height: 64px;
 
-/* Main Navbar */
-
-.navbar {
-    width: min(1180px, 100%);
-
-    height: 70px;
+    padding: 0 10px 0 18px;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    padding: 0 10px 0 25px;
+    border: 1px solid var(--nav-border);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
 
-    border-radius: 100px;
-
-    background: rgba(10,10,10,.72);
+    background: var(--nav-bg);
 
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
 
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.35),
-        inset 0 1px rgba(255,255,255,.035);
-
-    pointer-events: auto;
-
-    transition:
-        background .3s ease,
-        border .3s ease,
-        transform .3s ease;
+    box-shadow: 0 15px 45px rgba(0,0,0,.18);
 }
 
 
-/* =========================================
-   LOGO
-========================================= */
+/* THEME VARIABLES */
 
-.nav-logo {
-    display: inline-flex;
-    align-items: center;
-
-    color: #fff;
-
-    font-size: 19px;
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-    text-decoration: none;
-
-    white-space: nowrap;
+:root {
+    --nav-bg: rgba(10,11,15,.78);
+    --nav-text: #fff;
+    --nav-muted: #858b97;
+    --nav-border: rgba(255,255,255,.10);
 }
 
-.nav-logo span {
-    color: #777;
+body.light-theme {
+    --nav-bg: rgba(255,255,255,.82);
+    --nav-text: #111318;
+    --nav-muted: #6b7079;
+    --nav-border: rgba(0,0,0,.09);
 }
 
 
-/* =========================================
-   LINKS
-========================================= */
+/* LOGO */
 
-.nav-links {
+.navbar-logo {
     display: flex;
     align-items: center;
+    gap: 10px;
 
-    gap: 5px;
-
-    margin: 0 auto;
-
-    padding: 0;
-
-    list-style: none;
-}
-
-
-.nav-links a {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    height: 44px;
-
-    padding: 0 18px;
-
-    color: #777;
-
-    font-size: 13px;
-    font-weight: 500;
-
+    color: var(--nav-text);
     text-decoration: none;
-
-    border-radius: 50px;
-
-    transition:
-        color .3s ease,
-        background .3s ease;
 }
 
+.logo-mark {
+    width: 39px;
+    height: 39px;
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #fff;
+    display: grid;
+    place-items: center;
 
-    background: rgba(255,255,255,.055);
+    border: 1px solid var(--nav-border);
+    border-radius: 10px;
+
+    color: var(--nav-text);
+
+    font-size: 17px;
+    font-weight: 900;
 }
 
-
-/* =========================================
-   RIGHT
-========================================= */
-
-.nav-right {
+.logo-text {
     display: flex;
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-/* CTA */
-
-.nav-cta {
-    height: 48px;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-
-    padding: 0 20px;
-
-    border-radius: 50px;
-
-    background: #fff;
-
-    color: #000;
-
-    font-size: 12px;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition:
-        transform .3s ease,
-        background .3s ease;
-}
-
-
-.nav-cta span {
-    font-size: 15px;
-
-    transition:
-        transform .3s ease;
-}
-
-
-.nav-cta:hover {
-    transform: translateY(-2px);
-
-    background: #e8e8e8;
-}
-
-
-.nav-cta:hover span {
-    transform: translate(2px,-2px);
-}
-
-
-/* =========================================
-   MOBILE TOGGLE
-========================================= */
-
-.menu-toggle {
-    width: 48px;
-    height: 48px;
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
     flex-direction: column;
+    line-height: 1;
+}
 
-    gap: 6px;
+.logo-text strong {
+    color: var(--nav-text);
+    font-size: 15px;
+    letter-spacing: 1px;
+}
 
-    border: 1px solid rgba(255,255,255,.08);
+.logo-text small {
+    margin-top: 4px;
 
-    border-radius: 50%;
+    color: var(--nav-muted);
 
-    background: rgba(255,255,255,.04);
+    font-size: 6px;
+    letter-spacing: 2px;
+}
+
+
+/* BUTTON AREA */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* THEME BUTTON */
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--nav-border);
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--nav-text);
+
+    font-size: 17px;
 
     cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.theme-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: rotate(15deg);
 }
 
 
-.menu-toggle span {
-    width: 17px;
-    height: 1px;
+/* START PROJECT */
 
-    background: #fff;
+.navbar-cta {
+    height: 40px;
 
-    transition:
-        transform .3s ease,
-        opacity .3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 0 17px;
+
+    border-radius: 9px;
+
+    background: var(--nav-text);
+    color: var(--nav-bg);
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: .3s ease;
+}
+
+.navbar-cta span {
+    font-size: 14px;
+}
+
+.navbar-cta:hover {
+    background: #2563eb;
+    color: #fff;
+
+    transform: translateY(-2px);
 }
 
 
+/* MOBILE */
 
-
-/* =========================================
-   MENU OPEN
-========================================= */
-
-body.menu-open {
-    overflow: hidden;
-}
-
-
-body.menu-open .mobile-menu {
-    display: block;
-
-    opacity: 1;
-}
-
-
-body.menu-open .menu-toggle span:first-child {
-    transform:
-        translateY(3.5px)
-        rotate(45deg);
-}
-
-
-body.menu-open .menu-toggle span:last-child {
-    transform:
-        translateY(-3.5px)
-        rotate(-45deg);
-}
-
-
-/* =========================================
-   SCROLLED NAVBAR
-========================================= */
-
-.navbar.scrolled {
-    background: rgba(8,8,8,.9);
-
-    border-color:
-        rgba(255,255,255,.13);
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.5);
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 850px) {
-
-    .navbar-wrap {
-        top: 12px;
-
-        padding: 0 15px;
-    }
+@media (max-width: 500px) {
 
     .navbar {
-        height: 64px;
-
-        padding-left: 20px;
-        padding-right: 8px;
+        width: 94%;
+        top: 12px;
     }
 
-    .nav-links,
-    .nav-cta {
+    .navbar-container {
+        height: 58px;
+        padding-left: 11px;
+    }
+
+    .logo-text {
         display: none;
     }
 
-    .menu-toggle {
-        display: flex;
+    .theme-btn {
+        width: 36px;
+        height: 36px;
     }
 
+    .navbar-cta {
+        height: 36px;
+        padding: 0 13px;
+    }
 }

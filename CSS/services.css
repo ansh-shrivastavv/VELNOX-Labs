@@ -1,306 +1,609 @@
-/*==============================
-      GOOGLE FONT
-==============================*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* =========================================
+   VELNOX — SERVICES
+   Fully isolated section
+========================================= */
 
-:root{
-    --bg:#050505;
-    --card:#111111;
-    --card-hover:#171717;
-    --text:#ffffff;
-    --text-light:#9e9e9e;
-    --border:rgba(255,255,255,.08);
-    --white:#fff;
+.services {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 140px 0;
+
+    overflow: hidden;
+
+    background: var(--hero-bg);
+    color: var(--hero-text);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Inter",sans-serif;
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.services .services-container {
+
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    min-width: 0;
 }
 
-body{
-    background:var(--bg);
-    color:var(--text);
+
+/* =========================================
+   INTRO
+========================================= */
+
+.services .services-label {
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--hero-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
 }
 
-/*==============================
-      SERVICES
-==============================*/
+.services .services-label span {
 
-.services{
-    position:relative;
-    width:100%;
-    padding:120px 8%;
-    background:#050505;
-    overflow:hidden;
+    color: var(--hero-blue);
+
+    font-weight: 800;
 }
 
-/* Background Glow */
 
-.services::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle,
-    rgba(255,255,255,.08),
-    transparent 70%);
-    top:-220px;
-    right:-150px;
-    filter:blur(40px);
-    pointer-events:none;
+.services .services-heading {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+
+    gap: 70px;
+
+    align-items: end;
+
+    margin-top: 25px;
 }
 
-/*==============================
-      HEADER
-==============================*/
 
-.services-header{
-    max-width:760px;
-    margin:auto;
-    text-align:center;
-    margin-bottom:80px;
+.services .services-heading h2 {
+
+    margin: 0;
+
+    color: var(--hero-heading);
+
+    font-size: clamp(46px, 5vw, 72px);
+
+    line-height: .98;
+
+    letter-spacing: -3.5px;
+
+    font-weight: 800;
 }
 
-.section-tag{
-    display:inline-block;
-    padding:10px 20px;
-    border:1px solid var(--border);
-    border-radius:50px;
-    color:#d0d0d0;
-    font-size:.8rem;
-    letter-spacing:2px;
-    margin-bottom:22px;
+.services .services-heading h2 span {
+
+    display: block;
+
+    color: var(--hero-blue);
 }
 
-.services-header h2{
-    font-size:clamp(2.5rem,6vw,4.5rem);
-    font-weight:800;
-    line-height:1.1;
+
+.services .services-heading p {
+
+    max-width: 470px;
+
+    margin: 0;
+
+    color: var(--hero-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
 }
 
-.services-header h2 span{
-    color:#888;
+
+/* =========================================
+   GRID
+========================================= */
+
+.services .services-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-top: 70px;
+
+    min-width: 0;
 }
 
-.services-header p{
-    margin-top:25px;
-    color:var(--text-light);
-    line-height:1.8;
-    font-size:1rem;
+
+/* =========================================
+   CARD
+========================================= */
+
+.services .service-card {
+
+    position: relative;
+
+    min-width: 0;
+    min-height: 340px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 18px;
+
+    background: var(--hero-card);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
 }
 
-/*==============================
-      GRID
-==============================*/
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+.services .service-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -90px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: var(--hero-blue);
+
+    filter: blur(70px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity .4s ease;
 }
 
-/*==============================
-      CARD
-==============================*/
 
-.service-card{
+.services .service-card:hover {
 
-    position:relative;
+    transform: translateY(-6px);
 
-    background:rgba(255,255,255,.03);
-
-    border:1px solid var(--border);
-
-    border-radius:28px;
-
-    padding:40px;
-
-    backdrop-filter:blur(18px);
-
-    transition:.45s ease;
-
-    overflow:hidden;
-}
-
-/* Top Shine */
-
-.service-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:100%;
-
-    height:100%;
-
-    background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.12),
-    transparent);
-
-    transition:.8s;
-}
-
-.service-card:hover::before{
-
-    left:120%;
-}
-
-.service-card:hover{
-
-    transform:translateY(-12px);
-
-    background:var(--card-hover);
-
-    border-color:rgba(255,255,255,.25);
+    border-color:
+        rgba(37, 99, 235, .45);
 
     box-shadow:
-    0 20px 45px rgba(255,255,255,.05);
+        0 25px 60px rgba(0,0,0,.10);
 }
 
-/*==============================
-      NUMBER
-==============================*/
 
-.service-number{
+.services .service-card:hover::after {
 
-    position:absolute;
-
-    top:30px;
-
-    right:30px;
-
-    font-size:1rem;
-
-    color:#555;
-
-    font-weight:700;
+    opacity: .13;
 }
 
-/*==============================
-      ICON
-==============================*/
 
-.service-icon{
+/* FEATURED */
 
-    width:72px;
+.services .service-featured {
 
-    height:72px;
-
-    border-radius:20px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#fff;
-
-    color:#000;
-
-    font-size:28px;
-
-    margin-bottom:30px;
-
-    transition:.4s;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37,99,235,.09),
+            var(--hero-card)
+        );
 }
 
-.service-card:hover .service-icon{
 
-    transform:rotate(-8deg) scale(1.08);
+/* =========================================
+   CARD TOP
+========================================= */
+
+.services .service-card-top {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
 }
 
-/*==============================
-      TEXT
-==============================*/
 
-.service-card h3{
+.services .service-card-top > span {
 
-    font-size:1.45rem;
+    color: var(--hero-muted);
 
-    margin-bottom:18px;
+    font-size: 10px;
 
-    font-weight:700;
+    letter-spacing: 1px;
 }
 
-.service-card p{
 
-    color:var(--text-light);
+.services .service-card-top a {
 
-    line-height:1.8;
+    width: 34px;
+    height: 34px;
 
-    margin-bottom:35px;
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 9px;
+
+    color: var(--hero-muted);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: .3s ease;
 }
 
-/*==============================
-      BUTTON
-==============================*/
 
-.service-card a{
+.services .service-card:hover
+.service-card-top a {
 
-    display:inline-flex;
+    color: #fff;
 
-    align-items:center;
+    border-color: var(--hero-blue);
 
-    gap:10px;
+    background: var(--hero-blue);
 
-    color:#fff;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:.35s;
+    transform: rotate(7deg);
 }
 
-.service-card a span{
 
-    transition:.35s;
+/* =========================================
+   ICON
+========================================= */
+
+.services .service-icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    margin-top: 42px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 13px;
+
+    background:
+        rgba(37,99,235,.08);
+
+    color: var(--hero-blue);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    transition: .3s ease;
 }
 
-.service-card:hover a span{
 
-    transform:translateX(8px);
+.services .service-card:hover
+.service-icon {
+
+    color: #fff;
+
+    background: var(--hero-blue);
+
+    border-color: var(--hero-blue);
+
+    transform: scale(1.04);
 }
 
-/*==============================
-      RESPONSIVE
-==============================*/
 
-@media(max-width:768px){
+/* =========================================
+   CONTENT
+========================================= */
 
-.services{
+.services .service-content {
 
-padding:90px 22px;
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.services .service-content h3 {
+
+    margin: 20px 0 10px;
+
+    color: var(--hero-heading);
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    letter-spacing: -.5px;
+
+    font-weight: 750;
+}
+
+
+.services .service-content p {
+
+    max-width: 500px;
+
+    margin: 0;
+
+    color: var(--hero-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.services .service-tags {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 25px;
+}
+
+
+.services .service-tags span {
+
+    padding: 6px 9px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 6px;
+
+    color: var(--hero-muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .6px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   BOTTOM CTA
+========================================= */
+
+.services .services-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 55px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--hero-border);
+}
+
+
+.services .services-bottom span {
+
+    color: var(--hero-muted);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.services .services-bottom p {
+
+    margin: 7px 0 0;
+
+    color: var(--hero-text);
+
+    font-size: 13px;
+}
+
+
+.services .services-bottom > a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 16px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 9px;
+
+    color: var(--hero-text);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    transition: .3s ease;
+}
+
+
+.services .services-bottom > a:hover {
+
+    color: #fff;
+
+    background: var(--hero-blue);
+
+    border-color: var(--hero-blue);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services {
+
+        padding: 110px 0;
+    }
+
+
+    .services .services-heading {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .services .services-heading p {
+
+        max-width: 600px;
+    }
+
+
+    .services .services-grid {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 55px;
+    }
 
 }
 
-.services-header{
 
-margin-bottom:55px;
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .services {
+
+        padding: 90px 0;
+    }
+
+
+    .services .services-container {
+
+        width: 90%;
+    }
+
+
+    .services .services-heading h2 {
+
+        font-size: 46px;
+
+        letter-spacing: -2.8px;
+    }
+
+
+    .services .service-card {
+
+        min-height: 0;
+
+        padding: 23px;
+    }
+
+
+    .services .service-icon {
+
+        margin-top: 32px;
+    }
+
+
+    .services .services-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .services .services-bottom > a {
+
+        width: 100%;
+
+        justify-content: center;
+    }
 
 }
 
-.service-card{
 
-padding:32px;
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-}
+@media (max-width: 380px) {
 
-.services-grid{
+    .services .services-heading h2 {
 
-gap:22px;
+        font-size: 40px;
+    }
 
-}
+
+    .services .service-card {
+
+        padding: 20px;
+    }
 
 }

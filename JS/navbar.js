@@ -1,156 +1,79 @@
-/* =========================================
-   VELNOX NAVBAR JS
-========================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    const navbar =
-        document.querySelector(".navbar");
+    const body = document.body;
 
-    const menuToggle =
-        document.querySelector(".menu-toggle");
+    /* =========================
+       THEME
+    ========================= */
 
-    const mobileMenu =
-        document.querySelector(".mobile-menu");
+    const savedTheme = localStorage.getItem("velnox-theme");
 
-    const mobileLinks =
-        document.querySelectorAll(".mobile-menu a");
-
-    const navLinks =
-        document.querySelectorAll(".nav-links a");
-
-
-    /* =====================================
-       SCROLL EFFECT
-    ===================================== */
-
-    function handleNavbarScroll() {
-
-        if (window.scrollY > 40) {
-
-            navbar.classList.add("scrolled");
-
-        } else {
-
-            navbar.classList.remove("scrolled");
-
-        }
-
-    }
-
-    window.addEventListener(
-        "scroll",
-        handleNavbarScroll
-    );
-
-    handleNavbarScroll();
-
-
-    /* =====================================
-       MOBILE MENU
-    ===================================== */
-
-    if (menuToggle) {
-
-        menuToggle.addEventListener("click", () => {
-
-            document.body.classList.toggle(
-                "menu-open"
-            );
-
-        });
-
+    if (savedTheme === "light") {
+        body.classList.add("light-theme");
+    } else {
+        body.classList.remove("light-theme");
     }
 
 
-    /* Close mobile menu */
+    /* =========================
+       THEME BUTTON
+    ========================= */
 
-    mobileLinks.forEach(link => {
+    document.addEventListener("click", (e) => {
 
-        link.addEventListener("click", () => {
+        const themeButton = e.target.closest("#themeBtn");
 
-            document.body.classList.remove(
-                "menu-open"
-            );
+        if (!themeButton) return;
 
-        });
+        body.classList.toggle("light-theme");
+
+        const isLight =
+            body.classList.contains("light-theme");
+
+        localStorage.setItem(
+            "velnox-theme",
+            isLight ? "light" : "dark"
+        );
+
+        themeButton.textContent =
+            isLight ? "☾" : "☼";
 
     });
 
 
-    /* =====================================
-       ACTIVE NAV LINK
-    ===================================== */
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
-    const sections =
-        document.querySelectorAll("section[id]");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.querySelector(".navbar-links");
 
+    if (menuBtn && navLinks) {
 
-    function updateActiveLink() {
+        menuBtn.addEventListener("click", () => {
 
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 180;
-
-            if (
-                window.scrollY >=
-                sectionTop
-            ) {
-
-                current =
-                    section.getAttribute("id");
-
-            }
-
-        });
-
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                link.getAttribute("href") ===
-                `#${current}`
-            ) {
-
-                link.classList.add("active");
-
-            }
+            menuBtn.classList.toggle("open");
+            navLinks.classList.toggle("open");
 
         });
 
     }
 
 
-    window.addEventListener(
-        "scroll",
-        updateActiveLink
-    );
+    /* =========================
+       NAVBAR SCROLL
+    ========================= */
 
-    updateActiveLink();
+    const navbar = document.getElementById("navbar");
 
+    window.addEventListener("scroll", () => {
 
-    /* =====================================
-       ESC CLOSE
-    ===================================== */
+        if (!navbar) return;
 
-    document.addEventListener("keydown", e => {
-
-        if (
-            e.key === "Escape" &&
-            document.body.classList.contains(
-                "menu-open"
-            )
-        ) {
-
-            document.body.classList.remove(
-                "menu-open"
-            );
-
+        if (window.scrollY > 30) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
         }
 
     });
