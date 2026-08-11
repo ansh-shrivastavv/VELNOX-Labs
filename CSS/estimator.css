@@ -1,0 +1,597 @@
+/* =========================================
+   VELNOX — WEBSITE PRICE ESTIMATOR
+========================================= */
+
+.estimator {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 130px 0;
+
+    overflow: hidden;
+
+    background: var(--hero-bg);
+    color: var(--hero-text);
+}
+
+
+/* CONTAINER */
+
+.estimator-container {
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    min-width: 0;
+}
+
+
+/* LABEL */
+
+.estimator-label {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--hero-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+}
+
+.estimator-label span {
+    color: var(--hero-blue);
+}
+
+
+/* HEADER */
+
+.estimator-heading {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(0, .9fr);
+
+    gap: 70px;
+
+    align-items: end;
+
+    margin-top: 25px;
+}
+
+.estimator-heading h2 {
+    margin: 0;
+
+    color: var(--hero-heading);
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    line-height: .98;
+
+    letter-spacing: -3.5px;
+
+    font-weight: 800;
+}
+
+.estimator-heading h2 span {
+    display: block;
+
+    color: var(--hero-blue);
+}
+
+.estimator-heading p {
+    max-width: 450px;
+
+    margin: 0;
+
+    color: var(--hero-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   ESTIMATOR BOX
+========================================= */
+
+.estimator-box {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(320px, .8fr);
+
+    gap: 14px;
+
+    margin-top: 65px;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.estimator-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.estimate-group {
+    padding: 25px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 16px;
+
+    background: var(--hero-card);
+}
+
+.estimate-group-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: var(--hero-muted);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.estimate-group-title span {
+    color: var(--hero-blue);
+}
+
+
+/* =========================================
+   OPTION BUTTONS
+========================================= */
+
+.estimate-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+.estimate-option {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--hero-text);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.estimate-option strong {
+    font-size: 11px;
+}
+
+.estimate-option small {
+    flex-shrink: 0;
+
+    color: var(--hero-muted);
+
+    font-size: 8px;
+}
+
+.estimate-option:hover {
+    border-color: var(--hero-blue);
+}
+
+.estimate-option.active {
+    border-color: var(--hero-blue);
+
+    background: var(--hero-blue);
+
+    color: #fff;
+}
+
+.estimate-option.active small {
+    color: rgba(255,255,255,.8);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.estimate-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+.estimate-check {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+
+    padding: 13px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.estimate-check:hover {
+    border-color: var(--hero-blue);
+}
+
+.estimate-check input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.check-box {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 5px;
+
+    transition: .25s ease;
+}
+
+.estimate-check input:checked + .check-box {
+    background: var(--hero-blue);
+
+    border-color: var(--hero-blue);
+}
+
+.estimate-check input:checked + .check-box::after {
+    content: "✓";
+
+    display: block;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    line-height: 15px;
+
+    text-align: center;
+}
+
+.estimate-check > span:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.estimate-check strong {
+    color: var(--hero-text);
+
+    font-size: 10px;
+}
+
+.estimate-check small {
+    color: var(--hero-muted);
+
+    font-size: 8px;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.estimator-result {
+    position: sticky;
+
+    top: 30px;
+
+    align-self: start;
+
+    min-width: 0;
+
+    padding: 30px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37,99,235,.10),
+            var(--hero-card)
+        );
+}
+
+
+/* RESULT TOP */
+
+.result-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: var(--hero-muted);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.result-status {
+    color: var(--hero-blue);
+}
+
+
+/* PRICE */
+
+.result-price {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    margin-top: 45px;
+
+    color: var(--hero-heading);
+}
+
+.result-price small {
+    color: var(--hero-blue);
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.result-price strong {
+    font-size: clamp(48px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.result-price span {
+    color: var(--hero-muted);
+
+    font-size: 20px;
+}
+
+
+/* DESCRIPTION */
+
+.estimator-result > p {
+    margin: 18px 0 0;
+
+    color: var(--hero-muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* SUMMARY */
+
+.result-summary {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--hero-border);
+}
+
+.result-summary div {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.result-summary span {
+    color: var(--hero-muted);
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.result-summary strong {
+    max-width: 60%;
+
+    overflow: hidden;
+
+    color: var(--hero-text);
+
+    font-size: 9px;
+
+    text-align: right;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* CTA */
+
+.estimate-cta {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 30px;
+
+    padding: 14px 16px;
+
+    border-radius: 9px;
+
+    background: var(--hero-blue);
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    transition: .3s ease;
+}
+
+.estimate-cta:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.25);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .estimator {
+        padding: 105px 0;
+    }
+
+    .estimator-heading {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .estimator-box {
+        grid-template-columns: 1fr;
+    }
+
+    .estimator-result {
+        position: relative;
+
+        top: auto;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .estimator {
+        padding: 85px 0;
+    }
+
+    .estimator-container {
+        width: 90%;
+    }
+
+    .estimator-heading h2 {
+        font-size: 46px;
+
+        letter-spacing: -2.8px;
+    }
+
+    .estimate-options,
+    .estimate-features {
+        grid-template-columns: 1fr;
+    }
+
+    .estimate-group,
+    .estimator-result {
+        padding: 21px;
+    }
+
+    .result-price strong {
+        font-size: 52px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .estimator-heading h2 {
+        font-size: 40px;
+    }
+
+}

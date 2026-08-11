@@ -1,0 +1,395 @@
+/* =========================================
+   VELNOX — PROJECT MODAL
+========================================= */
+
+.project-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+
+/* OPEN */
+
+.project-modal.active {
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.project-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.65);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================
+   BOX
+========================================= */
+
+.project-modal-box {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(680px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 32px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 20px;
+
+    background: var(--hero-bg);
+
+    color: var(--hero-text);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.35);
+
+    transform: translateY(25px) scale(.97);
+
+    transition:
+        transform .35s ease;
+}
+
+
+.project-modal.active
+.project-modal-box {
+
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.project-modal-header {
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid var(--hero-border);
+}
+
+
+.project-modal-label {
+
+    color: var(--hero-blue);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.project-modal-header h2 {
+
+    margin: 10px 0 0;
+
+    color: var(--hero-heading);
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.project-modal-header h2 span {
+
+    color: var(--hero-blue);
+}
+
+
+/* =========================================
+   CLOSE
+========================================= */
+
+.project-modal-close {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--hero-muted);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+
+.project-modal-close:hover {
+
+    background: var(--hero-blue);
+
+    border-color: var(--hero-blue);
+
+    color: #fff;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.project-form {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    padding-top: 25px;
+}
+
+
+.project-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+
+.project-field-full {
+
+    grid-column: 1 / -1;
+}
+
+
+.project-field label {
+
+    color: var(--hero-muted);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.project-field input,
+.project-field select,
+.project-field textarea {
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--hero-border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: var(--hero-card);
+
+    color: var(--hero-text);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.project-field input::placeholder,
+.project-field textarea::placeholder {
+
+    color: var(--hero-muted);
+
+    opacity: .7;
+}
+
+
+.project-field input:focus,
+.project-field select:focus,
+.project-field textarea:focus {
+
+    border-color: var(--hero-blue);
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.10);
+}
+
+
+.project-field textarea {
+
+    resize: vertical;
+
+    min-height: 110px;
+}
+
+
+/* SELECT */
+
+.project-field select {
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.project-submit {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 15px 17px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    background: var(--hero-blue);
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.project-submit:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.25);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .project-modal {
+
+        padding: 12px;
+    }
+
+
+    .project-modal-box {
+
+        padding: 22px;
+
+        border-radius: 16px;
+
+        max-height: 94vh;
+    }
+
+
+    .project-modal-header h2 {
+
+        font-size: 32px;
+    }
+
+
+    .project-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .project-field-full,
+    .project-submit {
+
+        grid-column: auto;
+    }
+
+}
