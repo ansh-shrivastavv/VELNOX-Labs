@@ -1,98 +1,46 @@
-<section class="contact" id="contact">
+<section class="contact-section" id="contact">
 
     <div class="contact-container">
 
-        <!-- HEADER -->
-        <div class="contact-label">
-            <span>04</span>
-            GET IN TOUCH
-        </div>
+        <!-- LEFT CONTENT -->
+        <div class="contact-intro">
 
-
-        <!-- MAIN -->
-        <div class="contact-main">
-
-            <div class="contact-heading">
-
-                <h2>
-                    Have an idea?
-                    <span>Let's build it.</span>
-                </h2>
-
-                <p>
-                    Whether you have a project in mind, an idea to
-                    explore, or simply want to say hello — we'd love
-                    to hear from you.
-                </p>
-
+            <div class="section-label">
+                <span>04</span>
+                GET IN TOUCH
             </div>
 
+            <h2>
+                Have an idea?
+                <span>Let's build it.</span>
+            </h2>
 
-            <!-- CONTACT LINKS -->
-            <div class="contact-links">
+            <p class="contact-description">
+                Tell us about your project, idea, or business.
+                Share a few details and we'll get back to you
+                as soon as possible.
+            </p>
 
-                <!-- INSTAGRAM -->
-                <a
-                    href="https://instagram.com/velnox.web"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-link"
-                >
+            <div class="contact-meta">
 
-                    <div class="contact-link-icon">
-                        IG
-                    </div>
+                <div class="contact-meta-item">
+                    <small>EMAIL</small>
 
-                    <div class="contact-link-content">
-                        <span>INSTAGRAM</span>
-                        <strong>@velnox.web</strong>
-                    </div>
+                    <a href="mailto:velnox.webstudio@gmail.com">
+                        velnox.webstudio@gmail.com
+                    </a>
+                </div>
 
-                    <div class="contact-link-arrow">
-                        ↗
-                    </div>
+                <div class="contact-meta-item">
+                    <small>INSTAGRAM</small>
 
-                </a>
-
-
-                <!-- EMAIL -->
-                <a
-                    href="mailto:velnox.webstudio@gmail.com"
-                    class="contact-link"
-                >
-
-                    <div class="contact-link-icon">
-                        @
-                    </div>
-
-                    <div class="contact-link-content">
-                        <span>EMAIL</span>
-                        <strong>velnox.webstudio@gmail.com</strong>
-                    </div>
-
-                    <div class="contact-link-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-                <!-- MOBILE -->
-                <div class="contact-link contact-disabled">
-
-                    <div class="contact-link-icon">
-                        +
-                    </div>
-
-                    <div class="contact-link-content">
-                        <span>MOBILE</span>
-                        <strong>Adding soon</strong>
-                    </div>
-
-                    <div class="contact-link-arrow">
-                        —
-                    </div>
-
+                    <a
+                        href="https://instagram.com/velnox.web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        @velnox.web ↗
+                    </a>
                 </div>
 
             </div>
@@ -100,17 +48,193 @@
         </div>
 
 
-        <!-- BOTTOM CTA -->
-        <div class="contact-bottom">
+        <!-- CONTACT FORM -->
+        <div class="contact-form-wrapper">
 
-            <div class="contact-availability">
-                <span></span>
-                AVAILABLE FOR PROJECTS
-            </div>
+            <form
+                id="velnoxContactForm"
+                method="POST"
+                target="hidden_iframe"
+                action="https://script.google.com/macros/s/AKfycbyP39aUHsAyOv516Qy91kxDxCrvWHiB01nrNX00E8PsxoGJV81qrHOrZxX6Wpyp-_Uq/exec"
+            >
 
-            <p>
-                © 2026 VELNOX Web Labs
-            </p>
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">YOUR NAME</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="phone">PHONE</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Optional"
+                            autocomplete="tel"
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="service">SERVICE</label>
+
+                        <select
+                            id="service"
+                            name="service"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select a service
+                            </option>
+
+                            <option value="Website Development">
+                                Website Development
+                            </option>
+
+                            <option value="Landing Page">
+                                Landing Page
+                            </option>
+
+                            <option value="Portfolio Website">
+                                Portfolio Website
+                            </option>
+
+                            <option value="Business Website">
+                                Business Website
+                            </option>
+
+                            <option value="UI/UX Design">
+                                UI/UX Design
+                            </option>
+
+                            <option value="Branding">
+                                Branding
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="budget">
+                        PROJECT BUDGET
+                    </label>
+
+                    <select
+                        id="budget"
+                        name="budget"
+                    >
+                        <option value="" selected>
+                            Select budget range
+                        </option>
+
+                        <option value="Under ₹5,000">
+                            Under ₹5,000
+                        </option>
+
+                        <option value="₹5,000 - ₹10,000">
+                            ₹5,000 - ₹10,000
+                        </option>
+
+                        <option value="₹10,000 - ₹25,000">
+                            ₹10,000 - ₹25,000
+                        </option>
+
+                        <option value="₹25,000+">
+                            ₹25,000+
+                        </option>
+
+                        <option value="Not sure">
+                            Not sure yet
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        TELL US ABOUT YOUR PROJECT
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Tell us about your idea..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                    id="submitBtn"
+                >
+                    <span id="submitText">
+                        Send Project Request
+                    </span>
+
+                    <span class="submit-arrow">
+                        ↗
+                    </span>
+                </button>
+
+
+                <div
+                    class="form-status"
+                    id="formStatus"
+                    aria-live="polite"
+                ></div>
+
+            </form>
+
+
+            <!-- Prevent page redirect after submission -->
+            <iframe
+                name="hidden_iframe"
+                id="hidden_iframe"
+                style="display:none;"
+            ></iframe>
 
         </div>
 
