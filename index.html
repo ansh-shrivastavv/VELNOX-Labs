@@ -141,7 +141,12 @@
     <link rel="stylesheet" href="CSS/contact.css">
     <link rel="stylesheet" href="CSS/location.css">
     <link rel="stylesheet" href="CSS/footer.css">
-    
+
+    <!-- FLOATING INSTAGRAM -->
+    <link
+        rel="stylesheet"
+        href="CSS/floating-instagram.css"
+    >
 
 </head>
 
@@ -237,6 +242,13 @@
 
 
     <!-- ================================
+         FLOATING INSTAGRAM
+    ================================= -->
+
+    <div id="floating-instagram"></div>
+
+
+    <!-- ================================
          LOAD COMPONENTS
     ================================= -->
 
@@ -249,15 +261,20 @@
                 const response = await fetch(file);
 
                 if (!response.ok) {
-                    throw new Error(`Failed to load ${file}`);
+                    throw new Error(
+                        `Failed to load ${file}`
+                    );
                 }
 
                 const html = await response.text();
 
-                const element = document.getElementById(id);
+                const element =
+                    document.getElementById(id);
 
                 if (element) {
+
                     element.innerHTML = html;
+
                 }
 
             } catch (error) {
@@ -322,6 +339,13 @@
             loadComponent(
                 "footer",
                 "HTML/footer.html"
+            ),
+
+            /* FLOATING INSTAGRAM */
+
+            loadComponent(
+                "floating-instagram",
+                "HTML/floating-instagram.html"
             )
 
         ]);
@@ -348,6 +372,14 @@
     <script src="JS/footer.js" defer></script>
 
     <script src="JS/contact.js" defer></script>
+
+    <!-- FLOATING INSTAGRAM -->
+
+    <script
+        src="JS/floating-instagram.js"
+        defer>
+    </script>
+
 
 </body>
 

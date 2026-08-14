@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
     const typeOptions = document.querySelectorAll(
         ".estimate-options:not(.estimate-pages) .estimate-option"
     );
@@ -12,43 +16,77 @@ document.addEventListener("DOMContentLoaded", () => {
         ".estimate-check input"
     );
 
-    const priceElement =
-        document.getElementById("estimatedPrice");
+    const priceElement = document.getElementById(
+        "estimatedPrice"
+    );
 
-    const summaryType =
-        document.getElementById("summaryType");
+    const summaryType = document.getElementById(
+        "summaryType"
+    );
 
-    const summaryExtras =
-        document.getElementById("summaryExtras");
+    const summaryExtras = document.getElementById(
+        "summaryExtras"
+    );
 
+
+    /* =========================================
+       DEFAULT VALUES
+    ========================================= */
 
     let basePrice = 8000;
     let pagePrice = 0;
+
     let selectedType = "Business Website";
 
 
+    /* =========================================
+       FORMAT PRICE
+    ========================================= */
+
     function formatPrice(price) {
 
-        return price.toLocaleString("en-IN");
+        return `₹${Number(price).toLocaleString("en-IN")}`;
 
     }
 
+
+    /* =========================================
+       CALCULATE PRICE
+    ========================================= */
 
     function calculatePrice() {
 
         let total = basePrice + pagePrice;
 
-        let selectedFeatures = [];
+        const selectedFeatures = [];
 
+
+        /* FEATURES */
 
         featureInputs.forEach(input => {
 
-            if (input.checked) {
+            if (!input.checked) return;
 
-                total += Number(input.value);
+
+            const featurePrice =
+                Number(input.value) || 0;
+
+
+            total += featurePrice;
+
+
+            const featureName =
+                input.dataset.feature ||
+                input.closest(".estimate-check")
+                    ?.querySelector("label")
+                    ?.textContent
+                    ?.trim();
+
+
+            if (featureName) {
 
                 selectedFeatures.push(
-                    input.dataset.feature
+                    featureName
                 );
 
             }
@@ -56,39 +94,82 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        priceElement.textContent =
-            formatPrice(total);
+        /* PRICE */
+
+        if (priceElement) {
+
+            priceElement.textContent =
+                formatPrice(total);
+
+        }
 
 
-        summaryType.textContent =
-            selectedType;
+        /* SUMMARY TYPE */
+
+        if (summaryType) {
+
+            summaryType.textContent =
+                selectedType;
+
+        }
 
 
-        summaryExtras.textContent =
-            selectedFeatures.length
-                ? selectedFeatures.join(", ")
-                : "None";
+        /* SUMMARY EXTRAS */
+
+        if (summaryExtras) {
+
+            summaryExtras.textContent =
+                selectedFeatures.length
+                    ? selectedFeatures.join(", ")
+                    : "None";
+
+        }
 
     }
 
 
-    /* WEBSITE TYPE */
+    /* =========================================
+       WEBSITE TYPE
+    ========================================= */
 
     typeOptions.forEach(option => {
 
         option.addEventListener("click", () => {
 
+
+            /* Remove old active */
+
             typeOptions.forEach(item => {
+
                 item.classList.remove("active");
+
             });
+
+
+            /* Add active */
 
             option.classList.add("active");
 
-            basePrice =
-                Number(option.dataset.price);
 
-            selectedType =
-                option.querySelector("strong").textContent;
+            /* Get price */
+
+            basePrice =
+                Number(option.dataset.price) || 8000;
+
+
+            /* Get title */
+
+            const title =
+                option.querySelector("strong");
+
+
+            if (title) {
+
+                selectedType =
+                    title.textContent.trim();
+
+            }
+
 
             calculatePrice();
 
@@ -97,20 +178,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* PAGES */
+    /* =========================================
+       NUMBER OF PAGES
+    ========================================= */
 
     pageOptions.forEach(option => {
 
         option.addEventListener("click", () => {
 
+
+            /* Remove old active */
+
             pageOptions.forEach(item => {
+
                 item.classList.remove("active");
+
             });
+
+
+            /* Add active */
 
             option.classList.add("active");
 
+
+            /* Get page price */
+
             pagePrice =
-                Number(option.dataset.price);
+                Number(option.dataset.price) || 0;
+
 
             calculatePrice();
 
@@ -119,7 +214,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* FEATURES */
+    /* =========================================
+       FEATURES
+    ========================================= */
 
     featureInputs.forEach(input => {
 
@@ -130,6 +227,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+    /* =========================================
+       INITIAL ACTIVE OPTIONS
+    ========================================= */
+
+    const activeType =
+        document.querySelector(
+            ".estimate-options:not(.estimate-pages) .estimate-option.active"
+        );
+
+
+    if (activeType) {
+
+        basePrice =
+            Number(activeType.dataset.price) || 8000;
+
+
+        const title =
+            activeType.querySelector("strong");
+
+
+        if (title) {
+
+            selectedType =
+                title.textContent.trim();
+
+        }
+
+    }
+
+
+    const activePage =
+        document.querySelector(
+            ".estimate-pages .estimate-option.active"
+        );
+
+
+    if (activePage) {
+
+        pagePrice =
+            Number(activePage.dataset.price) || 0;
+
+    }
+
+
+    /* =========================================
+       INITIAL CALCULATION
+    ========================================= */
 
     calculatePrice();
 
