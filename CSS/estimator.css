@@ -4,52 +4,45 @@
 
 .estimator {
     position: relative;
-
     width: 100%;
     max-width: 100%;
-
     padding: 130px 0;
-
     overflow: hidden;
 
-    background: var(--hero-bg);
-    color: var(--hero-text);
+    background: var(--hero-bg, #080808);
+    color: var(--hero-text, #ffffff);
 }
-
-
-/* CONTAINER */
 
 .estimator-container {
     width: min(1250px, 92%);
-
     margin: 0 auto;
-
     min-width: 0;
 }
 
 
-/* LABEL */
+/* =========================================
+   LABEL
+========================================= */
 
 .estimator-label {
     display: flex;
     align-items: center;
-
     gap: 12px;
 
-    color: var(--hero-muted);
-
+    color: var(--hero-muted, #888);
     font-size: 10px;
     font-weight: 700;
-
     letter-spacing: 1.6px;
 }
 
 .estimator-label span {
-    color: var(--hero-blue);
+    color: var(--hero-blue, #2563eb);
 }
 
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .estimator-heading {
     display: grid;
@@ -59,41 +52,31 @@
         minmax(0, .9fr);
 
     gap: 70px;
-
     align-items: end;
-
     margin-top: 25px;
 }
 
 .estimator-heading h2 {
     margin: 0;
 
-    color: var(--hero-heading);
-
+    color: var(--hero-heading, #fff);
     font-size: clamp(45px, 5vw, 70px);
-
     line-height: .98;
-
     letter-spacing: -3.5px;
-
     font-weight: 800;
 }
 
 .estimator-heading h2 span {
     display: block;
-
-    color: var(--hero-blue);
+    color: var(--hero-blue, #2563eb);
 }
 
 .estimator-heading p {
     max-width: 450px;
-
     margin: 0;
 
-    color: var(--hero-muted);
-
+    color: var(--hero-muted, #888);
     font-size: 14px;
-
     line-height: 1.8;
 }
 
@@ -110,7 +93,6 @@
         minmax(320px, .8fr);
 
     gap: 14px;
-
     margin-top: 65px;
 }
 
@@ -121,40 +103,34 @@
 
 .estimator-options {
     display: flex;
-
     flex-direction: column;
-
     gap: 14px;
 }
 
 .estimate-group {
     padding: 25px;
 
-    border: 1px solid var(--hero-border);
-
+    border: 1px solid var(--hero-border, rgba(255,255,255,.1));
     border-radius: 16px;
 
-    background: var(--hero-card);
+    background: var(--hero-card, rgba(255,255,255,.03));
 }
 
 .estimate-group-title {
     display: flex;
     align-items: center;
-
     gap: 10px;
 
     margin-bottom: 18px;
 
-    color: var(--hero-muted);
-
+    color: var(--hero-muted, #888);
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
 .estimate-group-title span {
-    color: var(--hero-blue);
+    color: var(--hero-blue, #2563eb);
 }
 
 
@@ -173,29 +149,30 @@
 
 .estimate-option {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     gap: 12px;
-
     min-width: 0;
 
     padding: 15px;
 
-    border: 1px solid var(--hero-border);
-
+    border: 1px solid var(--hero-border, rgba(255,255,255,.1));
     border-radius: 10px;
 
     background: transparent;
-
-    color: var(--hero-text);
+    color: var(--hero-text, #fff);
 
     text-align: left;
-
     cursor: pointer;
 
-    transition: .25s ease;
+    font-family: inherit;
+
+    transition:
+        border-color .25s ease,
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
 }
 
 .estimate-option strong {
@@ -205,20 +182,18 @@
 .estimate-option small {
     flex-shrink: 0;
 
-    color: var(--hero-muted);
-
+    color: var(--hero-muted, #888);
     font-size: 8px;
 }
 
 .estimate-option:hover {
-    border-color: var(--hero-blue);
+    border-color: var(--hero-blue, #2563eb);
+    transform: translateY(-1px);
 }
 
 .estimate-option.active {
-    border-color: var(--hero-blue);
-
-    background: var(--hero-blue);
-
+    border-color: var(--hero-blue, #2563eb);
+    background: var(--hero-blue, #2563eb);
     color: #fff;
 }
 
@@ -244,33 +219,31 @@
     position: relative;
 
     display: flex;
-
     align-items: center;
 
     gap: 11px;
-
     min-width: 0;
 
     padding: 13px;
 
-    border: 1px solid var(--hero-border);
-
+    border: 1px solid var(--hero-border, rgba(255,255,255,.1));
     border-radius: 10px;
 
     cursor: pointer;
 
-    transition: .25s ease;
+    transition:
+        border-color .25s ease,
+        background .25s ease;
 }
 
 .estimate-check:hover {
-    border-color: var(--hero-blue);
+    border-color: var(--hero-blue, #2563eb);
 }
 
 .estimate-check input {
     position: absolute;
 
     opacity: 0;
-
     pointer-events: none;
 }
 
@@ -280,17 +253,15 @@
 
     flex-shrink: 0;
 
-    border: 1px solid var(--hero-border);
-
+    border: 1px solid var(--hero-border, rgba(255,255,255,.15));
     border-radius: 5px;
 
     transition: .25s ease;
 }
 
 .estimate-check input:checked + .check-box {
-    background: var(--hero-blue);
-
-    border-color: var(--hero-blue);
+    background: var(--hero-blue, #2563eb);
+    border-color: var(--hero-blue, #2563eb);
 }
 
 .estimate-check input:checked + .check-box::after {
@@ -299,33 +270,25 @@
     display: block;
 
     color: #fff;
-
     font-size: 10px;
-
     line-height: 15px;
-
     text-align: center;
 }
 
 .estimate-check > span:last-child {
     display: flex;
-
     flex-direction: column;
-
     gap: 3px;
-
     min-width: 0;
 }
 
 .estimate-check strong {
-    color: var(--hero-text);
-
+    color: var(--hero-text, #fff);
     font-size: 10px;
 }
 
 .estimate-check small {
-    color: var(--hero-muted);
-
+    color: var(--hero-muted, #888);
     font-size: 8px;
 }
 
@@ -338,118 +301,110 @@
     position: sticky;
 
     top: 30px;
-
     align-self: start;
-
     min-width: 0;
 
     padding: 30px;
 
-    border: 1px solid var(--hero-border);
-
+    border: 1px solid var(--hero-border, rgba(255,255,255,.1));
     border-radius: 18px;
 
     background:
         linear-gradient(
             145deg,
             rgba(37,99,235,.10),
-            var(--hero-card)
+            var(--hero-card, rgba(255,255,255,.03))
         );
 }
 
 
-/* RESULT TOP */
+/* =========================================
+   RESULT TOP
+========================================= */
 
 .result-top {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     gap: 15px;
 
-    color: var(--hero-muted);
+    color: var(--hero-muted, #888);
 
     font-size: 8px;
     font-weight: 800;
-
     letter-spacing: 1.2px;
 }
 
 .result-status {
-    color: var(--hero-blue);
+    color: var(--hero-blue, #2563eb);
 }
 
 
-/* PRICE */
+/* =========================================
+   PRICE
+========================================= */
 
 .result-price {
     display: flex;
-
     align-items: baseline;
 
     gap: 5px;
-
     margin-top: 45px;
 
-    color: var(--hero-heading);
+    color: var(--hero-heading, #fff);
 }
 
 .result-price small {
-    color: var(--hero-blue);
+    color: var(--hero-blue, #2563eb);
 
     font-size: 20px;
-
     font-weight: 700;
 }
 
 .result-price strong {
     font-size: clamp(48px, 5vw, 70px);
-
     line-height: 1;
-
     letter-spacing: -3px;
 }
 
-.result-price span {
-    color: var(--hero-muted);
-
+.result-price > span {
+    color: var(--hero-muted, #888);
     font-size: 20px;
 }
 
 
-/* DESCRIPTION */
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .estimator-result > p {
     margin: 18px 0 0;
 
-    color: var(--hero-muted);
+    color: var(--hero-muted, #888);
 
     font-size: 11px;
-
     line-height: 1.7;
 }
 
 
-/* SUMMARY */
+/* =========================================
+   SUMMARY
+========================================= */
 
 .result-summary {
     display: flex;
-
     flex-direction: column;
 
     gap: 12px;
-
     margin-top: 35px;
-
     padding-top: 20px;
 
-    border-top: 1px solid var(--hero-border);
+    border-top: 1px solid var(--hero-border, rgba(255,255,255,.1));
 }
 
 .result-summary div {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
@@ -457,12 +412,10 @@
 }
 
 .result-summary span {
-    color: var(--hero-muted);
+    color: var(--hero-muted, #888);
 
     font-size: 7px;
-
     font-weight: 800;
-
     letter-spacing: 1px;
 }
 
@@ -471,40 +424,36 @@
 
     overflow: hidden;
 
-    color: var(--hero-text);
+    color: var(--hero-text, #fff);
 
     font-size: 9px;
 
     text-align: right;
-
     text-overflow: ellipsis;
-
     white-space: nowrap;
 }
 
 
-/* CTA */
+/* =========================================
+   CTA
+========================================= */
 
 .estimate-cta {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     margin-top: 30px;
-
     padding: 14px 16px;
 
     border-radius: 9px;
 
-    background: var(--hero-blue);
-
+    background: var(--hero-blue, #2563eb);
     color: #fff;
 
     text-decoration: none;
 
     font-size: 10px;
-
     font-weight: 750;
 
     transition: .3s ease;
@@ -530,7 +479,6 @@
 
     .estimator-heading {
         grid-template-columns: 1fr;
-
         gap: 25px;
     }
 
@@ -540,7 +488,6 @@
 
     .estimator-result {
         position: relative;
-
         top: auto;
     }
 
@@ -563,7 +510,6 @@
 
     .estimator-heading h2 {
         font-size: 46px;
-
         letter-spacing: -2.8px;
     }
 
