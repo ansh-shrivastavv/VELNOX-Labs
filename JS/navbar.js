@@ -1,81 +1,223 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================
+   VELNOX — NAVBAR SYSTEM
+   Theme + Mobile Menu + Scroll
+========================================================= */
+
+(() => {
+
+    "use strict";
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
 
     const body = document.body;
 
-    /* =========================
+    const navbar =
+        document.getElementById("navbar");
+
+
+    /* =========================================================
        THEME
-    ========================= */
+    ========================================================= */
 
-    const savedTheme = localStorage.getItem("velnox-theme");
+    function applyTheme(theme) {
 
-    if (savedTheme === "light") {
-        body.classList.add("light-theme");
-    } else {
-        body.classList.remove("light-theme");
+        if (theme === "light") {
+
+            body.classList.add("light-theme");
+
+        } else {
+
+            body.classList.remove("light-theme");
+
+        }
+
+        updateThemeButton();
+
     }
 
 
-    /* =========================
-       THEME BUTTON
-    ========================= */
+    function updateThemeButton() {
 
-    document.addEventListener("click", (e) => {
+        const button =
+            document.getElementById("themeBtn");
 
-        const themeButton = e.target.closest("#themeBtn");
-
-        if (!themeButton) return;
-
-        body.classList.toggle("light-theme");
+        if (!button) return;
 
         const isLight =
             body.classList.contains("light-theme");
 
-        localStorage.setItem(
-            "velnox-theme",
-            isLight ? "light" : "dark"
-        );
-
-        themeButton.textContent =
+        button.textContent =
             isLight ? "☾" : "☼";
 
-    });
-
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.querySelector(".navbar-links");
-
-    if (menuBtn && navLinks) {
-
-        menuBtn.addEventListener("click", () => {
-
-            menuBtn.classList.toggle("open");
-            navLinks.classList.toggle("open");
-
-        });
+        button.setAttribute(
+            "aria-label",
+            isLight
+                ? "Switch to dark theme"
+                : "Switch to light theme"
+        );
 
     }
 
 
-    /* =========================
+    /* =========================================================
+       RESTORE SAVED THEME
+    ========================================================= */
+
+    const savedTheme =
+        localStorage.getItem("velnox-theme");
+
+    applyTheme(
+        savedTheme === "light"
+            ? "light"
+            : "dark"
+    );
+
+
+    /* =========================================================
+       THEME BUTTON
+       Event delegation = safe for dynamic navbar
+    ========================================================= */
+
+    document.addEventListener(
+        "click",
+        (event) => {
+
+            const button =
+                event.target.closest("#themeBtn");
+
+            if (!button) return;
+
+
+            const isLight =
+                body.classList.contains(
+                    "light-theme"
+                );
+
+
+            const nextTheme =
+                isLight ? "dark" : "light";
+
+
+            applyTheme(nextTheme);
+
+
+            localStorage.setItem(
+                "velnox-theme",
+                nextTheme
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    function setupMobileMenu() {
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.querySelector(".navbar-links");
+
+
+        if (!menuBtn || !navLinks) return;
+
+
+        if (
+            menuBtn.dataset.initialized === "true"
+        ) {
+            return;
+        }
+
+
+        menuBtn.dataset.initialized = "true";
+
+
+        menuBtn.addEventListener(
+            "click",
+            () => {
+
+                menuBtn.classList.toggle("open");
+
+                navLinks.classList.toggle("open");
+
+            }
+        );
+
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach((link) => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        menuBtn.classList.remove(
+                            "open"
+                        );
+
+                        navLinks.classList.remove(
+                            "open"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    setupMobileMenu();
+
+
+    /* =========================================================
        NAVBAR SCROLL
-    ========================= */
+    ========================================================= */
 
-    const navbar = document.getElementById("navbar");
-
-    window.addEventListener("scroll", () => {
+    function handleNavbarScroll() {
 
         if (!navbar) return;
 
+
         if (window.scrollY > 30) {
+
             navbar.classList.add("scrolled");
+
         } else {
+
             navbar.classList.remove("scrolled");
+
         }
 
-    });
+    }
 
-});
+
+    window.addEventListener(
+        "scroll",
+        handleNavbarScroll,
+        {
+            passive: true
+        }
+    );
+
+
+    handleNavbarScroll();
+
+
+    /* =========================================================
+       FINAL
+    ========================================================= */
+
+    console.log(
+        "✓ VELNOX Navbar Loaded"
+    );
+
+})();

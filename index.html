@@ -3,9 +3,9 @@
 
 <head>
 
-    <!-- ================================
+    <!-- =====================================================
          BASIC
-    ================================= -->
+    ====================================================== -->
 
     <meta charset="UTF-8">
 
@@ -29,14 +29,19 @@
         content="VELNOX Web Labs"
     >
 
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
     <title>
         VELNOX Web Labs | Premium Web Development Agency
     </title>
 
 
-    <!-- ================================
+    <!-- =====================================================
          CANONICAL
-    ================================= -->
+    ====================================================== -->
 
     <link
         rel="canonical"
@@ -44,9 +49,9 @@
     >
 
 
-    <!-- ================================
+    <!-- =====================================================
          FONTS PERFORMANCE
-    ================================= -->
+    ====================================================== -->
 
     <link
         rel="preconnect"
@@ -60,9 +65,9 @@
     >
 
 
-    <!-- ================================
+    <!-- =====================================================
          FAVICON
-    ================================= -->
+    ====================================================== -->
 
     <link
         rel="icon"
@@ -81,25 +86,9 @@
     >
 
 
-    <!-- ================================
-         VERCEL SPEED INSIGHTS
-    ================================= -->
-
-    <script>
-        window.si = window.si || function () {
-            (window.siq = window.siq || []).push(arguments);
-        };
-    </script>
-
-    <script
-        defer
-        src="/_vercel/speed-insights/script.js">
-    </script>
-
-
-    <!-- ================================
+    <!-- =====================================================
          OPEN GRAPH
-    ================================= -->
+    ====================================================== -->
 
     <meta
         property="og:type"
@@ -127,20 +116,59 @@
     >
 
 
-    <!-- ================================
+    <!-- =====================================================
          CSS
-    ================================= -->
+    ====================================================== -->
 
-    <link rel="stylesheet" href="CSS/navbar.css">
-    <link rel="stylesheet" href="CSS/hero.css">
-    <link rel="stylesheet" href="CSS/about.css">
-    <link rel="stylesheet" href="CSS/services.css">
-    <link rel="stylesheet" href="CSS/works.css">
-    <link rel="stylesheet" href="CSS/team.css">
-    <link rel="stylesheet" href="CSS/estimator.css">
-    <link rel="stylesheet" href="CSS/contact.css">
-    <link rel="stylesheet" href="CSS/location.css">
-    <link rel="stylesheet" href="CSS/footer.css">
+    <link
+        rel="stylesheet"
+        href="CSS/navbar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/hero.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/about.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/services.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/works.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/team.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/estimator.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/contact.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/location.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/footer.css"
+    >
 
     <link
         rel="stylesheet"
@@ -148,16 +176,32 @@
     >
 
 
-    <!-- ================================
+    <!-- =====================================================
          GSAP
-    ================================= -->
+    ====================================================== -->
 
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js">
     </script>
 
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js">
+    </script>
+
+
+    <!-- =====================================================
+         VERCEL SPEED INSIGHTS
+    ====================================================== -->
+
+    <script>
+
+        window.si = window.si || function () {
+
+            (window.siq = window.siq || [])
+                .push(arguments);
+
+        };
+
     </script>
 
 </head>
@@ -166,16 +210,16 @@
 <body>
 
 
-    <!-- ================================
+    <!-- =====================================================
          NAVBAR
-    ================================= -->
+    ====================================================== -->
 
     <div id="navbar"></div>
 
 
-    <!-- ================================
+    <!-- =====================================================
          HERO
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="hero-section"
@@ -187,9 +231,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          ABOUT
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="about-section"
@@ -201,9 +245,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          SERVICES
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="services-section"
@@ -215,9 +259,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          WORKS
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="works-section"
@@ -229,9 +273,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          TEAM
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="team-section"
@@ -243,9 +287,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          ESTIMATOR
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="estimator-section"
@@ -257,9 +301,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          CONTACT
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="contact-section"
@@ -271,9 +315,9 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          LOCATION
-    ================================= -->
+    ====================================================== -->
 
     <section
         id="location-section"
@@ -285,76 +329,136 @@
     </section>
 
 
-    <!-- ================================
+    <!-- =====================================================
          FOOTER
-    ================================= -->
+    ====================================================== -->
 
-    <footer id="footer-section">
+    <footer
+        id="footer-section"
+    >
 
         <div id="footer"></div>
 
     </footer>
 
 
-    <!-- ================================
+    <!-- =====================================================
          FLOATING INSTAGRAM
-    ================================= -->
+    ====================================================== -->
 
     <div id="floating-instagram"></div>
 
 
-    <!-- ================================
-         LOAD EVERYTHING
-    ================================= -->
+    <!-- =====================================================
+         COMPONENT LOADER
+    ====================================================== -->
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", async () => {
+        async function loadComponent(
+            id,
+            file
+        ) {
 
-            /* =========================================
-               COMPONENT LOADER
-            ========================================= */
+            try {
 
-            async function loadComponent(id, file) {
+                const response =
+                    await fetch(file);
 
-                try {
 
-                    const response = await fetch(file);
+                if (!response.ok) {
 
-                    if (!response.ok) {
-
-                        throw new Error(
-                            `Failed to load ${file}`
-                        );
-
-                    }
-
-                    const html = await response.text();
-
-                    const element =
-                        document.getElementById(id);
-
-                    if (element) {
-
-                        element.innerHTML = html;
-
-                    }
-
-                } catch (error) {
-
-                    console.error(
-                        `Component Error: ${file}`,
-                        error
+                    throw new Error(
+                        `${response.status} ${response.statusText}`
                     );
 
                 }
 
+
+                const html =
+                    await response.text();
+
+
+                const element =
+                    document.getElementById(id);
+
+
+                if (!element) {
+
+                    console.warn(
+                        `VELNOX: #${id} not found.`
+                    );
+
+                    return;
+
+                }
+
+
+                element.innerHTML = html;
+
+
+            } catch (error) {
+
+                console.error(
+                    `VELNOX Component Error: ${file}`,
+                    error
+                );
+
             }
 
+        }
 
-            /* =========================================
-               LOAD ALL COMPONENTS
-            ========================================= */
+
+        async function loadScript(
+            file
+        ) {
+
+            return new Promise(
+                (resolve) => {
+
+                    const script =
+                        document.createElement(
+                            "script"
+                        );
+
+
+                    script.src = file;
+
+
+                    script.onload = () => {
+
+                        resolve();
+
+                    };
+
+
+                    script.onerror = () => {
+
+                        console.error(
+                            `VELNOX: Could not load ${file}`
+                        );
+
+                        resolve();
+
+                    };
+
+
+                    document.body.appendChild(
+                        script
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           LOAD HTML COMPONENTS
+        ====================================================== */
+
+        async function initializeWebsite() {
+
 
             await Promise.all([
 
@@ -416,107 +520,59 @@
             ]);
 
 
-            /* =========================================
-               LOAD JS AFTER COMPONENTS
-            ========================================= */
+            /* =================================================
+               LOAD JAVASCRIPT
+            ================================================= */
+
 
             const scripts = [
 
                 "JS/navbar.js",
+
                 "JS/hero.js",
+
                 "JS/about.js",
+
                 "JS/services.js",
+
                 "JS/works.js",
+
                 "JS/team.js",
+
                 "JS/estimator.js",
+
                 "JS/contact.js",
-                "JS/location.js",
+
                 "JS/footer.js",
+
                 "JS/floating-instagram.js",
-                "JS/project-modal.js"
+
+                "JS/project-modal.js",
+
+                "JS/scroll-animation.js"
 
             ];
 
 
-            /* =========================================
-               SCRIPT LOADER
-            ========================================= */
-
-            function loadScript(src) {
-
-                return new Promise((resolve, reject) => {
-
-                    const script =
-                        document.createElement("script");
-
-                    script.src = src;
-
-                    script.onload = resolve;
-
-                    script.onerror = reject;
-
-                    document.body.appendChild(script);
-
-                });
-
-            }
-
-
-            /* =========================================
-               LOAD SECTION JS
-            ========================================= */
-
-            for (const script of scripts) {
-
-                try {
-
-                    await loadScript(script);
-
-                } catch (error) {
-
-                    console.warn(
-                        `Could not load ${script}`,
-                        error
-                    );
-
-                }
-
-            }
-
-
-            /* =========================================
-               SCROLL ANIMATION
-            ========================================= */
-
-            try {
-
-                await loadScript(
-                    "JS/scroll-animation.js"
-                );
-
-            } catch (error) {
-
-                console.error(
-                    "Scroll animation failed:",
-                    error
-                );
-
-            }
-
-
-            /* =========================================
-               REFRESH GSAP
-            ========================================= */
-
-            if (
-                typeof ScrollTrigger !== "undefined"
+            for (
+                const script of scripts
             ) {
 
-                setTimeout(() => {
+                await loadScript(script);
 
-                    ScrollTrigger.refresh();
+            }
 
-                }, 500);
+
+            /* =================================================
+               FINAL SCROLLTRIGGER REFRESH
+            ================================================= */
+
+            if (
+                typeof window.ScrollTrigger !==
+                "undefined"
+            ) {
+
+                window.ScrollTrigger.refresh();
 
             }
 
@@ -525,7 +581,15 @@
                 "✓ VELNOX Website Fully Loaded"
             );
 
-        });
+        }
+
+
+        /* =====================================================
+           START WEBSITE
+        ====================================================== */
+
+        initializeWebsite();
+
 
     </script>
 
