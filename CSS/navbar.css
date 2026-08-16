@@ -202,3 +202,27 @@ body.light-theme {
         padding: 0 13px;
     }
 }
+
+/* =========================================
+   VELNOX SCROLL PERFORMANCE
+========================================= */
+
+#about-section,
+#services-section,
+#works-section,
+#team-section,
+#estimator-section,
+#contact-section,
+#location-section,
+#footer-section {
+    will-change: transform, opacity;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}

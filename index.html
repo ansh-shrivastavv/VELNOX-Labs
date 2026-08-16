@@ -142,16 +142,29 @@
     <link rel="stylesheet" href="CSS/location.css">
     <link rel="stylesheet" href="CSS/footer.css">
 
-    <!-- FLOATING INSTAGRAM -->
     <link
         rel="stylesheet"
         href="CSS/floating-instagram.css"
     >
 
+
+    <!-- ================================
+         GSAP
+    ================================= -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+    </script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+    </script>
+
 </head>
 
 
 <body>
+
 
     <!-- ================================
          NAVBAR
@@ -164,8 +177,13 @@
          HERO
     ================================= -->
 
-    <section aria-label="Hero Section">
+    <section
+        id="hero-section"
+        aria-label="Hero Section"
+    >
+
         <div id="hero"></div>
+
     </section>
 
 
@@ -173,8 +191,13 @@
          ABOUT
     ================================= -->
 
-    <section aria-label="About VELNOX">
+    <section
+        id="about-section"
+        aria-label="About VELNOX"
+    >
+
         <div id="about"></div>
+
     </section>
 
 
@@ -182,8 +205,13 @@
          SERVICES
     ================================= -->
 
-    <section aria-label="Services">
+    <section
+        id="services-section"
+        aria-label="Services"
+    >
+
         <div id="services"></div>
+
     </section>
 
 
@@ -191,8 +219,13 @@
          WORKS
     ================================= -->
 
-    <section aria-label="Portfolio">
+    <section
+        id="works-section"
+        aria-label="Portfolio"
+    >
+
         <div id="works"></div>
+
     </section>
 
 
@@ -200,8 +233,13 @@
          TEAM
     ================================= -->
 
-    <section aria-label="Our Team">
+    <section
+        id="team-section"
+        aria-label="Our Team"
+    >
+
         <div id="team"></div>
+
     </section>
 
 
@@ -209,8 +247,13 @@
          ESTIMATOR
     ================================= -->
 
-    <section aria-label="Project Estimator">
+    <section
+        id="estimator-section"
+        aria-label="Project Estimator"
+    >
+
         <div id="estimator"></div>
+
     </section>
 
 
@@ -218,8 +261,13 @@
          CONTACT
     ================================= -->
 
-    <section aria-label="Contact">
+    <section
+        id="contact-section"
+        aria-label="Contact"
+    >
+
         <div id="contact"></div>
+
     </section>
 
 
@@ -227,8 +275,13 @@
          LOCATION
     ================================= -->
 
-    <section aria-label="Location">
+    <section
+        id="location-section"
+        aria-label="Location"
+    >
+
         <div id="location"></div>
+
     </section>
 
 
@@ -236,8 +289,10 @@
          FOOTER
     ================================= -->
 
-    <footer>
+    <footer id="footer-section">
+
         <div id="footer"></div>
+
     </footer>
 
 
@@ -249,135 +304,229 @@
 
 
     <!-- ================================
-         LOAD COMPONENTS
+         LOAD EVERYTHING
     ================================= -->
 
     <script>
 
-        async function loadComponent(id, file) {
+        document.addEventListener("DOMContentLoaded", async () => {
+
+            /* =========================================
+               COMPONENT LOADER
+            ========================================= */
+
+            async function loadComponent(id, file) {
+
+                try {
+
+                    const response = await fetch(file);
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            `Failed to load ${file}`
+                        );
+
+                    }
+
+                    const html = await response.text();
+
+                    const element =
+                        document.getElementById(id);
+
+                    if (element) {
+
+                        element.innerHTML = html;
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        `Component Error: ${file}`,
+                        error
+                    );
+
+                }
+
+            }
+
+
+            /* =========================================
+               LOAD ALL COMPONENTS
+            ========================================= */
+
+            await Promise.all([
+
+                loadComponent(
+                    "navbar",
+                    "HTML/navbar.html"
+                ),
+
+                loadComponent(
+                    "hero",
+                    "HTML/hero.html"
+                ),
+
+                loadComponent(
+                    "about",
+                    "HTML/about.html"
+                ),
+
+                loadComponent(
+                    "services",
+                    "HTML/services.html"
+                ),
+
+                loadComponent(
+                    "works",
+                    "HTML/works.html"
+                ),
+
+                loadComponent(
+                    "team",
+                    "HTML/team.html"
+                ),
+
+                loadComponent(
+                    "estimator",
+                    "HTML/estimator.html"
+                ),
+
+                loadComponent(
+                    "contact",
+                    "HTML/contact.html"
+                ),
+
+                loadComponent(
+                    "location",
+                    "HTML/location.html"
+                ),
+
+                loadComponent(
+                    "footer",
+                    "HTML/footer.html"
+                ),
+
+                loadComponent(
+                    "floating-instagram",
+                    "HTML/floating-instagram.html"
+                )
+
+            ]);
+
+
+            /* =========================================
+               LOAD JS AFTER COMPONENTS
+            ========================================= */
+
+            const scripts = [
+
+                "JS/navbar.js",
+                "JS/hero.js",
+                "JS/about.js",
+                "JS/services.js",
+                "JS/works.js",
+                "JS/team.js",
+                "JS/estimator.js",
+                "JS/contact.js",
+                "JS/location.js",
+                "JS/footer.js",
+                "JS/floating-instagram.js",
+                "JS/project-modal.js"
+
+            ];
+
+
+            /* =========================================
+               SCRIPT LOADER
+            ========================================= */
+
+            function loadScript(src) {
+
+                return new Promise((resolve, reject) => {
+
+                    const script =
+                        document.createElement("script");
+
+                    script.src = src;
+
+                    script.onload = resolve;
+
+                    script.onerror = reject;
+
+                    document.body.appendChild(script);
+
+                });
+
+            }
+
+
+            /* =========================================
+               LOAD SECTION JS
+            ========================================= */
+
+            for (const script of scripts) {
+
+                try {
+
+                    await loadScript(script);
+
+                } catch (error) {
+
+                    console.warn(
+                        `Could not load ${script}`,
+                        error
+                    );
+
+                }
+
+            }
+
+
+            /* =========================================
+               SCROLL ANIMATION
+            ========================================= */
 
             try {
 
-                const response = await fetch(file);
-
-                if (!response.ok) {
-                    throw new Error(
-                        `Failed to load ${file}`
-                    );
-                }
-
-                const html = await response.text();
-
-                const element =
-                    document.getElementById(id);
-
-                if (element) {
-
-                    element.innerHTML = html;
-
-                }
+                await loadScript(
+                    "JS/scroll-animation.js"
+                );
 
             } catch (error) {
 
                 console.error(
-                    `Component Error: ${file}`,
+                    "Scroll animation failed:",
                     error
                 );
 
             }
 
-        }
+
+            /* =========================================
+               REFRESH GSAP
+            ========================================= */
+
+            if (
+                typeof ScrollTrigger !== "undefined"
+            ) {
+
+                setTimeout(() => {
+
+                    ScrollTrigger.refresh();
+
+                }, 500);
+
+            }
 
 
-        Promise.all([
+            console.log(
+                "✓ VELNOX Website Fully Loaded"
+            );
 
-            loadComponent(
-                "navbar",
-                "HTML/navbar.html"
-            ),
+        });
 
-            loadComponent(
-                "hero",
-                "HTML/hero.html"
-            ),
-
-            loadComponent(
-                "about",
-                "HTML/about.html"
-            ),
-
-            loadComponent(
-                "services",
-                "HTML/services.html"
-            ),
-
-            loadComponent(
-                "works",
-                "HTML/works.html"
-            ),
-
-            loadComponent(
-                "team",
-                "HTML/team.html"
-            ),
-
-            loadComponent(
-                "estimator",
-                "HTML/estimator.html"
-            ),
-
-            loadComponent(
-                "contact",
-                "HTML/contact.html"
-            ),
-
-            loadComponent(
-                "location",
-                "HTML/location.html"
-            ),
-
-            loadComponent(
-                "footer",
-                "HTML/footer.html"
-            ),
-
-            /* FLOATING INSTAGRAM */
-
-            loadComponent(
-                "floating-instagram",
-                "HTML/floating-instagram.html"
-            )
-
-        ]);
-
-    </script>
-
-
-    <!-- ================================
-         JAVASCRIPT
-    ================================= -->
-
-    <script src="JS/navbar.js" defer></script>
-
-    <script src="JS/hero.js" defer></script>
-
-    <script src="JS/about.js" defer></script>
-
-    <script src="JS/services.js" defer></script>
-
-    <script src="JS/estimator.js" defer></script>
-
-    <script src="JS/team.js" defer></script>
-
-    <script src="JS/footer.js" defer></script>
-
-    <script src="JS/contact.js" defer></script>
-
-    <!-- FLOATING INSTAGRAM -->
-
-    <script
-        src="JS/floating-instagram.js"
-        defer>
     </script>
 
 
