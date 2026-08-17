@@ -1,35 +1,88 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================
+   VELNOX — TEAM SYSTEM
+   Team Card Reveal Animation
+========================================================= */
 
-    const founder = document.querySelector(".founder");
+(() => {
 
-    if (!founder) return;
+    "use strict";
 
-    const image = founder.querySelector(".founder-image img");
 
-    founder.addEventListener("mousemove", (e) => {
+    /* =========================================================
+       TEAM CARDS
+    ========================================================= */
 
-        if (window.innerWidth <= 800 || !image) return;
+    const teamCards =
+        document.querySelectorAll(".team-card");
 
-        const rect = founder.getBoundingClientRect();
 
-        const x =
-            ((e.clientX - rect.left) / rect.width - .5) * 5;
+    /* =========================================================
+       CHECK
+    ========================================================= */
 
-        const y =
-            ((e.clientY - rect.top) / rect.height - .5) * 5;
+    if (!teamCards.length) {
 
-        image.style.transform =
-            `scale(1.04) translate(${x}px, ${y}px)`;
+        console.log(
+            "⚠ VELNOX Team: No team cards found"
+        );
+
+        return;
+    }
+
+
+    /* =========================================================
+       INTERSECTION OBSERVER
+    ========================================================= */
+
+    const teamObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+
+                    entry.target.classList.add(
+                        "team-visible"
+                    );
+
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    /* =========================================================
+       INITIALIZE
+    ========================================================= */
+
+    teamCards.forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 0.12}s`;
+
+        teamObserver.observe(card);
 
     });
 
-    founder.addEventListener("mouseleave", () => {
 
-        if (!image) return;
+    /* =========================================================
+       FINAL
+    ========================================================= */
 
-        image.style.transform =
-            "scale(1) translate(0,0)";
+    console.log(
+        "✓ VELNOX Team Loaded"
+    );
 
-    });
-
-});
+})();

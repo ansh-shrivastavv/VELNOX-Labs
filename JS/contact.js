@@ -1,209 +1,111 @@
 /* =========================================================
-   VELNOX — CONTACT FORM
-   Google Sheets / Apps Script Submission
+   VELNOX — CONTACT SYSTEM
+   Google Apps Script Form Submission
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
 
-    const form = document.getElementById("velnoxContactForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const submitText = document.getElementById("submitText");
-    const formStatus = document.getElementById("formStatus");
-    const iframe = document.getElementById("hidden_iframe");
-
-    // Form doesn't exist on this page
-    if (!form) return;
-
-    let isSubmitting = false;
+    "use strict";
 
 
-    /* =====================================================
-       SUBMIT FORM
-    ===================================================== */
+    const form =
+        document.getElementById("contactForm");
 
-    form.addEventListener("submit", () => {
+    const submitButton =
+        document.getElementById("contactSubmit");
 
-        if (isSubmitting) {
-            return;
-        }
-
-        isSubmitting = true;
-
-        // Button state
-        if (submitBtn) {
-            submitBtn.disabled = true;
-        }
-
-        if (submitText) {
-            submitText.textContent = "Sending...";
-        }
-
-        // Clear previous status
-        if (formStatus) {
-            formStatus.textContent = "";
-            formStatus.className = "form-status";
-        }
+    const status =
+        document.getElementById("contactStatus");
 
 
-        /*
-         * The form is submitted directly to
-         * Google Apps Script using POST.
-         *
-         * hidden_iframe prevents the page
-         * from redirecting to Google.
-         */
+    if (!form || !submitButton || !status) {
+
+        console.log(
+            "⚠ VELNOX Contact: Elements not found"
+        );
+
+        return;
+    }
 
 
-        /* =================================================
-           SUCCESS STATE
-        ================================================= */
+    form.addEventListener(
+        "submit",
+        async (event) => {
 
-        setTimeout(() => {
+            event.preventDefault();
 
-            if (submitText) {
-                submitText.textContent = "Request Sent ✓";
+
+            const originalText =
+                submitButton.innerHTML;
+
+
+            submitButton.disabled = true;
+
+            submitButton.innerHTML =
+                "<span>Sending...</span><span>↗</span>";
+
+            status.textContent = "";
+
+            status.className =
+                "contact-status";
+
+
+            try {
+
+                const formData =
+                    new FormData(form);
+
+
+                await fetch(
+                    form.action,
+                    {
+                        method: "POST",
+                        body: formData,
+                        mode: "no-cors"
+                    }
+                );
+
+
+                status.textContent =
+                    "Your enquiry has been sent successfully.";
+
+                status.classList.add(
+                    "success"
+                );
+
+
+                form.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Contact form error:",
+                    error
+                );
+
+
+                status.textContent =
+                    "Something went wrong. Please try again.";
+
+                status.classList.add(
+                    "error"
+                );
+
             }
 
-            if (formStatus) {
 
-                formStatus.textContent =
-                    "Thanks! Your project request has been received.";
+            submitButton.disabled = false;
 
-                formStatus.className =
-                    "form-status success";
-            }
+            submitButton.innerHTML =
+                originalText;
 
-            // Clear form
-            form.reset();
-
-
-            /* =============================================
-               RESET BUTTON
-            ============================================= */
-
-            setTimeout(() => {
-
-                if (submitText) {
-                    submitText.textContent =
-                        "Send Project Request";
-                }
-
-                if (formStatus) {
-                    formStatus.textContent = "";
-                    formStatus.className = "form-status";
-                }
-
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                }
-
-                isSubmitting = false;
-
-            }, 3500);
-
-        }, 1500);
-
-    });
-
-
-    /* =====================================================
-       INPUT FOCUS EFFECT
-    ===================================================== */
-
-    const inputs = form.querySelectorAll(
-        "input, select, textarea"
+        }
     );
 
-    inputs.forEach((input) => {
 
-        input.addEventListener("focus", () => {
-            input.parentElement.classList.add("is-focused");
-        });
+    console.log(
+        "✓ VELNOX Contact Loaded"
+    );
 
-        input.addEventListener("blur", () => {
-            input.parentElement.classList.remove("is-focused");
-        });
-
-    });
-
-
-    /* =====================================================
-       MESSAGE CHARACTER LIMIT
-    ===================================================== */
-
-    const message = document.getElementById("message");
-
-    if (message) {
-
-        message.setAttribute("maxlength", "2000");
-
-        message.addEventListener("input", () => {
-
-            if (message.value.length >= 2000) {
-
-                if (formStatus) {
-
-                    formStatus.textContent =
-                        "Message limit reached.";
-
-                    formStatus.className =
-                        "form-status error";
-                }
-
-            } else {
-
-                if (
-                    formStatus &&
-                    formStatus.classList.contains("error")
-                ) {
-                    formStatus.textContent = "";
-                    formStatus.className = "form-status";
-                }
-
-            }
-
-        });
-
-    }
-
-
-    /* =====================================================
-       PHONE — BASIC CLEANUP
-    ===================================================== */
-
-    const phone = document.getElementById("phone");
-
-    if (phone) {
-
-        phone.addEventListener("input", () => {
-
-            phone.value = phone.value.replace(
-                /[^0-9+\-\s()]/g,
-                ""
-            );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       GOOGLE IFRAME LOAD
-    ===================================================== */
-
-    if (iframe) {
-
-        iframe.addEventListener("load", () => {
-
-            /*
-             * Google Apps Script response is loaded
-             * inside the hidden iframe.
-             *
-             * We don't redirect the user.
-             */
-
-        });
-
-    }
-
-});
+})();

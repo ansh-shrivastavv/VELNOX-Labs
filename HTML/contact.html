@@ -2,203 +2,192 @@
 
     <div class="contact-container">
 
-        <!-- LEFT CONTENT -->
-        <div class="contact-intro">
+        <!-- Heading -->
+        <div class="contact-heading">
 
-            <div class="section-label">
-                <span>04</span>
+            <span class="contact-tag">
                 GET IN TOUCH
-            </div>
+            </span>
 
             <h2>
-                Have an idea?
-                <span>Let's build it.</span>
+                Let's build something
+                <span>great.</span>
             </h2>
 
-            <p class="contact-description">
-                Tell us about your project, idea, or business.
-                Share a few details and we'll get back to you
-                as soon as possible.
+            <p>
+                Have a project, idea, or business that needs a
+                better digital presence? Tell us about it.
             </p>
-
-            <div class="contact-meta">
-
-                <div class="contact-meta-item">
-                    <small>EMAIL</small>
-
-                    <a href="mailto:velnox.webstudio@gmail.com">
-                        velnox.webstudio@gmail.com
-                    </a>
-                </div>
-
-                <div class="contact-meta-item">
-                    <small>INSTAGRAM</small>
-
-                    <a
-                        href="https://instagram.com/velnox.web"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        @velnox.web ↗
-                    </a>
-                </div>
-
-            </div>
 
         </div>
 
 
-        <!-- CONTACT FORM -->
-        <div class="contact-form-wrapper">
+        <div class="contact-grid">
 
+            <!-- Left -->
+            <div class="contact-info">
+
+                <div class="contact-info-item">
+
+                    <span class="contact-number">01</span>
+
+                    <div>
+                        <h3>Start a Project</h3>
+                        <p>
+                            Share your requirements and we'll
+                            get back to you.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-info-item">
+
+                    <span class="contact-number">02</span>
+
+                    <div>
+                        <h3>Tell Us Your Idea</h3>
+                        <p>
+                            No idea is too early. Let's discuss
+                            what you're planning.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-info-item">
+
+                    <span class="contact-number">03</span>
+
+                    <div>
+                        <h3>Let's Create</h3>
+                        <p>
+                            Once everything is clear, we'll
+                            turn the idea into reality.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Form -->
             <form
-                id="velnoxContactForm"
+                class="contact-form"
+                id="contactForm"
                 method="POST"
-                target="hidden_iframe"
                 action="https://script.google.com/macros/s/AKfycbyP39aUHsAyOv516Qy91kxDxCrvWHiB01nrNX00E8PsxoGJV81qrHOrZxX6Wpyp-_Uq/exec"
             >
 
-                <div class="form-row">
+                <div class="contact-form-row">
 
-                    <div class="form-group">
-                        <label for="name">YOUR NAME</label>
+                    <div class="contact-field">
+
+                        <label for="name">
+                            Name
+                        </label>
 
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Enter your name"
-                            autocomplete="name"
+                            placeholder="Your name"
                             required
                         >
+
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="email">EMAIL ADDRESS</label>
+                    <div class="contact-field">
+
+                        <label for="email">
+                            Email
+                        </label>
 
                         <input
                             type="email"
                             id="email"
                             name="email"
                             placeholder="you@example.com"
-                            autocomplete="email"
                             required
                         >
+
                     </div>
 
                 </div>
 
 
-                <div class="form-row">
+                <div class="contact-field">
 
-                    <div class="form-group">
-                        <label for="phone">PHONE</label>
+                    <label for="phone">
+                        Phone
+                    </label>
 
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Optional"
-                            autocomplete="tel"
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="service">SERVICE</label>
-
-                        <select
-                            id="service"
-                            name="service"
-                            required
-                        >
-                            <option value="" disabled selected>
-                                Select a service
-                            </option>
-
-                            <option value="Website Development">
-                                Website Development
-                            </option>
-
-                            <option value="Landing Page">
-                                Landing Page
-                            </option>
-
-                            <option value="Portfolio Website">
-                                Portfolio Website
-                            </option>
-
-                            <option value="Business Website">
-                                Business Website
-                            </option>
-
-                            <option value="UI/UX Design">
-                                UI/UX Design
-                            </option>
-
-                            <option value="Branding">
-                                Branding
-                            </option>
-
-                            <option value="Other">
-                                Other
-                            </option>
-                        </select>
-                    </div>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+91 XXXXX XXXXX"
+                    >
 
                 </div>
 
 
-                <div class="form-group">
+                <div class="contact-field">
 
-                    <label for="budget">
-                        PROJECT BUDGET
+                    <label for="service">
+                        What do you need?
                     </label>
 
                     <select
-                        id="budget"
-                        name="budget"
+                        id="service"
+                        name="service"
+                        required
                     >
-                        <option value="" selected>
-                            Select budget range
+
+                        <option value="" selected disabled>
+                            Select a service
                         </option>
 
-                        <option value="Under ₹5,000">
-                            Under ₹5,000
+                        <option value="Website Development">
+                            Website Development
                         </option>
 
-                        <option value="₹5,000 - ₹10,000">
-                            ₹5,000 - ₹10,000
+                        <option value="Web Application">
+                            Web Application
                         </option>
 
-                        <option value="₹10,000 - ₹25,000">
-                            ₹10,000 - ₹25,000
+                        <option value="UI UX Design">
+                            UI / UX Design
                         </option>
 
-                        <option value="₹25,000+">
-                            ₹25,000+
+                        <option value="Website Redesign">
+                            Website Redesign
                         </option>
 
-                        <option value="Not sure">
-                            Not sure yet
+                        <option value="Other">
+                            Other
                         </option>
+
                     </select>
 
                 </div>
 
 
-                <div class="form-group">
+                <div class="contact-field">
 
                     <label for="message">
-                        TELL US ABOUT YOUR PROJECT
+                        Project Details
                     </label>
 
                     <textarea
                         id="message"
                         name="message"
-                        rows="6"
-                        placeholder="Tell us about your idea..."
+                        rows="5"
+                        placeholder="Tell us a little about your project..."
                         required
                     ></textarea>
 
@@ -208,33 +197,23 @@
                 <button
                     type="submit"
                     class="contact-submit"
-                    id="submitBtn"
+                    id="contactSubmit"
                 >
-                    <span id="submitText">
-                        Send Project Request
-                    </span>
 
-                    <span class="submit-arrow">
-                        ↗
-                    </span>
+                    <span>Send Enquiry</span>
+
+                    <span>↗</span>
+
                 </button>
 
 
-                <div
-                    class="form-status"
-                    id="formStatus"
+                <p
+                    class="contact-status"
+                    id="contactStatus"
                     aria-live="polite"
-                ></div>
+                ></p>
 
             </form>
-
-
-            <!-- Prevent page redirect after submission -->
-            <iframe
-                name="hidden_iframe"
-                id="hidden_iframe"
-                style="display:none;"
-            ></iframe>
 
         </div>
 
